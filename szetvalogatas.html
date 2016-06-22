@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta name="description" content="A honlap programozási tételeket, egyszerűbb algoritmusokat mutat be vizuális megjelenítéssel." />
+		<meta name="author" content="Bende Imre" />
+		<link rel="icon" href="img/elte.ico" />
+
+		<title>Pr. tételek: Szétválogatás</title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#" data-i18n="label.projecttitle"></a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse"></div>
+			</div>
+		</nav>
+
+		<div class="container">
+
+			<div class="main">
+				<div class="row">
+					<h1 data-i18n="progtetel.szetvalogatas.nev"></h1>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div id="leiras">
+							<h2 data-i18n="label.leiras">Leírás</h2>
+							<p data-i18n="[html]progtetel.szetvalogatas.leiras"></p>
+							<a href="http://progalap.elte.hu/downloads/seged/eTananyag/lecke20_lap1.html#hiv17" data-i18n="label.bovebben"></a>
+						</div>
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+							<li><a data-toggle="pill" href="#strukto" data-i18n="label.struktogram"></a></li>
+							<li><a data-toggle="pill" href="#implementation" data-i18n="label.cppimplementacio"></a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="pszeudo" class="tab-pane fade in active">
+								<p class="line"><strong>Eljárás</strong> Szétválogatás(A, B, DBB, C, DBC)</p>
+								<p class="line tab1">DBB := 0<span id="elsoOsszeg" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">DBC := 0<span id="elsoOsszeg" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><strong>Ciklus</strong> i := 1-től N-ig<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><strong>Ha</strong> T(A[i]) <strong>akkor</strong></p>
+								<p class="line tab3">DBB := DBB + 1</p>
+								<p class="line tab3">B[DBB] := A[i]</p>
+								<p class="line tab2"><strong>különben</strong></p>
+								<p class="line tab3">DBC := DBC + 1</p>
+								<p class="line tab3">C[DBC] := A[i]</p>
+								<p class="line tab2"><strong>Elágazás vége</strong></p>
+								<p class="line tab1"><strong>Ciklus vége</strong></p>
+								<p class="line"><strong>Eljárás vége</strong></p>
+							</div>
+							<div id="strukto" class="tab-pane fade">
+								<table>
+									<tr>
+										<td colspan="5">
+											DBB := 0 <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span><br/>
+											DBC := 0
+										</td>
+									</tr>
+									<tr>
+										<td colspan="5" class="ciklusFeltetel">
+											i := 1-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+										<td class="atloBal"></td>
+										<td class="elagazasFeltetel" colspan="2">
+											T(A[i])
+										</td>
+										<td class="atloJobb"></td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop">&nbsp;</td>
+										<td colspan="2">
+											DBB := DBB + 1 <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span><br/>
+											B[DBB] := A[i]
+										</td>
+										<td colspan="2">
+											DBC := DBC + 1<br/>
+											C[DBC] := A[i]
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div id="implementation" class="tab-pane fade">
+								<p class="line"><span class="cppKeyword">void</span> <span class="cppVariable">szetvalogatas</span>(<span class="cppKeyword">double</span>[] <span class="cppVariable">A</span>, <span class="cppKeyword">int</span> <span class="cppVariable">N</span>, <span class="cppKeyword">double</span>[] <span class="cppVariable">B</span>, <span class="cppKeyword">double</span>[] <span class="cppVariable">C</span>){</p>
+								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">DBB</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">DBC</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> i</span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">T</span>(<span class="cppVariable">A</span>[<span class="cppVariable">i</span>])){</span>
+								<p class="line tab3"><span class="cppVariable">B</span>[<span class="cppVariable">DBB</span>++]; <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2">}</p>
+								<p class="line tab2"><span class="cppKeyword">else</span>{</p>
+								<p class="line tab3"><p class="line tab3"><span class="cppVariable">C</span>[<span class="cppVariable">DBC</span>++]; <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p></p>
+								<p class="line tab2">}</p>
+								<p class="line tab1">}</p>
+								<p class="line">}</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-5">
+						<div id="program">
+							<div class="form-group">
+								<label for="bemenet">A (tömb): </label>
+								<input type="text" class="form-control" name="bemenet" id="bemenet" />
+							</div>
+							<div class="form-group">
+								<label for="feltetel">Feltétel: </label>
+								<select id="relaciosJel" class="form-control">
+									<option>=</option>
+									<option>></option>
+									<option>>=</option>
+									<option><</option>
+									<option><=</option>
+								</select>
+								<input type="text" class="form-control" name="feltetel" id="feltetel" />
+								<button class="btn btn-success" id="futtatoGomb" onclick="szetvalogatasStart()" data-i18n="label.futtatas"></button>
+							</div> 
+
+							<div id="eredmenyek" class="hidden">
+								<div id="nyilak">
+									<button class="btn btn-play" id="elozoGomb" onclick="elozo()">
+										<span class="glyphicon glyphicon-chevron-left"></span>
+									</button>
+									<button class="btn btn-play" id="stopGomb" onclick="stop()">
+										<span class="glyphicon glyphicon-stop"></span>
+									</button>
+									<button class="btn btn-play" id="pauseGomb" onclick="pause()">
+										<span class="glyphicon glyphicon-pause"></span>
+									</button>
+									<button class="btn btn-play" id="playGomb" onclick="play()">
+										<span class="glyphicon glyphicon-play"></span>
+									</button>
+									<button class="btn btn-play" id="kovetkezoGomb" onclick="kovetkezo()">
+										<span class="glyphicon glyphicon-chevron-right"></span>
+									</button>
+								</div>
+								
+								<div id="algo-prog" class="progress">
+									<div id="algo-progressbar" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+										<span class="sr-only"></span>
+									</div>
+								</div>
+
+								<p class="h4">Változók értékei</p>
+								<div id="valtozok"></div>
+
+								<p class="h4">Tömb állása</p>
+								<div id="tombok"></div>
+							</div>
+							<div id="hibasbemenet" class="hidden">
+								Hibás bemenet.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<footer class="footer"><div class="container"></div></footer>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/i18next-1.10.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/eljarasok.js"></script>
+		<script src="js/osszetettprogtetelek.js"></script>
+		<script src="js/esemenyek.js"></script>
+		<script src="js/forditas.js"></script>
+		<script>
+			$(function() {
+				$("#progtetelek").addClass("active");
+			});
+		</script>
+	</body>
+</html>

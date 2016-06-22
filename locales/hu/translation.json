@@ -1,0 +1,127 @@
+﻿{
+	"label": {
+		"pszeudokod": "Pszeudokód",
+		"struktogram": "Struktogram",
+		"cppimplementacio": "C++ implementáció",
+		"leiras": "Leírás",
+		"feltetel": "Feltétel",
+		"bovebben": "Bővebben",
+		"futtatas": "Futtatás",
+		"projecttitle": "Algoritmusok lépésenként",
+		"tartalomjegyzek": "Tartalomjegyzék",
+		"keszitette": "Készítette",
+		"temavezeto": "Témavezető",
+		"futtatas": "Futtatás",
+		"feltetel": "Feltétel",
+		"menu": {
+			"kezdooldal": "Kezdőoldal",
+			"progtetelek": "Programozási tételek<span class='caret'></span>",
+			"rendezesek": "Rendezések<span class='caret'></span>",
+			"grafalgoritmusok": "Gráfalgoritmusok<span class='caret'></span>",
+			"adatszerkezetek": "Adatszerkezetek<span class='caret'></span>"
+		},
+		"fooldal": {
+			"kezdooldal": "Kezdőoldal",
+			"progtetelek": "Programozási tételek",
+			"rendezesek": "Rendezések",
+			"grafalgoritmusok": "Gráfalgoritmusok",
+			"adatszerkezetek": "Adatszerkezetek"
+		}
+	},
+	"pszeudokodelem": {
+		"ha": "Ha",
+		"amig": "Amíg",
+		"kulonben": "Különben",
+		"ciklus": "Ciklus",
+		"akkor": "akkor",
+		"eljaras": "Eljárás",
+		"kiiras": "Kiírás",
+		"elagazasvege": "Elágazás vége",
+		"ciklusvege": "Ciklus vége",
+		"eljarasvege": "Eljárás vége"
+	},
+	"progtetel": {
+		"osszegzes": {
+			"leiras": "Az összegzés programozási tétel egymás után összeadogatja egy tömb elemeit.",
+			"nev": "Összegzés"
+		},
+		"megszamolas": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Megszámolás"
+		},
+		"kereses": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Keresés"
+		},
+		"logker": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Logaritmikus keresés"
+		},
+		"maxkiv": {
+			"leiras": "Ez a tétel N darab „valami” közül kell megadja a legnagyobbat (vagy a legkisebbet).<br/>Kell: Értelmezve legyen egy rendezési reláció, legalább egy elem legyen!",
+			"nev": "Maximumkiválasztás"
+		},
+		"masolas": {
+			"leiras": "Egy tömb elemeit átmásolja egy másik tömbbe, miközben valamilyen átalakítást végez az egyes elemeken.",
+			"nev": "Másolás"
+		},
+		"kivalogatas": {
+			"leiras": "A tömb elemit egy másik tömbbe rakja, feltételhez kötve.",
+			"nev": "Kiválogatás"
+		},
+		"szetvalogatas": {
+			"leiras": "Két tömbbe válogatja szét egy tömb elemeit, feltételtől függően.",
+			"nev": "Szétválogatás"
+		},
+		"unio": {
+			"leiras": "Két halmaz (tömb) unióját adja meg.",
+			"nev": "Unió"
+		},
+		"metszet": {
+			"leiras": "Két halmaz (tömb) metszetét adja meg.",
+			"nev": "Metszet"
+		}
+	},
+	"rendezes": {
+		"buborekos": {
+			"leiras": "A buborékos rendezés egy egyszerű rendezési algoritmus. Nevét onnan kapta, hogy hasonlóan ahhoz, ahogy a pezsgőspohárban szállnak felfelé a buborékok, a rendezés során is minden egyes menetben a fennmaradó elemek közül a legnagyobbat \"áramoltatjuk fel\" a tömbszelet végére, tetejére.",
+			"nev": "Buborékos rendezés"
+		},
+		"minkiv": {
+			"leiras": "asd",
+			"nev": "Minimumkiválasztásos rendezés"
+		},
+		"gyorsrendezes": {
+			"leiras": "asd",
+			"nev": "Gyorsrendezés"
+		},
+		"osszefesulesesrendezes": {
+			"leiras": "asd",
+			"nev": "Összefésüléses rendezés"
+		}
+	},
+	"adatszerkezet": {
+		"sor": {
+			"nev": "Sor",
+			"leiras": "asd",
+			"muvelet": {
+				"sorbol": "Sorból",
+				"sorba": "Sorba",
+				"urese": "Üres-e?",
+				"telie": "Teli-e?",
+				"elso": "Első"
+			}
+		},
+		"verem": {
+			"nev": "Verem",
+			"leiras": "asd",
+			"muvelet": {
+				"verembol": "Veremből",
+				"verembe": "Verembe",
+				"urese": "Üres-e?",
+				"telie": "Teli-e?",
+				"elso": "Első"
+			}
+		}
+	}
+}

@@ -1,0 +1,119 @@
+﻿{
+	"label": {
+		"pszeudokod": "Pszeudokód",
+		"leiras": "Leírás",
+		"feltetel": "Feltétel",
+		"futtatas": "Futtatás",
+		"projecttitle": "Algoritmusok lépésenként",
+		"menu": {
+			"kezdooldal": "Kezdőoldal",
+			"progtetelek": "Programozási tételek<span class='caret'></span>",
+			"rendezesek": "Rendezések<span class='caret'></span>",
+			"grafalgoritmusok": "Gráfalgoritmusok<span class='caret'></span>",
+			"adatszerkezetek": "Adatszerkezetek<span class='caret'></span>"
+		},
+		"fooldal": {
+			"kezdooldal": "Kezdőoldal",
+			"progtetelek": "Programozási tételek",
+			"rendezesek": "Rendezések",
+			"grafalgoritmusok": "Gráfalgoritmusok",
+			"adatszerkezetek": "Adatszerkezetek"
+		}
+	},
+	"pszeudokodelem": {
+		"ha": "Ha",
+		"amig": "Amíg",
+		"kulonben": "Különben",
+		"ciklus": "Ciklus",
+		"akkor": "akkor",
+		"eljaras": "Eljárás",
+		"kiiras": "Kiírás",
+		"elagazasvege": "Elágazás vége",
+		"ciklusvege": "Ciklus vége",
+		"eljarasvege": "Eljárás vége"
+	},
+	"progtetel": {
+		"osszegzes": {
+			"leiras": "Ez a tétel N darab „valami” közül kell megadja a legnagyobbat (vagy a legkisebbet).<br/>Kell: Értelmezve legyen egy rendezési reláció, legalább egy elem legyen!",
+			"nev": "Összegzés"
+		},
+		"megszamolas": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Megszámolás"
+		},
+		"kereses": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Keresés"
+		},
+		"logker": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Logaritmikus keresés"
+		},
+		"maxkiv": {
+			"leiras": "Ez a tétel N darab „valami” közül kell megadja a legnagyobbat (vagy a legkisebbet).<br/>Kell: Értelmezve legyen egy rendezési reláció, legalább egy elem legyen!",
+			"nev": "Maximumkiválasztás"
+		},
+		"masolas": {
+			"leiras": "Egy sorozat elemet átmásolom egy másik sorozatba, miközben valamilyen átalakítást végzek az egyes elemeken.",
+			"nev": "Másolás"
+		},
+		"kivalogatas": {
+			"leiras": "A tömb elemit egy másik tömbbe rakom, feltételhez kötve.",
+			"nev": "Kiválogatás"
+		},
+		"szetvalogatas": {
+			"leiras": "Két tömbbe válogatjuk szét egy tömb elemeit.",
+			"nev": "Szétválogatás"
+		},
+		"unio": {
+			"leiras": "Két halmaz (tömb) unióját adja meg.",
+			"nev": "Unió"
+		},
+		"metszet": {
+			"leiras": "Két halmaz (tömb) metszetét adja meg.",
+			"nev": "Metszet"
+		}
+	},
+	"rendezes": {
+		"buborekos": {
+			"leiras": "A buborékos rendezés egy egyszerű rendezési algoritmus. Nevét onnan kapta, hogy hasonlóan ahhoz, ahogy a pezsgőspohárban szállnak felfelé a buborékok, a rendezés során is minden egyes menetben a fennmaradó elemek közül a legnagyobbat \"áramoltatjuk fel\" a tömbszelet végére, tetejére.",
+			"nev": "Buborékos rendezés"
+		},
+		"minkiv": {
+			"leiras": "asd",
+			"nev": "Minimumkiválasztásos rendezés"
+		},
+		"gyorsrendezes": {
+			"leiras": "asd",
+			"nev": "Gyorsrendezés"
+		},
+		"osszefesulesesrendezes": {
+			"leiras": "asd",
+			"nev": "Összefésüléses rendezés"
+		}
+	},
+	"adatszerkezet": {
+		"sor": {
+			"nev": "Sor",
+			"leiras": "asd",
+			"muvelet": {
+				"sorbol": "Sorból",
+				"sorba": "Sorba",
+				"urese": "Üres-e?",
+				"telie": "Teli-e?",
+				"elso": "Első"
+			}
+		},
+		"verem": {
+			"nev": "Verem",
+			"leiras": "asd",
+			"muvelet": {
+				"verembol": "Veremből",
+				"verembe": "Verembe",
+				"urese": "Üres-e?",
+				"telie": "Teli-e?",
+				"elso": "Első"
+			}
+		}
+	}
+}

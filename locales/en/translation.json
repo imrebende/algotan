@@ -1,0 +1,124 @@
+﻿{
+	"label": {
+		"pszeudokod": "Pseudocode",
+		"struktogram": "Structogram",
+		"cppimplementacio": "C++ implementation",
+		"leiras": "Description",
+		"bovebben": "More information",
+		"feltetel": "Condition",
+		"futtatas": "Run",
+		"projecttitle": "Algorithms step-by-step",
+		"futtatas": "Run",
+		"feltetel": "Condition",
+		"menu": {
+			"kezdooldal": "Homepage",
+			"progtetelek": "Basic algorithms<span class='caret'></span>",
+			"rendezesek": "Sorts<span class='caret'></span>",
+			"grafalgoritmusok": "Graph algorithms<span class='caret'></span>",
+			"adatszerkezetek": "Data structures<span class='caret'></span>"
+		},
+		"fooldal": {
+			"kezdooldal": "Homepage",
+			"progtetelek": "Basic algorithms",
+			"rendezesek": "Sorts",
+			"grafalgoritmusok": "Graph algorithms",
+			"adatszerkezetek": "Data structures"
+		}
+	},
+	"pszeudokodelem": {
+		"ha": "If",
+		"amig": "While",
+		"kulonben": "Else",
+		"ciklus": "For",
+		"akkor": "then",
+		"eljaras": "Procedure",
+		"kiiras": "Print",
+		"elagazasvege": "End If",
+		"ciklusvege": "End For",
+		"eljarasvege": "End Procedure"
+	},
+	"progtetel": {
+		"osszegzes": {
+			"leiras": "Ez a tétel N darab „valami” közül kell megadja a legnagyobbat (vagy a legkisebbet).<br/>Kell: Értelmezve legyen egy rendezési reláció, legalább egy elem legyen!",
+			"nev": "Sum"
+		},
+		"megszamolas": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Count"
+		},
+		"maxkiv": {
+			"leiras": "Ez a tétel N darab „valami” közül kell megadja a legnagyobbat (vagy a legkisebbet).<br/>Kell: Értelmezve legyen egy rendezési reláció, legalább egy elem legyen!",
+			"nev": "Maximum selection"
+		},
+		"kereses": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Search"
+		},
+		"logker": {
+			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"nev": "Logarithmic search"
+		},
+		"masolas": {
+			"leiras": "Egy sorozat elemet átmásolom egy másik sorozatba, miközben valamilyen átalakítást végzek az egyes elemeken.",
+			"nev": "Copy"
+		},
+		"kivalogatas": {
+			"leiras": "A tömb elemit egy másik tömbbe rakom, feltételhez kötve.",
+			"nev": "Select"
+		},
+		"szetvalogatas": {
+			"leiras": "Két tömbbe válogatjuk szét egy tömb elemeit.",
+			"nev": "Separate"
+		},
+		"unio": {
+			"leiras": "Két halmaz (tömb) unióját adja meg.",
+			"nev": "Union"
+		},
+		"metszet": {
+			"leiras": "Két halmaz (tömb) metszetét adja meg.",
+			"nev": "Intersection"
+		}
+	},
+	"rendezes": {
+		"buborekos": {
+			"leiras": "asd",
+			"nev": "Bubble sort"
+		},
+		"minkiv": {
+			"leiras": "asd",
+			"nev": "Selection sort"
+		},
+		"gyorsrendezes": {
+			"leiras": "asd",
+			"nev": "Quick sort"
+		},
+		"osszefesulesesrendezes": {
+			"leiras": "asd",
+			"nev": "Merge sort"
+		}
+	},
+	"adatszerkezet": {
+		"sor": {
+			"nev": "Queue",
+			"leiras": "asd",
+			"muvelet": {
+				"sorbol": "Dequeue",
+				"sorba": "Enqueue",
+				"urese": "Is empty?",
+				"telie": "Is full?",
+				"elso": "Front"
+			}
+		},
+		"verem": {
+			"nev": "Stack",
+			"leiras": "asd",
+			"muvelet": {
+				"verembol": "Pop",
+				"verembe": "Push",
+				"urese": "Is empty?",
+				"telie": "Is full?",
+				"elso": "Front"
+			}
+		}
+	}
+}
