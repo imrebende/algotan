@@ -44,7 +44,8 @@
 						<div id="leiras">
 							<h2 data-i18n="label.leiras"></h2>
 							<p data-i18n="[html]progtetel.kereses.leiras"></p>
-							<a href="http://progalap.elte.hu/downloads/seged/eTananyag/lecke13_lap1.html#hiv11" data-i18n="label.bovebben"></a>
+							<a href="http://progalap.elte.hu/downloads/seged/eTananyag/lecke13_lap1.html#hiv11" data-i18n="label.bovebben"></a>,
+							<a href="cpp/kereses.cpp" data-i18n="">CPP példa</a>
 						</div>
 						<ul class="nav nav-tabs">
 							<li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
@@ -54,11 +55,11 @@
 						<div class="tab-content">
 							<div id="pszeudo" class="tab-pane fade in active">
 								<p class="line"><strong>Eljárás</strong> Kereses(A, N, E, L)</p>
-								<p class="line tab1">L := hamis<span id="elsoDb" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1">i := 1<span id="elsoDb" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">L := hamis<span id="elsoDbNyil" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">i := 1<span id="elsoDbNyil" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><strong>Ciklus amíg</strong> i <= N és nem L<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">L := T(A[i])</p>
-								<p class="line tab2">i := i + 1 <span id="dbValtozas" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2">i := i + 1 <span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><strong>Ciklus vége</strong></p>
 								<p class="line tab1"><strong>Ha</strong> L</p>
 								<p class="line tab2">E := i - 1</p>
@@ -103,7 +104,7 @@
 								</table>
 							</div>
 							<div id="implementation" class="tab-pane fade">
-								<p class="line"><span class="cppKeyword">int</span> <span class="cppVariable">megszamolas</span>(<span class="cppKeyword">double</span>[] <span class="cppVariable">A</span>, <span class="cppKeyword">int</span> <span class="cppVariable">N</span>){</p>
+								<p class="line"><span class="cppKeyword">int</span> <span class="cppVariable">megszamolas</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>){</p>
 								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">DB</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> i</span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">T</span>(<span class="cppVariable">A</span>[<span class="cppVariable">i</span>])){</span>

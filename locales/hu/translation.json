@@ -50,7 +50,7 @@
 			"nev": "Megszámolás"
 		},
 		"kereses": {
-			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
+			"leiras": "Megkeresi az első olyan elemét a sorozatnak, melyre igaz a T függvény. T egy tetszőleges tulajdonságfüggvényt jelent.",
 			"nev": "Keresés"
 		},
 		"logker": {
@@ -58,7 +58,7 @@
 			"nev": "Logaritmikus keresés"
 		},
 		"maxkiv": {
-			"leiras": "Ez a tétel N darab „valami” közül kell megadja a legnagyobbat (vagy a legkisebbet).<br/>Kell: Értelmezve legyen egy rendezési reláció, legalább egy elem legyen!",
+			"leiras": "Egy sorozatban megadja a legnagyobb elem helyét.<br/>Szükséges feltétel: Értelmezve legyen egy rendezési reláció, illetve legalább egy elem legyen!",
 			"nev": "Maximumkiválasztás"
 		},
 		"masolas": {

@@ -10,9 +10,9 @@ function osszegzes(t){
 	}
 	valtozokKiirasa({nev: "S", ertek: s},"elsoOsszeg");
 	for (i = 0; i < t.length; i++) {
-		valtozokKiirasa({nev: "S", ertek: s}, {nev: "i", ertek: i + 1},"ciklusLepes");
+		valtozokKiirasa({nev: "S", ertek: s}, {nev: "i", ertek: i + 1}, "ciklusLepes");
 		s += t[i];
-		valtozokKiirasa({nev: "S", ertek: s}, {nev: "i", ertek: i + 1},"osszegNoveles");
+		valtozokKiirasa({nev: "S", ertek: s}, {nev: "i", ertek: i + 1}, "osszegNoveles");
 	}
 	elsoLepesMegjelenitese();
 	barValtoztatasa();
@@ -29,7 +29,7 @@ function megszamolas(t, relaciosJel, felt){
 		valtozokKiirasa({nev: "DB", ertek: d}, {nev: "i", ertek: i + 1}, "ciklusLepes");
 		if(feltetel(t[i], relaciosJel, felt)){
 			d++;
-			valtozokKiirasa({nev: "DB", ertek: d}, {nev: "i", ertek: i + 1},"dbValtozas");
+			valtozokKiirasa({nev: "DB", ertek: d}, {nev: "i", ertek: i + 1}, "dbValtozas");
 		}
 	}
 	elsoLepesMegjelenitese();
@@ -43,12 +43,12 @@ function kereses(t, relaciosJel, felt) {
 	tombKiirasa(t);	
 	var l = false;
 	var i = 0;
-	valtozokKiirasa({nev: "i", ertek: i}, {nev: "l", ertek: l}, "");
+	valtozokKiirasa({nev: "i", ertek: i}, {nev: "l", ertek: l}, "elsoDb");
 	while (!l && i < t.length) {
 		l = feltetel(t[i], relaciosJel, felt);
 		valtozokKiirasa({nev: "i", ertek: i + 1}, {nev: "l", ertek: l}, "");
 		i++;
-		valtozokKiirasa({nev: "i", ertek: i + 1}, {nev: "l", ertek: l}, "");
+		valtozokKiirasa({nev: "i", ertek: i + 1}, {nev: "l", ertek: l}, "ciklusLepes");
 	}
 	elsoLepesMegjelenitese();
 	barValtoztatasa();

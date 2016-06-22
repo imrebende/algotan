@@ -14,25 +14,25 @@ $(function() {
 		<li id="progtetelek" class="dropdown">\
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.progtetelek"><span class="caret"></span></a>\
 			<ul class="dropdown-menu">\
-				<li><a href="osszegzes" data-i18n="progtetel.osszegzes.nev"></a></li>\
-				<li><a href="megszamolas" data-i18n="progtetel.megszamolas.nev"></a></li>\
-				<li><a href="maximumkivalasztas" data-i18n="progtetel.maxkiv.nev"></a></li>\
-				<li><a href="kereses" data-i18n="progtetel.kereses.nev"></a></li>\
-				<li><a href="logaritmikus-kereses" data-i18n="progtetel.logker.nev"></a></li>\
-				<li><a href="masolas" data-i18n="progtetel.masolas.nev"></a></li>\
-				<li><a href="kivalogatas" data-i18n="progtetel.kivalogatas.nev"></a></li>\
-				<li><a href="szetvalogatas" data-i18n="progtetel.szetvalogatas.nev"></a></li>\
-				<li><a href="metszet" data-i18n="progtetel.metszet.nev"></a></li>\
-				<li><a href="unio" data-i18n="progtetel.unio.nev"></a></li>\
+				<li><a href="osszegzes.html" data-i18n="progtetel.osszegzes.nev"></a></li>\
+				<li><a href="megszamolas.html" data-i18n="progtetel.megszamolas.nev"></a></li>\
+				<li><a href="maximumkivalasztas.html" data-i18n="progtetel.maxkiv.nev"></a></li>\
+				<li><a href="kereses.html" data-i18n="progtetel.kereses.nev"></a></li>\
+				<li><a href="logaritmikus-kereses.html" data-i18n="progtetel.logker.nev"></a></li>\
+				<li><a href="masolas.html" data-i18n="progtetel.masolas.nev"></a></li>\
+				<li><a href="kivalogatas.html" data-i18n="progtetel.kivalogatas.nev"></a></li>\
+				<li><a href="szetvalogatas.html" data-i18n="progtetel.szetvalogatas.nev"></a></li>\
+				<li><a href="metszet.html" data-i18n="progtetel.metszet.nev"></a></li>\
+				<li><a href="unio.html" data-i18n="progtetel.unio.nev"></a></li>\
 			</ul>\
 		</li>\
 	<li id="rendezesek" class="dropdown">\
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.rendezesek"></a>\
 		<ul class="dropdown-menu">\
-			<li><a href="buborekos-rendezes" data-i18n="rendezes.buborekos.nev"></a></li>\
-			<li><a href="minkivalasztasos-rendezes" data-i18n="rendezes.minkiv.nev"></a></li>\
-			<li><a href="gyorsrendezes" data-i18n="rendezes.gyorsrendezes.nev"></a></li>\
-			<li><a href="osszefesuleses-rendezes" data-i18n="rendezes.osszefesulesesrendezes.nev"></a></li>\
+			<li><a href="buborekos-rendezes.html" data-i18n="rendezes.buborekos.nev"></a></li>\
+			<li><a href="minkivalasztasos-rendezes.html" data-i18n="rendezes.minkiv.nev"></a></li>\
+			<li><a href="gyorsrendezes.html" data-i18n="rendezes.gyorsrendezes.nev"></a></li>\
+			<li><a href="osszefesuleses-rendezes.html" data-i18n="rendezes.osszefesulesesrendezes.nev"></a></li>\
 		</ul>\
 	</li>\
 	<li class="dropdown">\
@@ -43,8 +43,8 @@ $(function() {
 		<li class="dropdown">\
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.adatszerkezetek"></a>\
 		<ul class="dropdown-menu">\
-			<li><a href="verem" data-i18n="adatszerkezet.verem.nev"></a></li>\
-			<li><a href="sor" data-i18n="adatszerkezet.sor.nev"></a></li>\
+			<li><a href="verem.html" data-i18n="adatszerkezet.verem.nev"></a></li>\
+			<li><a href="sor.html" data-i18n="adatszerkezet.sor.nev"></a></li>\
 		</ul>\
 	</li>\
 	</ul>');

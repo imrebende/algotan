@@ -14,25 +14,32 @@ void beolvasas(int& n, int t[]){
 	}
 }
 
-//Maximumkiválsztás programozási tétel
-int maximum(int n, int t[]){
-	int maxHely = 0;
-	for (int i = 1; i < n; i++){
-		if(t[maxHely] < t[i]){
-			maxHely = i;
-		}
+//Keresés programozási tétel
+int kereses(int n, int t[], int felt){
+	int i = 0;
+	while(!l && i < N){
+		l = ()t[i] == felt);
+		i++;
 	}
-	return maxHely;
+	if(l){
+		return i - 1;
+	} else {
+		return -1;
+	}
 }
 
 int main(){
   int t[MAXN];
   int n;
+  int felt = 5;
 
   beolvasas(n, t);
 
-  int maxh = maximum(n, t);
-  cout << "Érték: " << t[maxh] << ", hely: " << m << endl;
+  if(kereses(n, t, felt) > -1){
+	  cout << "A keresett elem: " << kereses(n, t, felt);
+  } else {
+	  cout << "Nincs találat.";
+  }
 
   return 0;
 }

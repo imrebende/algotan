@@ -14,15 +14,12 @@ void beolvasas(int& n, int t[]){
 	}
 }
 
-//Megszámolás programozási tétel
-int megszamolas(int n, int t[], int felt){
-	int db = 0;
-	for(int i = 0; i < n; i++){
-		if(t[i] == felt){
-			db++;
-		}
+int osszegzes(int n, int t[]){
+	int s = 0;
+	for (int i = 0; i < n; i++){
+		s += t[i];
 	}
-	return db;
+	return s;
 }
 
 int main(){
@@ -31,7 +28,7 @@ int main(){
 	
 	beolvasas(n, t);
 	
-	cout << megszamolas(n, t, felt) << endl;
+	cout << osszegzes(n, t, felt) << endl;
 	
 	return 0;
 }
