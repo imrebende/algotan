@@ -1,0 +1,2 @@
+# algotan
+Algoritmusok
