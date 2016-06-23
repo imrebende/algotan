@@ -5,7 +5,7 @@ function masolas(t){
 	valtozokKiirasa({nev: "B", ertek: masoltT}, "");
 	for(var i = 0; i < t.length; i++){
 		masoltT.push(t[i]);
-		valtozokKiirasa({nev: "B", ertek: masoltT}, {nev: "i", ertek: i+1}, "");
+		valtozokKiirasa({nev: "B", ertek: masoltT}, {nev: "i", ertek: i+1}, "ciklusLepes");
 	}
 	elsoLepesMegjelenitese();
 	barValtoztatasa();
