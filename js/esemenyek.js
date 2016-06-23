@@ -116,6 +116,8 @@ function fuggvenyElottiInit(){
 	$("#valtozok").text("");
 	$("#tombok").text("");
 	pause();
+	$("#eredmenyek").addClass("hidden");
+	$("#hibasbemenet").removeClass("hidden");
 }
 
 function osszegStart(){
@@ -126,10 +128,6 @@ function osszegStart(){
 		osszegzes(t);
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
-	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
 	}
 }
 
@@ -142,10 +140,6 @@ function megszamolasStart(){
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
 	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
-	}
 }
 
 function keresesStart(){
@@ -157,10 +151,6 @@ function keresesStart(){
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
 	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
-	}
 }
 
 function maxKivStart(){
@@ -171,10 +161,6 @@ function maxKivStart(){
 		maximumKivalasztas(t);
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
-	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
 	}
 }
 
@@ -192,10 +178,6 @@ function logkerStart(){
 			
 		}
 	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
-	}
 }
 
 function masolasStart(){
@@ -206,10 +188,6 @@ function masolasStart(){
 		masolas(t);
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
-	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
 	}
 }
 
@@ -222,10 +200,6 @@ function kivalogatasStart(){
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
 	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
-	}
 }
 
 function szetvalogatasStart(){
@@ -236,10 +210,6 @@ function szetvalogatasStart(){
 		szetvalogatas(t, $("#relaciosJel").val(), $("#feltetel").val());
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
-	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
 	}
 }
 
@@ -252,10 +222,6 @@ function bubrendStart() {
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
 	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
-	}
 }
 
 function minKivRendStart() {
@@ -266,10 +232,6 @@ function minKivRendStart() {
 		minKivRendezes(t);
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
-	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
 	}
 }
 
@@ -283,10 +245,6 @@ function metszetStart() {
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
 	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
-	}
 }
 
 function gyorsRendStart() {
@@ -297,10 +255,6 @@ function gyorsRendStart() {
 		gyorsRendezes(t);
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
-	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
 	}
 }
 
@@ -316,9 +270,5 @@ function osszefesulesesRendezesStart() {
 		barValtoztatasa();
 		szovegValtoztatas();
 		play();
-	}
-	else {
-		$("#eredmenyek").addClass("hidden");
-		$("#hibasbemenet").removeClass("hidden");
 	}
 }
