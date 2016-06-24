@@ -1,8 +1,6 @@
 //Kicserél két elemet a t tömbben
 function csere(t, a, b){
-	var tmp = t[a];
-	t[a] = t[b];
-	t[b] = tmp;
+	t[b] = [t[a], t[a] = t[b]][0];
 }
 
 //Buborékos rendezés

@@ -39,3 +39,17 @@ function muvelet(a, op, b){
 			break;
 		} 
 }
+
+function ertelmezo(utasitasok){
+	
+}
+
+function forCiklus(kezdet, veg, lepes, utasitasok){
+	for(var i = kezdet; i < veg; i+=lepes){
+		ertelmezo(utasitasok);
+	}
+}
+
+function kiiras(szoveg){
+	console.log(szoveg);
+}
