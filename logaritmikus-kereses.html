@@ -45,16 +45,91 @@
 							<h2 data-i18n="label.leiras"></h2>
 							<p data-i18n="[html]progtetel.logker.leiras"></p>
 						</div>
-						<div id="pszeudo">
-							<h2 data-i18n="label.pszeudokod"></h2>
-							<p class="line"><strong>Eljárás</strong> Megszámolás(A, N, DB)</p>
-							<p class="line tab1">DB := 0<span id="elsoDb" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-							<p class="line tab1"><strong>Ciklus</strong> i := 1-től N-ig<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-							<p class="line tab2"><strong>Ha</strong> T(A[i])</p>
-							<p class="line tab3">DB := DB + 1 <span id="dbValtozas" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-							<p class="line tab2"><strong>Elágazás vége</strong></p>
-							<p class="line tab1"><strong>Ciklus vége</strong></p>
-							<p class="line"><strong>Eljárás vége</strong></p>
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+							<li><a data-toggle="pill" href="#strukto" data-i18n="label.struktogram"></a></li>
+							<li><a data-toggle="pill" href="#implementation" data-i18n="label.cppimplementacio"></a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="pszeudo" class="tab-pane fade in active">
+								<p class="line"><strong>Eljárás</strong> Kereses(A, N, E, L)</p>
+								<p class="line tab1">L := hamis<span id="elsoDbNyil" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">i := 1<span id="elsoDbNyil" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><strong>Ciklus amíg</strong> i <= N és nem L<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2">L := T(A[i]) <span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2">i := i + 1 <span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><strong>Ciklus vége</strong></p>
+								<p class="line tab1"><strong>Ha</strong> L</p>
+								<p class="line tab2">E := i - 1</p>
+								<p class="line tab1">Elágazás vége</p>
+								<p class="line"><strong>Eljárás vége</strong></p>
+							</div>
+							<div id="strukto" class="tab-pane fade">
+								<table>
+									<tr>
+										<td colspan="4">
+											L := hamis <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span><br/>
+											i := 1<br/>
+											u := 1<br/>
+											v := n
+										</td>
+									</tr>
+									<tr>
+										<td colspan="4" class="ciklusFeltetel">
+											i <= N és nem L<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop">&nbsp;</td>
+										<td class="ciklusFeltetel">
+											HA A[i] = T
+										</td>
+										<td class="ciklusFeltetel">
+											KÜLÖNBEN HA A[i] < T
+										</td>
+										<td class="ciklusFeltetel">
+											KÜLÖNBEN
+										</td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop">&nbsp;</td>
+										<td class="ciklusFeltetel">
+											L := igaz
+										</td>
+										<td class="ciklusFeltetel">
+											u := i + 1
+										</td>
+										<td class="ciklusFeltetel">
+											v := i - 1
+										</td>
+									</tr>
+									<tr>
+										<td class="atloBal"></td>
+										<td class="elagazasFeltetel" colspan="2">
+											L
+										</td>
+										<td class="atloJobb"></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											E := i - 1<span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+										</td>
+										<td colspan="2">
+											-
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div id="implementation" class="tab-pane fade">
+								<p class="line"><span class="cppKeyword">int</span> <span class="cppVariable">megszamolas</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>){</p>
+								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">DB</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> i</span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">T</span>(<span class="cppVariable">A</span>[<span class="cppVariable">i</span>])){</span>
+								<p class="line tab3"><span class="cppVariable">DB</span>++; <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2">}</p>
+								<p class="line tab1">}</p>
+								<p class="line">}</p>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-5">
