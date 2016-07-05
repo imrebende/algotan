@@ -86,29 +86,41 @@ function gyorsRendezes(tomb, bal, jobb) {
 	play();
 }
 
-//Két rendezett tömböüt összefésül
-function osszefesules(bal, jobb){
+//Két rendezett tömböt összefésül
+function osszefesules(bal, jobb, eredeti){
 	var eredmeny = [],
 		ib = 0,
 		ij = 0;
 		
+	var vizsgaltIndexek = [];
+		
 	while (ib < bal.length && ij < jobb.length){
-		if (bal[ib] < jobb[ij]){
+		if (bal[ib].value < jobb[ij].value){
+			vizsgaltIndexek.push(bal[ib].index);
 			eredmeny.push(bal[ib++]);
 		} else {
+			vizsgaltIndexek.push(jobb[ij].index);
 			eredmeny.push(jobb[ij++]);
 		}
 	}
 
 	eredmeny = eredmeny.concat(bal.slice(ib)).concat(jobb.slice(ij));
 	
-	valtozokKiirasa({nev: "bal", ertek: bal}, {nev: "jobb", ertek: jobb}, {nev: "eredmeny", ertek: eredmeny}, "");
+	valtozokKiirasa({nev: "bal", ertek: tombObjValues(bal)}, {nev: "jobb", ertek: tombObjValues(jobb)}, {nev: "eredmeny", ertek: tombObjValues(eredmeny)}, "");
+	vizsgaltIndexek.sort();
+	
+	for(var i = 0; i < vizsgaltIndexek.length; i++){
+		eredeti[vizsgaltIndexek[i]] = tombObjValues(eredmeny)[i];
+	}
+	
+	tombKiirasa(tombObjValues(eredeti), vizsgaltIndexek, "");
+	vizsgaltIndexek = [];
 	
 	return eredmeny;
 }
 
 //Összefésüléses rendezés
-function osszefesulesesRendezes(elemek){
+function osszefesulesesRendezes(elemek, eredeti){
 
 	if (elemek.length < 2) {
 		return elemek;
@@ -118,5 +130,5 @@ function osszefesulesesRendezes(elemek){
 		bal    = elemek.slice(0, kozep),
 		jobb   = elemek.slice(kozep);
 		
-	return osszefesules(osszefesulesesRendezes(bal), osszefesulesesRendezes(jobb));
+	return osszefesules(osszefesulesesRendezes(bal, eredeti), osszefesulesesRendezes(jobb, eredeti), eredeti);
 }

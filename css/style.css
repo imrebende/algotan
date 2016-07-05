@@ -36,6 +36,10 @@ ol li:before {
 	counter-increment: item;
 }
 
+.mintaBemenetClass{
+	cursor: pointer;
+}
+
 /* Algorimusok leírásai */
 
 .utasitas {

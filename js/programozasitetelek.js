@@ -8,7 +8,7 @@ function osszegzes(t){
 	else{
 		s = "";
 	}
-	valtozokKiirasa({nev: "S", ertek: s},"elsoOsszeg");
+	valtozokKiirasa({nev: "S", ertek: s}, "elsoOsszeg");
 	for (i = 0; i < t.length; i++) {
 		valtozokKiirasa({nev: "S", ertek: s}, {nev: "i", ertek: i + 1}, "ciklusLepes");
 		s += t[i];

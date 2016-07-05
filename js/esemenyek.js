@@ -10,7 +10,7 @@ $(function() {
   //Menü beszúrása
   $("#navbar").append('\
 	<ul class="nav navbar-nav">\
-		<li id="kezdooldal"><a href="index" data-i18n="label.menu.kezdooldal"></a></li>\
+		<li id="kezdooldal"><a href="index.html" data-i18n="label.menu.kezdooldal"></a></li>\
 		<li id="progtetelek" class="dropdown">\
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.progtetelek"><span class="caret"></span></a>\
 			<ul class="dropdown-menu">\
@@ -52,7 +52,6 @@ $(function() {
 	//Nyelvi elemek beállítása
 	language_complete = navigator.language.split("-");
 	language = (language_complete[0]);
-  
 	i18n.init({ lng: "hu" }, function() {
 		$("html").i18n();
 	});
@@ -122,7 +121,6 @@ function fuggvenyElottiInit(){
 
 function osszegStart(){
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#bemenet").val())) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		osszegzes(t);
@@ -133,7 +131,6 @@ function osszegStart(){
 
 function megszamolasStart(){
 	fuggvenyElottiInit();
-
 	if(tombEllenorzes($("#bemenet").val()) && $("#feltetel").val()) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		megszamolas(t, $("#relaciosJel").val(), $("#feltetel").val());
@@ -144,7 +141,6 @@ function megszamolasStart(){
 
 function keresesStart(){
 	fuggvenyElottiInit();
-
 	if(tombEllenorzes($("#bemenet").val()) && $("#feltetel").val()) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		kereses(t, $("#relaciosJel").val(), $("#feltetel").val());
@@ -155,7 +151,6 @@ function keresesStart(){
 
 function maxKivStart(){
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#bemenet").val())) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		maximumKivalasztas(t);
@@ -166,7 +161,6 @@ function maxKivStart(){
 
 function logkerStart(){
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#logKerBemenet").val()) && $("#feltetel").val()) {
 		var t = tombAtalakitas($("#logKerBemenet").val().replace(" ","").split(","));
 		if(tombRendezettE(t)){
@@ -182,7 +176,6 @@ function logkerStart(){
 
 function masolasStart(){
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#bemenet").val())) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		masolas(t);
@@ -193,7 +186,6 @@ function masolasStart(){
 
 function kivalogatasStart(){
 	fuggvenyElottiInit();
-
 	if(tombEllenorzes($("#bemenet").val()) && $("#feltetel").val()) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		kivalogatas(t, $("#relaciosJel").val(), $("#feltetel").val());
@@ -204,7 +196,6 @@ function kivalogatasStart(){
 
 function szetvalogatasStart(){
 	fuggvenyElottiInit();
-
 	if(tombEllenorzes($("#bemenet").val()) && $("#feltetel").val()) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		szetvalogatas(t, $("#relaciosJel").val(), $("#feltetel").val());
@@ -215,7 +206,6 @@ function szetvalogatasStart(){
 
 function bubrendStart() {
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#bemenet").val())) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		buborekosRendezes(t);
@@ -226,7 +216,6 @@ function bubrendStart() {
 
 function minKivRendStart() {
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#bemenet").val())) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		minKivRendezes(t);
@@ -237,7 +226,6 @@ function minKivRendStart() {
 
 function metszetStart() {
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#bemenet").val()) && tombEllenorzes($("#bemenet2").val())) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		var t2 = tombAtalakitas($("#bemenet2").val().replace(" ","").split(","));
@@ -249,7 +237,6 @@ function metszetStart() {
 
 function gyorsRendStart() {
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#bemenet").val())) {
 		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
 		gyorsRendezes(t);
@@ -260,10 +247,9 @@ function gyorsRendStart() {
 
 function osszefesulesesRendezesStart() {
 	fuggvenyElottiInit();
-	
 	if(tombEllenorzes($("#bemenet").val())) {
-		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
-		osszefesulesesRendezes(t);
+		var t = tombAtalakitasIndexekkel($("#bemenet").val().replace(" ","").split(","));
+		osszefesulesesRendezes(t, t);
 		$("#eredmenyek").removeClass("hidden");
 		$("#hibasbemenet").addClass("hidden");
 		elsoLepesMegjelenitese();
@@ -271,4 +257,8 @@ function osszefesulesesRendezesStart() {
 		szovegValtoztatas();
 		play();
 	}
+}
+
+function osszegzesSzoveg(){
+	$("#bemenet").val("a,b,cd,ef");
 }

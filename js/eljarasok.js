@@ -1,10 +1,27 @@
 //Tömb elemeinek átalakítása számmá, amennyiben ez lehetséges
 function tombAtalakitas(t){
-	var a = []
+	var a = [];
 	for(var i = 0; i < t.length; i++){
 		if(parseFloat(t[i])){
 			a[i] = parseFloat(t[i]);
+		} else {
+			a[i] = t[i];
 		}
+	}
+	return a;
+}
+
+function tombAtalakitasIndexekkel(t){
+	var a = [];
+	for(var i = 0; i < t.length; i++){
+		var akt = {};
+		if(parseFloat(t[i])){
+			akt.value = parseFloat(t[i]);
+		} else {
+			akt.value = t[i];
+		}
+		akt.index = i;
+		a.push(akt);
 	}
 	return a;
 }
@@ -35,6 +52,22 @@ function tombEllenorzes(t){
 	return true;
 }
 
+function tombObjValues(t){
+	var a = [];
+	for(var i = 0; i < t.length; i++){
+		a[i] = t[i].value;
+	}
+	return a;
+}
+
+function tombObjIndexes(t){
+	var a = [];
+	for(var i = 0; i < t.length; i++){
+		a[i] = t[i].index;
+	}
+	return a;
+}
+
 //Tömb kiírása a "tomb" id-vel rendelkező tartományba
 function tombKiirasa(t, a, b, szoveg){
 	var tombClass = "";
@@ -45,7 +78,7 @@ function tombKiirasa(t, a, b, szoveg){
 	tombSzoveg += '<div class="tomb hidden ' + tombClass + '">[ ';
 	for(var i = 0; i < t.length; i++){
 		var className = "";
-		if(i === parseFloat(a) || i === parseFloat(b)){
+		if(i === parseFloat(a) || i === parseFloat(b) || ($.isArray(a) && a.indexOf(i) >= 0)){
 			className = "blueTombElem";
 		}
 		tombSzoveg += '<span class="elem ' + className + ' ">' + t[i] + '</span>';
@@ -112,8 +145,7 @@ function barValtoztatasa(){
 			width: (allas * 100) + "%"
 		}, 0, function() {
 		});	
-	}
-	else if($(".tomb").length !== 0){
+	} else if($(".tomb").length !== 0){
 		var allas = ($(".tomb").index($(".tomb.active")) + 1) / $(".tomb").length;
 		$("#algo-progressbar").animate({
 			width: (allas * 100) + "%"
@@ -132,36 +164,29 @@ function szovegValtoztatas(){
 	if($("#valtozok .active").hasClass("ciklusLepes")){
 		$(".ciklusLepesNyil").removeClass("hidden");
 		magyarazatValtoztatas("i", $("#valtozok .active .ertek.i").text());
-	}
-	else if($("#valtozok .active").hasClass("maxValtozas")){
+	} else if($("#valtozok .active").hasClass("maxValtozas")){
 		$(".maxValtozasNyil").removeClass("hidden");
 		magyarazatValtoztatas("MAX", $("#valtozok .active .ertek.MAX").text());
-	}
-	else if($("#valtozok .active").hasClass("elsoMax")){
+	} else if($("#valtozok .active").hasClass("elsoMax")){
 		$(".elsoMaxNyil").removeClass("hidden");
 		magyarazatValtoztatas("MAX", $("#valtozok .active .ertek.MAX").text());
-	}
-	else if($("#valtozok .active").hasClass("osszegNoveles")){
+	} else if($("#valtozok .active").hasClass("osszegNoveles")){
 		$(".osszegNovelesNyil").removeClass("hidden");
 		magyarazatValtoztatas("S", $("#valtozok .active .ertek.S").text());
-	}
-	else if($("#valtozok .active").hasClass("elsoOsszeg")){
+	} else if($("#valtozok .active").hasClass("elsoOsszeg")){
 		$(".elsoOsszegNyil").removeClass("hidden");
 		magyarazatValtoztatas("S", $("#valtozok .active .ertek.S").text());
-	}
-	else if($("#valtozok .active").hasClass("elsoDb")){
+	} else if($("#valtozok .active").hasClass("elsoDb")){
 		$(".elsoDbNyil").removeClass("hidden");
 		magyarazatValtoztatas("DB", $("#valtozok .active .ertek.DB").text());
-	}
-	else if($("#valtozok .active").hasClass("dbValtozas")){
+	} else if($("#valtozok .active").hasClass("dbValtozas")){
 		$(".dbValtozasNyil").removeClass("hidden");
 		magyarazatValtoztatas("DB", $("#valtozok .active .ertek.DB").text());
 	}
 	
 	if($("#tombok .active").hasClass("csereLepes")){
 		$(".utasitas.csereLepes").removeClass("hidden");
-	}
-	else if($("#tombok .active").hasClass("ciklusLepes")){
+	} else if($("#tombok .active").hasClass("ciklusLepes")){
 		$(".utasitas.ciklusLepes").removeClass("hidden");
 	}
 }
@@ -172,8 +197,7 @@ function valtozokKiirasa() {
 	for (var i = 0; i < arguments.length - 1; i++) {
 		if($.isArray(arguments[i].ertek)){
 			s += '<div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + '">[ ' + arguments[i].ertek + " ]</div><br/>";
-		}
-		else {
+		} else {
 			s += '<div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + '">' + arguments[i].ertek + "</div><br/>";
 		}
 	}
