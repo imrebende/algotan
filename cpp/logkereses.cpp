@@ -20,7 +20,7 @@ int logKereses(int n, int t[], int felt){
 	int v = n - 1;
 	int i;
 	bool l = false;
-	while(!l && i < N){
+	while(!l && u <= v){
 		i = (u + v) / 2;
 		if(t[i] == felt){
 			l = true;
@@ -45,7 +45,7 @@ int main(){
   beolvasas(n, t);
 
   if(logKereses(n, t, felt) > -1){
-	  cout << "A keresett elem: " << kereses(n, t, felt);
+	  cout << "A keresett elem: " << logKereses(n, t, felt);
   } else {
 	  cout << "Nincs találat.";
   }
