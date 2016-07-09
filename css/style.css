@@ -90,6 +90,10 @@ ol li:before {
 	border-top: 0px;
 }
 
+#strukto table tr .belsoCiklusMag{
+	width: 50px;
+}
+
 /* C++ implementáció */
 
 #implementation  {

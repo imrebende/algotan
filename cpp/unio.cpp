@@ -29,5 +29,9 @@ int main(){
 	
 	metszet(a, 6, b, 3, c, db);
 	
+	for(int i = 0; i < db; i++){
+		cout << c[i] << " ";
+	}
+	
 	return 0;
 }

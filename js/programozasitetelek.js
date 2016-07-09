@@ -4,8 +4,7 @@ function osszegzes(t){
 	var s;
 	if(t[0] >= 0 && t[0] <= 9){
 		s = 0;
-	}
-	else{
+	} else{
 		s = "";
 	}
 	valtozokKiirasa({nev: "S", ertek: s}, "elsoOsszeg");
@@ -14,10 +13,7 @@ function osszegzes(t){
 		s += t[i];
 		valtozokKiirasa({nev: "S", ertek: s}, {nev: "i", ertek: i + 1}, "osszegNoveles");
 	}
-	elsoLepesMegjelenitese();
-	barValtoztatasa();
-	szovegValtoztatas();
-	play();
+	megjelenitesInit();
 }
 
 //Megszámolás tétel
@@ -32,10 +28,7 @@ function megszamolas(t, relaciosJel, felt){
 			valtozokKiirasa({nev: "DB", ertek: d}, {nev: "i", ertek: i + 1}, "dbValtozas");
 		}
 	}
-	elsoLepesMegjelenitese();
-	barValtoztatasa();
-	szovegValtoztatas();
-	play();
+	megjelenitesInit();
 }
 
 //Keresés tétel
@@ -50,10 +43,7 @@ function kereses(t, relaciosJel, felt) {
 		i++;
 		valtozokKiirasa({nev: "i", ertek: i + 1}, {nev: "l", ertek: l}, "ciklusLepes");
 	}
-	elsoLepesMegjelenitese();
-	barValtoztatasa();
-	szovegValtoztatas();
-	play();
+	megjelenitesInit();
 }
 
 //Logaritmikus keresés
@@ -62,32 +52,21 @@ function logKereses(t, searchElement) {
     var maxIndex = t.length - 1;
     var currentIndex;
     var currentElement;
-	var l = false;
-  
+	var l = false;  
 	valtozokKiirasa({nev: "minIndex", ertek: minIndex + 1}, {nev: "maxIndex", ertek: maxIndex + 1}, {nev: "t", ertek: t}, "");
-
-    	while (minIndex <= maxIndex && !l) {
-
-        	currentIndex = (minIndex + maxIndex) / 2 | 0;
-        	currentElement = t[currentIndex];
- 
-        	if (currentElement < searchElement) {
-            		minIndex = currentIndex + 1;
-        	}
-        	else if (currentElement > searchElement) {
-            		maxIndex = currentIndex - 1;
-        	}
-        	else {
-            		l = true;
-        	}
-
-			valtozokKiirasa({nev: "minIndex", ertek: minIndex + 1}, {nev: "maxIndex", ertek: maxIndex + 1}, {nev: "currentIndex", ertek: currentIndex + 1}, {nev: "l", ertek: l}, {nev: "t", ertek: t.slice(minIndex, maxIndex+1)}, "");
-    	}
-
-	elsoLepesMegjelenitese();
-	barValtoztatasa();
-	szovegValtoztatas();
-	play();
+   	while (minIndex <= maxIndex && !l) {
+       	currentIndex = (minIndex + maxIndex) / 2 | 0;
+       	currentElement = t[currentIndex];
+       	if (currentElement < searchElement) {
+           	minIndex = currentIndex + 1;
+       	} else if (currentElement > searchElement) {
+           	maxIndex = currentIndex - 1;
+       	} else {
+          	l = true;
+       	}
+		valtozokKiirasa({nev: "minIndex", ertek: minIndex + 1}, {nev: "maxIndex", ertek: maxIndex + 1}, {nev: "currentIndex", ertek: currentIndex + 1}, {nev: "l", ertek: l}, {nev: "t", ertek: t.slice(minIndex, maxIndex+1)}, "");
+    }
+	megjelenitesInit();
 }
 
 //Maximum-kiválasztás tétel
@@ -102,8 +81,5 @@ function maximumKivalasztas(t) {
 			valtozokKiirasa({nev: "MAX", ertek: maxh + 1}, {nev: "i", ertek: i + 1}, "maxValtozas");
 		}
 	}
-	elsoLepesMegjelenitese();
-	barValtoztatasa();
-	szovegValtoztatas();
-	play();
+	megjelenitesInit();
 }

@@ -24,7 +24,8 @@
 			"rendezesek": "Rendezések",
 			"grafalgoritmusok": "Gráfalgoritmusok",
 			"adatszerkezetek": "Adatszerkezetek"
-		}
+		},
+		"cppExample": "C++ példa"
 	},
 	"pszeudokodelem": {
 		"ha": "Ha",
@@ -36,7 +37,9 @@
 		"kiiras": "Kiírás",
 		"elagazasvege": "Elágazás vége",
 		"ciklusvege": "Ciklus vége",
-		"eljarasvege": "Eljárás vége"
+		"eljarasvege": "Eljárás vége",
+		"es": "és",
+		"vagy": "vagy"
 	},
 	"progtetel": {
 		"osszegzes": {

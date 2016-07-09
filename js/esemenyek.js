@@ -235,6 +235,17 @@ function metszetStart() {
 	}
 }
 
+function unioStart() {
+	fuggvenyElottiInit();
+	if(tombEllenorzes($("#bemenet").val()) && tombEllenorzes($("#bemenet2").val())) {
+		var t = tombAtalakitas($("#bemenet").val().replace(" ","").split(","));
+		var t2 = tombAtalakitas($("#bemenet2").val().replace(" ","").split(","));
+		unio(t, t2);
+		$("#eredmenyek").removeClass("hidden");
+		$("#hibasbemenet").addClass("hidden");
+	}
+}
+
 function gyorsRendStart() {
 	fuggvenyElottiInit();
 	if(tombEllenorzes($("#bemenet").val())) {

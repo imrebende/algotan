@@ -260,3 +260,10 @@ function lejatszas(k) {
 	}
 	timeouts.push(setTimeout(pause, k * 2200 + 1));
 }
+
+function megjelenitesInit(){
+	elsoLepesMegjelenitese();
+	barValtoztatasa();
+	szovegValtoztatas();
+	play();
+}
