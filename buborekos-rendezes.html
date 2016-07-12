@@ -45,19 +45,86 @@
 							<h2 data-i18n="label.leiras">Leírás</h2>
 							<p data-i18n="[html]rendezes.buborekos.leiras"></p>
 						</div>
-						<div id="pszeudo">
-							<h2 data-i18n="label.pszeudokod"></h2>
-							<p class="line"><strong>Eljárás</strong> BuborékosRendezés(A, N)</p>
-							<p class="line tab1"><strong>Ciklus</strong> i := N-től 2-ig</p>
-							<p class="line tab2"><strong>Ciklus</strong> j := 1-től i-1-ig</p>
-							<p class="line tab3"><strong>Ha</strong> A[j] &gt; A[j + 1]<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-							<p class="line tab4">tmp := A[j]<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-							<p class="line tab4">A[j] := A[j + 1]<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-							<p class="line tab4">A[j + 1] := tmp<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-							<p class="line tab3"><strong>Elágazás vége</strong></p>
-							<p class="line tab2"><strong>Ciklus vége</strong></p>
-							<p class="line tab1"><strong>Ciklus vége</strong></p>
-							<p class="line"><strong>Eljárás vége</strong></p>
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+							<li><a data-toggle="pill" href="#strukto" data-i18n="label.struktogram"></a></li>
+							<li><a data-toggle="pill" href="#implementation" data-i18n="label.cppimplementacio"></a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="pszeudo" class="tab-pane fade in active">
+								<p class="line"><strong>Eljárás</strong> BuborékosRendezés(A, N)</p>
+								<p class="line tab1"><strong>Ciklus</strong> i := N-től 2-ig</p>
+								<p class="line tab2"><strong>Ciklus</strong> j := 1-től i-1-ig</p>
+								<p class="line tab3"><strong>Ha</strong> A[j] &gt; A[j + 1]<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab4">tmp := A[j]<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab4">A[j] := A[j + 1]<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab4">A[j + 1] := tmp<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3"><strong>Elágazás vége</strong></p>
+								<p class="line tab2"><strong>Ciklus vége</strong></p>
+								<p class="line tab1"><strong>Ciklus vége</strong></p>
+								<p class="line"><strong>Eljárás vége</strong></p>
+							</div>
+							<div id="strukto" class="tab-pane fade">
+								<table>
+									<tr>
+										<td colspan="5" class="ciklusFeltetel">
+											i := N-től 2-ig<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+										<td colspan="4" class="noBottomBorder">
+											j := 1-től i-1-ig
+										</td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+										<td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
+										<td class="atloBal"></td>
+										<td class="elagazasFeltetel">
+											A[j] &gt; A[j + 1]
+										</td>
+										<td class="atloJobb"></td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+										<td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
+										<td colspan="2">
+											tmp := A[j]
+										</td>
+										<td class="noBottomBorder"> - </td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+										<td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
+										<td colspan="2">
+											A[j] := A[j + 1]
+										</td>
+										<td class="noBottomBorder noTopBorder"></td>
+									</tr>
+									<tr>
+										<td class="ciklusMagElsoOszlop">&nbsp;</td>
+										<td class="ciklusMagElsoOszlop belsoCiklusMag">&nbsp;</td>
+										<td colspan="2">
+											A[j + 1] := tmp
+										</td>
+										<td class="noTopBorder"></td>
+									</tr>
+								</table>
+							</div>
+							<div id="implementation" class="tab-pane fade">
+								<p class="line"><span class="cppKeyword">void</span> <span class="cppVariable">buborekosRendezes</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>){</p>
+								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppVariable">N</span> - <span class="cppNumber">1</span>; <span class="cppVariable">i</span> > <span class="cppNumber">0</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">j</span> = <span class="cppNumber">0</span>; <span class="cppVariable">j</span> < <span class="cppVariable">i</span>; <span class="cppVariable">j</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3"><span class="cppKeyword">if</span>(<span class="cppVariable">A</span>[<span class="cppVariable">j</span>] > <span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>]){</span>
+								<p class="line tab4"><span class="cppKeyword">int</span> <span class="cppVariable">tmp</span> = <span class="cppVariable">A</span>[<span class="cppVariable">j</span>];</p>
+								<p class="line tab4"><span class="cppVariable">A</span>[<span class="cppVariable">j</span>] = <span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>];</p>
+								<p class="line tab4"><span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>] = <span class="cppVariable">tmp</span>;</p>
+								<p class="line tab3">}</p>
+								<p class="line tab2">}</p>
+								<p class="line tab1">}</p>
+								<p class="line">}</p>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-5">
