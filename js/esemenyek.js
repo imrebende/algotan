@@ -36,11 +36,6 @@ $(function() {
 		</ul>\
 	</li>\
 	<li class="dropdown">\
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.grafalgoritmusok"></a>\
-		<ul class="dropdown-menu">\
-		</ul>\
-	</li>\
-		<li class="dropdown">\
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.adatszerkezetek"></a>\
 		<ul class="dropdown-menu">\
 			<li><a href="verem.html" data-i18n="adatszerkezet.verem.nev"></a></li>\

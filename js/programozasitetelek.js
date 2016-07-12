@@ -36,10 +36,10 @@ function kereses(t, relaciosJel, felt) {
 	tombKiirasa(t);	
 	var l = false;
 	var i = 0;
-	valtozokKiirasa({nev: "i", ertek: i}, {nev: "l", ertek: l}, "elsoDb");
+	valtozokKiirasa({nev: "i", ertek: i}, {nev: "l", ertek: l}, "elsoLepes");
 	while (!l && i < t.length) {
 		l = feltetel(t[i], relaciosJel, felt);
-		valtozokKiirasa({nev: "i", ertek: i + 1}, {nev: "l", ertek: l}, "");
+		valtozokKiirasa({nev: "i", ertek: i + 1}, {nev: "l", ertek: l}, "feltetelVizsgalat");
 		i++;
 		valtozokKiirasa({nev: "i", ertek: i + 1}, {nev: "l", ertek: l}, "ciklusLepes");
 	}

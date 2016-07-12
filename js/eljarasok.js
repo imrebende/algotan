@@ -182,6 +182,9 @@ function szovegValtoztatas(){
 	} else if($("#valtozok .active").hasClass("dbValtozas")){
 		$(".dbValtozasNyil").removeClass("hidden");
 		magyarazatValtoztatas("DB", $("#valtozok .active .ertek.DB").text());
+	} else if($("#valtozok .active").hasClass("elsoLepes")){
+		$(".dbValtozasNyil").removeClass("hidden");
+		magyarazatValtoztatas("i", 1);
 	}
 	
 	if($("#tombok .active").hasClass("csereLepes")){
