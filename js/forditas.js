@@ -40,7 +40,7 @@ function muvelet(a, op, b){
 		} 
 }
 
-function ertelmezo(utasitasok){
+/*function ertelmezo(utasitasok){
 	
 }
 
@@ -52,4 +52,4 @@ function forCiklus(kezdet, veg, lepes, utasitasok){
 
 function kiiras(szoveg){
 	console.log(szoveg);
-}
+}*/

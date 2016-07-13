@@ -48,6 +48,7 @@ function kereses(t, relaciosJel, felt) {
 
 //Logaritmikus keresés
 function logKereses(t, searchElement) {
+	tombKiirasa(t);
 	var minIndex = 0;
     var maxIndex = t.length - 1;
     var currentIndex;
@@ -64,7 +65,7 @@ function logKereses(t, searchElement) {
        	} else {
           	l = true;
        	}
-		valtozokKiirasa({nev: "minIndex", ertek: minIndex + 1}, {nev: "maxIndex", ertek: maxIndex + 1}, {nev: "currentIndex", ertek: currentIndex + 1}, {nev: "l", ertek: l}, {nev: "t", ertek: t.slice(minIndex, maxIndex+1)}, "");
+		valtozokKiirasa({nev: "minIndex", ertek: minIndex + 1}, {nev: "maxIndex", ertek: maxIndex + 1}, {nev: "currentIndex", ertek: currentIndex + 1}, {nev: "l", ertek: l}, {nev: "t", ertek: t.slice(minIndex, maxIndex+1)}, "ciklusLepes");
     }
 	megjelenitesInit();
 }
@@ -73,7 +74,7 @@ function logKereses(t, searchElement) {
 function maximumKivalasztas(t) {
 	tombKiirasa(t);
 	var maxh = 0;
-	valtozokKiirasa({nev: "MAX", ertek: maxh + 1},"elsoMax");
+	valtozokKiirasa({nev: "MAX", ertek: maxh + 1}, "elsoMax");
 	for (i = 1; i < t.length; i++) {
 		valtozokKiirasa({nev: "MAX", ertek: maxh + 1}, {nev: "i", ertek: i + 1}, "ciklusLepes");
 		if(t[i] > t[maxh]) {

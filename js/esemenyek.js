@@ -5,7 +5,7 @@ $(function() {
   $("#logKerBemenet").val("1,2,3,4,5,6,7,8,9");
   
   //Footer beszúrása
-  $("footer.footer .container").text("Készítette: Bende Imre ( Témavezető: Dr. Zsakó László )");
+  $("footer.footer .container #szerzo").text("Készítette: Bende Imre ( Témavezető: Dr. Zsakó László )");
   
   //Menü beszúrása
   $("#navbar").append('\

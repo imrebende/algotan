@@ -216,9 +216,7 @@ function kovetkezoAllas() {
 		$("#valtozok .active").first().addClass("hidden");
 		$("#valtozok .active").first().removeClass("active");
 		$("#valtozok .active").removeClass("hidden");
-		tombValtoztatas();
-		szovegValtoztatas();
-		barValtoztatasa();
+		allasValtoztatasFunction();
 	}
 	//Következő tömb állás betöltése, ha van
 	if($("#tombok .active").next().length > 0){
@@ -226,9 +224,7 @@ function kovetkezoAllas() {
 		$("#tombok .active").first().addClass("hidden");
 		$("#tombok .active").first().removeClass("active");
 		$("#tombok .active").removeClass("hidden");
-		tombValtoztatas();
-		szovegValtoztatas();
-		barValtoztatasa();
+		allasValtoztatasFunction();
 	}
 }
 
@@ -239,18 +235,14 @@ function elozoAllas() {
 		$("#valtozok .active").last().addClass("hidden");
 		$("#valtozok .active").last().removeClass("active");
 		$("#valtozok .active").removeClass("hidden");
-		tombValtoztatas();
-		szovegValtoztatas()
-		barValtoztatasa();
+		allasValtoztatasFunction();
 	}
 	if($("#tombok .active").prev().length > 0){
 		$("#tombok .active").prev().addClass("active");
 		$("#tombok .active").last().addClass("hidden");
 		$("#tombok .active").last().removeClass("active");
 		$("#tombok .active").removeClass("hidden");
-		tombValtoztatas();
-		szovegValtoztatas()
-		barValtoztatasa();
+		allasValtoztatasFunction();
 	}
 }
 
@@ -262,6 +254,12 @@ function lejatszas(k) {
 		timeouts.push(setTimeout(kovetkezoAllas, (i + 1) * 2200));
 	}
 	timeouts.push(setTimeout(pause, k * 2200 + 1));
+}
+
+function allasValtoztatasFunction(){
+	tombValtoztatas();
+	szovegValtoztatas()
+	barValtoztatasa();
 }
 
 function megjelenitesInit(){

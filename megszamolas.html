@@ -45,7 +45,7 @@
 							<h2 data-i18n="label.leiras"></h2>
 							<p data-i18n="[html]progtetel.megszamolas.leiras"></p>
 							<a href="http://progalap.elte.hu/downloads/seged/eTananyag/lecke13_lap1.html#hiv14" data-i18n="label.bovebben"></a>,
-							<a href="cpp/megszamolas.cpp" data-i18n="">C++ példa</a>
+							<a href="cpp/megszamolas.cpp" data-i18n="label.cppPelda"></a>
 						</div>
 						<div id="example" class="hidden cplusplus"></div>
 						<ul class="nav nav-tabs">
@@ -169,15 +169,23 @@
 
 		</div>
 		
-		<footer class="footer"><div class="container"></div></footer>
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6" id="dokumentacio"><a href="doc/dokumentacio.docx" data-i18n="label.dokumentacio"></a></div>
+					<div class="col-md-6 text-right" id="szerzo"></div>
+				</div>
+			</div>
+		</footer>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/i18next-1.10.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/underscore.js"></script>
 		<script src="js/eljarasok.js"></script>
 		<script src="js/programozasitetelek.js"></script>
 		<script src="js/esemenyek.js"></script>
-		<script src="js/underscore.js"></script>
+		<script src="js/forditas.js"></script>
 		<script>
 			$(function() {
 				$("#progtetelek").addClass("active");
