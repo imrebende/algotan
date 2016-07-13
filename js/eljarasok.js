@@ -33,7 +33,6 @@ function tombRendezettE(t){
 		l = (t[i] <= t[i + 1]);
 		i++;
 	}
-	
 	return l;
 }
 
@@ -132,10 +131,8 @@ function tombValtoztatas(){
 }
 
 function elsoLepesMegjelenitese(){
-	$("#tombok div").first().removeClass("hidden");
-	$("#tombok div").first().addClass("active");
-	$("#valtozok div").first().removeClass("hidden");
-	$("#valtozok div").first().addClass("active");
+	$("#tombok div").first().removeClass("hidden").addClass("active");
+	$("#valtozok div").first().removeClass("hidden").addClass("active");
 }
 
 function barValtoztatasa(){
@@ -213,16 +210,14 @@ function kovetkezoAllas() {
 	//Következő változó állás betöltése, ha van
 	if($("#valtozok .active").next().length > 0){
 		$("#valtozok .active").next().addClass("active");
-		$("#valtozok .active").first().addClass("hidden");
-		$("#valtozok .active").first().removeClass("active");
+		$("#valtozok .active").first().addClass("hidden").removeClass("active");
 		$("#valtozok .active").removeClass("hidden");
 		allasValtoztatasFunction();
 	}
 	//Következő tömb állás betöltése, ha van
 	if($("#tombok .active").next().length > 0){
 		$("#tombok .active").next().addClass("active");
-		$("#tombok .active").first().addClass("hidden");
-		$("#tombok .active").first().removeClass("active");
+		$("#tombok .active").first().addClass("hidden").removeClass("active");
 		$("#tombok .active").removeClass("hidden");
 		allasValtoztatasFunction();
 	}
@@ -232,15 +227,13 @@ function kovetkezoAllas() {
 function elozoAllas() {
 	if($("#valtozok .active").prev().length > 0){
 		$("#valtozok .active").prev().addClass("active");
-		$("#valtozok .active").last().addClass("hidden");
-		$("#valtozok .active").last().removeClass("active");
+		$("#valtozok .active").last().addClass("hidden").removeClass("active");
 		$("#valtozok .active").removeClass("hidden");
 		allasValtoztatasFunction();
 	}
 	if($("#tombok .active").prev().length > 0){
 		$("#tombok .active").prev().addClass("active");
-		$("#tombok .active").last().addClass("hidden");
-		$("#tombok .active").last().removeClass("active");
+		$("#tombok .active").last().addClass("hidden").removeClass("active");
 		$("#tombok .active").removeClass("hidden");
 		allasValtoztatasFunction();
 	}
