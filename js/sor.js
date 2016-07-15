@@ -1,20 +1,22 @@
-//Kivesz egy elemet a sorból
+//Kivesz egy elemet a sorbÃ³l
 function sorbol(){
+	$("#kivettErtek").val($("#sE td:last-of-type").text());
+	$("#sE td").last().remove();
+	$("#hiba").text("");
+	
 	if($("#sE td").length === 0){
-		$("#hiba").text("Nincs több elem");
-	}
-	else {
-		$("#kivettErtek").val($("#sE td:last-of-type").text());
-		$("#sE td").last().remove();
-		$("#hiba").text("");
+		$("#hiba").text("Nincs tÃ¶bb elem");
+		$(".sorNyil").addClass("hidden");
 	}
 }
 
 //Betesz egy elemet a sorba
 function sorba(){
-	//Ha az érték nem üres
+	//Ha az Ã©rtÃ©k nem Ã¼res
 	if($("#betettErtek").val() !== ""){
-		$("<td>" + $("#betettErtek").val() + "</td>").insertAfter("#sE td:last-of-type");
+		$("#sE tbody tr").append("<td>" + $("#betettErtek").val() + "</td>");
 		$("#betettErtek").val("");
+		$("#hiba").text("");
+		$(".sorNyil").removeClass("hidden");
 	}
 }

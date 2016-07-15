@@ -40,7 +40,6 @@ function minKivRendezes(t){
 }
 
 function feloszt(tomb, pivot, bal, jobb) {
-
 	var index = bal,
     pivotValue = tomb[pivot];
 
@@ -49,7 +48,6 @@ function feloszt(tomb, pivot, bal, jobb) {
 	tombKiirasa(tomb, pivot, jobb, "csereLepes");
 
     for(var v = bal; v < jobb; v++) {
-
 		if(tomb[v] < pivotValue) {
 			tombKiirasa(tomb, v, index, "csereLepes");  
 			csere(tomb, v, index);
@@ -103,18 +101,22 @@ function osszefesules(bal, jobb, eredeti){
 			eredmeny.push(jobb[ij++]);
 		}
 	}
-
 	eredmeny = eredmeny.concat(bal.slice(ib)).concat(jobb.slice(ij));
 	
-	valtozokKiirasa({nev: "bal", ertek: tombObjValues(bal)}, {nev: "jobb", ertek: tombObjValues(jobb)}, {nev: "eredmeny", ertek: tombObjValues(eredmeny)}, "");
+	while(ib < bal.length){
+		vizsgaltIndexek.push(bal[ib++].index);
+	}
+	while(ij < jobb.length){
+		vizsgaltIndexek.push(jobb[ij++].index);
+	}
 	vizsgaltIndexek.sort();
 	
 	for(var i = 0; i < vizsgaltIndexek.length; i++){
-		eredeti[vizsgaltIndexek[i]] = tombObjValues(eredmeny)[i];
+		eredeti[vizsgaltIndexek[i]] = eredmeny[i];
 	}
 	
+	valtozokKiirasa({nev: "bal", ertek: tombObjValues(bal)}, {nev: "jobb", ertek: tombObjValues(jobb)}, {nev: "eredmeny", ertek: tombObjValues(eredmeny)}, "");
 	tombKiirasa(tombObjValues(eredeti), vizsgaltIndexek, "");
-	vizsgaltIndexek = [];
 	
 	return eredmeny;
 }
