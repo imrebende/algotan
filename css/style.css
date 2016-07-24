@@ -176,7 +176,7 @@ ol li:before {
 	font-weight: bold;
 }
 
-.greenElem{
+.greenElem, .greenTombElem{
 	color: green !important;
 	font-weight: bold;
 }

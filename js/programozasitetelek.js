@@ -48,25 +48,31 @@ function kereses(t, relaciosJel, felt) {
 
 //Logaritmikus keresés
 function logKereses(t, searchElement) {
-	tombKiirasa(t);
-	var minIndex = 0;
-    var maxIndex = t.length - 1;
+	var u = 0;
+    var v = t.length - 1;
     var currentIndex;
     var currentElement;
 	var l = false;  
-	valtozokKiirasa({nev: "minIndex", ertek: minIndex + 1}, {nev: "maxIndex", ertek: maxIndex + 1}, {nev: "t", ertek: t}, "");
-   	while (minIndex <= maxIndex && !l) {
-       	currentIndex = (minIndex + maxIndex) / 2 | 0;
+	valtozokKiirasa({nev: "u", ertek: u + 1}, {nev: "v", ertek: v + 1}, {nev: "t", ertek: t}, "");
+	var vizsgaltIndexek = [];
+	for(var i = u; i <= v; i++) vizsgaltIndexek.push(i);
+	tombKiirasa(t, vizsgaltIndexek, [(u + v) / 2 | 0], "");
+   	while (u <= v && !l) {
+       	currentIndex = (u + v) / 2 | 0;
        	currentElement = t[currentIndex];
        	if (currentElement < searchElement) {
-           	minIndex = currentIndex + 1;
+           	u = currentIndex + 1;
        	} else if (currentElement > searchElement) {
-           	maxIndex = currentIndex - 1;
+           	v = currentIndex - 1;
        	} else {
           	l = true;
        	}
-		valtozokKiirasa({nev: "minIndex", ertek: minIndex + 1}, {nev: "maxIndex", ertek: maxIndex + 1}, {nev: "currentIndex", ertek: currentIndex + 1}, {nev: "l", ertek: l}, {nev: "t", ertek: t.slice(minIndex, maxIndex+1)}, "ciklusLepes");
+		valtozokKiirasa({nev: "u", ertek: u + 1}, {nev: "v", ertek: v + 1}, {nev: "i", ertek: ((u + v) / 2 | 0) + 1}, {nev: "l", ertek: l}, {nev: "t", ertek: t.slice(u, v + 1)}, "ciklusLepes");
+		vizsgaltIndexek = [];
+		for(var i = u; i <= v; i++) vizsgaltIndexek.push(i);
+		tombKiirasa(t, vizsgaltIndexek, [(u + v) / 2 | 0], "");
     }
+	valtozokKiirasa({nev: "u", ertek: u + 1}, {nev: "v", ertek: v + 1}, {nev: "i", ertek: ((u + v) / 2 | 0) + 1, class: "blueElem"}, {nev: "l", ertek: l, class: "blueElem"}, {nev: "t", ertek: t.slice(u, v + 1)}, "ciklusLepes");
 	megjelenitesInit();
 }
 

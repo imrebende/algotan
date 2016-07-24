@@ -12,8 +12,11 @@ function verembol() {
 
 //Betesz egy elemet a verembe (tetejére)
 function verembe() {
-	$("#vE").prepend("<tr><td>" + $("#betettErtek").val() + "</td></tr>");
-	$(".veremNyil").removeClass("hidden");
+	if($("#betettErtek") != ""){
+		$("#betettErtek").val("");
+		$("#vE").prepend("<tr><td>" + $("#betettErtek").val() + "</td></tr>");
+		$(".veremNyil").removeClass("hidden");
+	}
 }
 
 //Megnézi a veremből lévő legfelső elemet

@@ -80,6 +80,9 @@ function tombKiirasa(t, a, b, szoveg){
 		if(i === parseFloat(a) || i === parseFloat(b) || ($.isArray(a) && a.indexOf(i) >= 0)){
 			className = "blueTombElem";
 		}
+		if($.isArray(b) && b.indexOf(i) >= 0){
+			className = "greenTombElem";
+		}
 		tombSzoveg += '<span class="elem ' + className + ' ">' + t[i] + '</span>';
 		if(i !== t.length - 1){
 			tombSzoveg += ", ";
@@ -196,9 +199,9 @@ function valtozokKiirasa() {
 	var s = '<div class="valtozo hidden ' + arguments[arguments.length - 1] + '">';
 	for (var i = 0; i < arguments.length - 1; i++) {
 		if($.isArray(arguments[i].ertek)){
-			s += '<div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + '">[ ' + arguments[i].ertek + " ]</div><br/>";
+			s += '<div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + " " + arguments[i].class + '">[ ' + arguments[i].ertek + " ]</div><br/>";
 		} else {
-			s += '<div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + '">' + arguments[i].ertek + "</div><br/>";
+			s += '<div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + " " + arguments[i].class + '">' + arguments[i].ertek + "</div><br/>";
 		}
 	}
 	s += '</div>';
