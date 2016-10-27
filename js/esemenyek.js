@@ -42,6 +42,11 @@ $(function() {
 			<li><a href="sor.html" data-i18n="adatszerkezet.sor.nev"></a></li>\
 		</ul>\
 	</li>\
+	<li class="dropdown">\
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.egyeb"></a>\
+		<ul class="dropdown-menu">\
+		</ul>\
+	</li>\
 	</ul>');
 	
 	//Nyelvi elemek beállítása

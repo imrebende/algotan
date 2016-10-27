@@ -9,7 +9,7 @@
 		<meta name="author" content="Bende Imre" />
 		<link rel="icon" href="img/elte.ico" />
 
-		<title>Minimumkiválasztásos rendezés</title>
+		<title data-i18n="rendezes.gyorsrendezes.nev"></title>
 
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
@@ -37,25 +37,13 @@
 
 			<div class="main">
 				<div class="row">
-					<h1>Minimumkiválasztásos rendezés</h1>
+					<h1 data-i18n="rendezes.gyorsrendezes.nev"></h1>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<div id="pszeudo">
-							<h2>Pszeudokód</h2>
-							<p class="line"><strong>Eljárás</strong> MinKivRendezés(A, N)</p>
-							<p class="line tab1"><strong>Ciklus</strong> i := 1-től N-ig</p>
-							<p class="line tab2">minI := 1;</p>
-							<p class="line tab2"><strong>Ciklus</strong> j := i+1-től N-ig</p>
-							<p class="line tab3"><strong data-i18n="pszeudokodelem.ha"></strong> A[minI] &lt; A[j] <strong>akkor</strong><span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-							<p class="line tab4">minI := j;
-							<p class="line tab3"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
-							<p class="line tab2"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
-							<p class="line tab3">tmp := A[i]</p>
-							<p class="line tab3">A[i] := A[minI]</p>
-							<p class="line tab3">A[minI] := tmp</p>
-							<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
-							<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
+						<div id="leiras">
+							<h2 data-i18n="label.leiras"></h2>
+							<p data-i18n="[html]rendezes.gyorsrendezes.leiras"></p>
 						</div>
 					</div>
 					<div class="col-md-5">

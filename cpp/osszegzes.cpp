@@ -28,7 +28,7 @@ int main(){
 	
 	beolvasas(n, t);
 	
-	cout << osszegzes(n, t, felt) << endl;
+	cout << osszegzes(n, t) << endl;
 	
 	return 0;
 }

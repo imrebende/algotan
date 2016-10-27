@@ -16,14 +16,16 @@
 			"progtetelek": "Programozási tételek<span class='caret'></span>",
 			"rendezesek": "Rendezések<span class='caret'></span>",
 			"grafalgoritmusok": "Gráfalgoritmusok<span class='caret'></span>",
-			"adatszerkezetek": "Adatszerkezetek<span class='caret'></span>"
+			"adatszerkezetek": "Adatszerkezetek<span class='caret'></span>",
+			"egyeb": "Egyéb<span class='caret'></span>"
 		},
 		"fooldal": {
 			"kezdooldal": "Kezdőoldal",
 			"progtetelek": "Programozási tételek",
 			"rendezesek": "Rendezések",
 			"grafalgoritmusok": "Gráfalgoritmusok",
-			"adatszerkezetek": "Adatszerkezetek"
+			"adatszerkezetek": "Adatszerkezetek",
+			"egyeb": "Egyéb"
 		},
 		"cppPelda": "C++ példa",
 		"dokumentacio": "Dokumentáció"
@@ -90,15 +92,15 @@
 			"nev": "Buborékos rendezés"
 		},
 		"minkiv": {
-			"leiras": "asd",
+			"leiras": "A kiválasztásos rendezés egy egyszerű, négyzetes időben futó rendezési algoritmus. Az alapötlet az, hogy kiválasztjuk a rendezendő tömb legkisebb elemét, és kicseréljük a tömb legelső elemével. Ezzel a tömb első eleme megkapta a végső értékét, és a feladat egyszerűsödött a tömb maradékának rendezésére. Az algoritmust addig ismételjük a maradék tömbön, amíg csak egy elem marad. ",
 			"nev": "Minimumkiválasztásos rendezés"
 		},
 		"gyorsrendezes": {
-			"leiras": "asd",
+			"leiras": "A gyorsrendezés oszd meg és uralkodj elven működik: a rendezendő számok listáját két részre bontja, majd ezeket a részeket rekurzívan, gyorsrendezéssel rendezi. A felbontáshoz kiválaszt egy támpontnak nevezett elemet (más néven pivot, főelem vagy vezérelem), és particionálja a listát: a támpontnál kisebb elemeket eléje, a nagyobbakat mögéje mozgatja. Teljes indukcióval könnyen belátható, hogy ez az algoritmus helyesen működik.",
 			"nev": "Gyorsrendezés"
 		},
 		"osszefesulesesrendezes": {
-			"leiras": "asd",
+			"leiras": "Az összefésülő rendezés alapötlete, hogy eleve rendezett elemsorozatok aránylag egyszerűen vonhatók össze rendezett sorozattá. Az algoritmus lényege, hogy az elemeket két csoportba osztjuk, a csoportokat rendezzük (akár összefésülő rendezéssel), majd a kapott részeket összefésüljük. ",
 			"nev": "Összefésüléses rendezés"
 		}
 	},
@@ -124,6 +126,12 @@
 				"telie": "Teli-e?",
 				"elso": "Első"
 			}
+		}
+	},
+	"egyeb": {
+		"faktorialis": {
+			"leiras": "Kiszámítja az N faktoriálist (N!).",
+			"nev": "Faktoriális"
 		}
 	}
 }
