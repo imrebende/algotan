@@ -3,6 +3,7 @@ $(function() {
   //Minta bemenetet adok a tömb input mezőjébe
   $("#bemenet").val("4,3,6,8,2,3,9");
   $("#logKerBemenet").val("1,2,3,4,5,6,7,8,9");
+  $("#bemenetSimple").val("12");
   
   //Footer beszúrása
   $("footer.footer .container #szerzo").text("Készítette: Bende Imre ( Témavezető: Dr. Zsakó László )");
@@ -35,16 +36,17 @@ $(function() {
 			<li><a href="osszefesuleses-rendezes.html" data-i18n="rendezes.osszefesulesesrendezes.nev"></a></li>\
 		</ul>\
 	</li>\
-	<li class="dropdown">\
+	<li id="adatszerkezetek" class="dropdown">\
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.adatszerkezetek"></a>\
 		<ul class="dropdown-menu">\
 			<li><a href="verem.html" data-i18n="adatszerkezet.verem.nev"></a></li>\
 			<li><a href="sor.html" data-i18n="adatszerkezet.sor.nev"></a></li>\
 		</ul>\
 	</li>\
-	<li class="dropdown">\
+	<li id="egyeb" class="dropdown">\
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.egyeb"></a>\
 		<ul class="dropdown-menu">\
+			<li><a href="faktorialis.html" data-i18n="egyeb.faktorialis.nev"></a></li>\
 		</ul>\
 	</li>\
 	</ul>');

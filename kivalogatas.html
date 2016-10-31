@@ -55,11 +55,11 @@
 						<div class="tab-content">
 							<div id="pszeudo" class="tab-pane fade in active">
 								<p class="line"><strong>Eljárás</strong> Kiválogatás(A, B, DB)</p>
-								<p class="line tab1">DB := 0<span id="elsoOsszeg" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><strong>Ciklus</strong> i := 1-től N-ig<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">DB := 0<span class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><strong>Ciklus</strong> i := 1-től N-ig<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> T(A[i]) <strong>akkor</strong></p>
-								<p class="line tab3">DB := DB + 1</p>
-								<p class="line tab3">B[DB] := A[i]</p>
+								<p class="line tab3">DB := DB + 1<span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3">B[DB] := A[i]<span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><strong>Elágazás vége</strong></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
@@ -87,7 +87,7 @@
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td colspan="2">
-											DB := DB + 1 <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span><br/>
+											DB := DB + 1 <span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span><br/>
 										</td>
 										<td class="noBottomBorder">
 											-
@@ -96,7 +96,7 @@
 									<tr>
 										<td class="ciklusMagElsoOszlop">&nbsp;</td>
 										<td colspan="2">
-											B[DB] := A[i]
+											B[DB] := A[i]<span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td class="noTopBorder">
 										</td>
@@ -108,7 +108,7 @@
 								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">DB</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span></span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">T</span>(<span class="cppVariable">A</span>[<span class="cppVariable">i</span>])){</span>
-								<p class="line tab3"><span class="cppVariable">B</span>[<span class="cppVariable">DB</span>++]; <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3"><span class="cppVariable">B</span>[<span class="cppVariable">DB</span>++]; <span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">}</p>
 								<p class="line tab1">}</p>
 								<p class="line">}</p>
@@ -187,9 +187,9 @@
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/i18next-1.10.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/eljarasok.min.js"></script>
-		<script src="js/osszetettprogtetelek.min.js"></script>
-		<script src="js/esemenyek.min.js"></script>
+		<script src="js/eljarasok.js"></script>
+		<script src="js/osszetettprogtetelek.js"></script>
+		<script src="js/esemenyek.js"></script>
 		<script src="js/forditas.js"></script>
 		<script>
 			$(function() {

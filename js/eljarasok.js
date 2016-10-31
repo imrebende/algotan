@@ -183,8 +183,14 @@ function szovegValtoztatas(){
 		$(".dbValtozasNyil").removeClass("hidden");
 		magyarazatValtoztatas("DB", $("#valtozok .active .ertek.DB").text());
 	} else if($("#valtozok .active").hasClass("elsoLepes")){
-		$(".dbValtozasNyil").removeClass("hidden");
+		$(".elsoLepesNyil").removeClass("hidden");
 		magyarazatValtoztatas("i", 1);
+	} else if($("#valtozok .active").hasClass("faktorialisLepes")){
+		$(".faktorialisLepesNyil").removeClass("hidden");
+		magyarazatValtoztatas("fakt", $("#valtozok .active .ertek.fakt").text());
+	} else if($("#valtozok .active").hasClass("elemBerakas")){
+		$(".elemBerakasNyil").removeClass("hidden");
+		//magyarazatValtoztatas("fakt", $("#valtozok .active .ertek.fakt").text());
 	}
 	
 	if($("#tombok .active").hasClass("csereLepes")){

@@ -18,10 +18,10 @@ function kivalogatas(t, relJel, felt){
 		felt = parseFloat(felt);
 	}
 	for(var i = 0; i < t.length; i++){
-		valtozokKiirasa({nev: "B", ertek: a}, {nev: "i", ertek: i+1}, "");
+		valtozokKiirasa({nev: "B", ertek: a}, {nev: "i", ertek: i+1}, "ciklusLepes");
 		if(feltetel(t[i], relJel, felt)){
 			a.push(t[i]);
-			valtozokKiirasa({nev: "B", ertek: a}, {nev: "i", ertek: i+1}, "");
+			valtozokKiirasa({nev: "B", ertek: a}, {nev: "i", ertek: i+1}, "elemBerakas");
 		}
 	}
 	megjelenitesInit();
@@ -38,10 +38,10 @@ function szetvalogatas(t, relJel, felt){
 	for(var i = 0; i < t.length; i++){
 		if(feltetel(t[i], relJel, felt)){
 			a.push(t[i]);
-			valtozokKiirasa({nev: "B", ertek: a}, {nev: "C", ertek: b}, {nev: "i", ertek: i+1}, "");
+			valtozokKiirasa({nev: "B", ertek: a}, {nev: "C", ertek: b}, {nev: "i", ertek: i+1}, "elemBerakas");
 		} else{
 			b.push(t[i]);
-			valtozokKiirasa({nev: "B", ertek: a}, {nev: "C", ertek: b}, {nev: "i", ertek: i+1}, "");
+			valtozokKiirasa({nev: "B", ertek: a}, {nev: "C", ertek: b}, {nev: "i", ertek: i+1}, "elemBerakas2");
 		}
 	}
 	megjelenitesInit();

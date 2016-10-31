@@ -49,17 +49,17 @@
 							<p class="line tab1">Elemek: <strong>tömb</strong></p>
 							<br/>
 							<p class="line"><strong>Eljárás</strong> Sorból(x)</p>
-							<p class="line tab1">x := Verem.Elemek(1)</p>
-							<p class="line tab1">Verem.Meret := Verem.Meret - 1</p>
+							<p class="line tab1">x := Sor.Elemek(1)</p>
+							<p class="line tab1">Sor.Meret := Verem.Meret - 1</p>
 							<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
 							<br/>
 							<p class="line"><strong>Eljárás</strong> Elso(x)</p>
-							<p class="line tab1">x := Verem.Elemek(1)</p>
+							<p class="line tab1">x := Sor.Elemek(1)</p>
 							<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
 							<br/>
-							<p class="line"><strong>Eljárás</strong> Verembe(x)</p>
-							<p class="line tab1">Verem.Meret := Verem.Meret + 1</p>
-							<p class="line tab1">Verem.Elemek(Verem.Meret) := x</p>
+							<p class="line"><strong>Eljárás</strong> Sorba(x)</p>
+							<p class="line tab1">Sor.Meret := Sor.Meret + 1</p>
+							<p class="line tab1">Sor.Elemek(Sor.Meret) := x</p>
 							<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
 						</div>
 						</div>
@@ -70,6 +70,11 @@
 								<label for="bemenet">A kivett érték: </label>
 								<input type="text" class="form-control inputMezo" name="kivettErtek" id="kivettErtek" disabled="disabled"/>
 								<button class="btn btn-success" id="verembolGomb" onclick="sorbol()">Sorból</button>
+							</div>
+							<div class="form-group">
+								<label for="bemenet">Legelső elem: </label>
+								<input type="text" class="form-control inputMezo" name="elsoElem" id="elsoElem" disabled="disabled"/>
+								<button class="btn btn-success" id="verembolGomb" onclick="elso()">Első</button>
 							</div>
 							<div class="form-group">
 								<label for="bemenet">A beteni kívánt érték: </label>
@@ -131,8 +136,13 @@
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/i18next-1.10.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/eljarasok.min.js"></script>
+		<script src="js/eljarasok.js"></script>
 		<script src="js/sor.js"></script>
-		<script src="js/esemenyek.min.js"></script>
+		<script src="js/esemenyek.js"></script>
+		<script>
+			$(function() {
+				$("#adatszerkezetek").addClass("active");
+			});
+		</script>
 	</body>
 </html>
