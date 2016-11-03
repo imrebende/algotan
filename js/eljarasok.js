@@ -90,7 +90,6 @@ function tombKiirasa(t, a, b, szoveg){
 	}
 	tombSzoveg += ' ]</div>';
 	$("#tombok").append(tombSzoveg);
-	
 }
 
 //Az algoritmus állása alapján kiszínezi, hogy hol tartunk a tömbben
@@ -114,7 +113,7 @@ function tombValtoztatas(){
 	var i = $("div.valtozo .ertek.i").first().text();
 	var j = 0;
 	while (i < iValue){
-		if( $("div.valtozo:nth-of-type(" + j + ")").hasClass("dbValtozas") ){
+		if( $("div.valtozo:nth-of-type(" + j + ")").hasClass("dbValtozas") || $("div.valtozo:nth-of-type(" + j + ")").hasClass("elemBerakas")){
 			$("#tombok .elem:nth-of-type(" + i + ")").addClass("greenElem");
 		}
 		j++;
@@ -122,6 +121,8 @@ function tombValtoztatas(){
 		i = $("div.valtozo:nth-of-type(" + j + ") .ertek.i").text();
 	}
 	if( $("div.valtozo.active").hasClass("dbValtozas") ){
+		$("#tombok .elem:nth-of-type(" + iValue + ")").addClass("greenElem")
+	} else if( $("div.valtozo.active").hasClass("elemBerakas") ){
 		$("#tombok .elem:nth-of-type(" + iValue + ")").addClass("greenElem")
 	}
 	
@@ -191,12 +192,15 @@ function szovegValtoztatas(){
 	} else if($("#valtozok .active").hasClass("elemBerakas")){
 		$(".elemBerakasNyil").removeClass("hidden");
 		//magyarazatValtoztatas("fakt", $("#valtozok .active .ertek.fakt").text());
+	} else if($("#valtozok .active").hasClass("feltetelVizsgalat")){
+		$(".feltetelVizsgalatNyil").removeClass("hidden");
+		magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());
 	}
 	
 	if($("#tombok .active").hasClass("csereLepes")){
-		$(".utasitas.csereLepes").removeClass("hidden");
+		$(".csereLepesNyil").removeClass("hidden");
 	} else if($("#tombok .active").hasClass("ciklusLepes")){
-		$(".utasitas.ciklusLepes").removeClass("hidden");
+		$(".ciklusLepesNyil").removeClass("hidden");
 	}
 }
 

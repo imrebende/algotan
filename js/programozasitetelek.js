@@ -43,6 +43,11 @@ function kereses(t, relaciosJel, felt) {
 		i++;
 		valtozokKiirasa({nev: "i", ertek: i + 1}, {nev: "l", ertek: l}, "ciklusLepes");
 	}
+	if(l){
+		valtozokKiirasa({nev: "i", ertek: i, class: "blueElem"}, {nev: "l", ertek: l, class: "blueElem"}, "");
+	} else {
+		valtozokKiirasa({nev: "l", ertek: l, class: "blueElem"}, "");
+	}
 	megjelenitesInit();
 }
 
@@ -53,7 +58,7 @@ function logKereses(t, searchElement) {
     var currentIndex;
     var currentElement;
 	var l = false;  
-	valtozokKiirasa({nev: "u", ertek: u + 1}, {nev: "v", ertek: v + 1}, {nev: "t", ertek: t}, "");
+	valtozokKiirasa({nev: "u", ertek: u + 1}, {nev: "v", ertek: v + 1}, {nev: "t", ertek: t}, "elsoLepes");
 	var vizsgaltIndexek = [];
 	for(var i = u; i <= v; i++) vizsgaltIndexek.push(i);
 	tombKiirasa(t, vizsgaltIndexek, [(u + v) / 2 | 0], "");
@@ -72,7 +77,11 @@ function logKereses(t, searchElement) {
 		for(var i = u; i <= v; i++) vizsgaltIndexek.push(i);
 		tombKiirasa(t, vizsgaltIndexek, [(u + v) / 2 | 0], "");
     }
-	valtozokKiirasa({nev: "u", ertek: u + 1}, {nev: "v", ertek: v + 1}, {nev: "i", ertek: ((u + v) / 2 | 0) + 1, class: "blueElem"}, {nev: "l", ertek: l, class: "blueElem"}, {nev: "t", ertek: t.slice(u, v + 1)}, "ciklusLepes");
+	if(l){
+		valtozokKiirasa({nev: "i", ertek: ((u + v) / 2 | 0) + 1, class: "blueElem"}, {nev: "l", ertek: l, class: "blueElem"}, "ciklusLepes");
+	} else {
+		valtozokKiirasa({nev: "l", ertek: l, class: "blueElem"}, "ciklusLepes");
+	}
 	megjelenitesInit();
 }
 

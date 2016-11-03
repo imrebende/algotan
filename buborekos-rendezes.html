@@ -53,12 +53,12 @@
 						<div class="tab-content">
 							<div id="pszeudo" class="tab-pane fade in active">
 								<p class="line"><strong>Eljárás</strong> BuborékosRendezés(A, N)</p>
-								<p class="line tab1"><strong>Ciklus</strong> i := N-től 2-ig</p>
-								<p class="line tab2"><strong>Ciklus</strong> j := 1-től i-1-ig</p>
-								<p class="line tab3"><strong data-i18n="pszeudokodelem.ha"></strong> A[j] &gt; A[j + 1]<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab4">tmp := A[j]<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab4">A[j] := A[j + 1]<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab4">A[j + 1] := tmp<span class="csereLepes glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := N-től 2-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><strong data-i18n="pszeudokodelem.ciklus"></strong>j := 1-től i-1-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3"><strong data-i18n="pszeudokodelem.ha"></strong> A[j] &gt; A[j + 1]</p>
+								<p class="line tab4">tmp := A[j]<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab4">A[j] := A[j + 1]<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab4">A[j + 1] := tmp<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab3"><strong>Elágazás vége</strong></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
@@ -74,7 +74,7 @@
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td colspan="4" class="noBottomBorder">
-											j := 1-től i-1-ig
+											j := 1-től i-1-ig<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 									</tr>
 									<tr>
@@ -90,7 +90,7 @@
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
 										<td colspan="2">
-											tmp := A[j]
+											tmp := A[j]<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td class="noBottomBorder"> - </td>
 									</tr>
@@ -98,7 +98,7 @@
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
 										<td colspan="2">
-											A[j] := A[j + 1]
+											A[j] := A[j + 1]<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td class="noBottomBorder noTopBorder"></td>
 									</tr>
@@ -106,7 +106,7 @@
 										<td class="ciklusMagElsoOszlop">&nbsp;</td>
 										<td class="ciklusMagElsoOszlop belsoCiklusMag">&nbsp;</td>
 										<td colspan="2">
-											A[j + 1] := tmp
+											A[j + 1] := tmp<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td class="noTopBorder"></td>
 									</tr>
@@ -117,9 +117,9 @@
 								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppVariable">N</span> - <span class="cppNumber">1</span>; <span class="cppVariable">i</span> > <span class="cppNumber">0</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">j</span> = <span class="cppNumber">0</span>; <span class="cppVariable">j</span> < <span class="cppVariable">i</span>; <span class="cppVariable">j</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab3"><span class="cppKeyword">if</span>(<span class="cppVariable">A</span>[<span class="cppVariable">j</span>] > <span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>]){</span>
-								<p class="line tab4"><span class="cppKeyword">int</span> <span class="cppVariable">tmp</span> = <span class="cppVariable">A</span>[<span class="cppVariable">j</span>];</p>
-								<p class="line tab4"><span class="cppVariable">A</span>[<span class="cppVariable">j</span>] = <span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>];</p>
-								<p class="line tab4"><span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>] = <span class="cppVariable">tmp</span>;</p>
+								<p class="line tab4"><span class="cppKeyword">int</span> <span class="cppVariable">tmp</span> = <span class="cppVariable">A</span>[<span class="cppVariable">j</span>];<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab4"><span class="cppVariable">A</span>[<span class="cppVariable">j</span>] = <span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>];<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab4"><span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>] = <span class="cppVariable">tmp</span>;<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab3">}</p>
 								<p class="line tab2">}</p>
 								<p class="line tab1">}</p>

@@ -58,7 +58,7 @@
 								<p class="line tab1">L := hamis<span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1">i := 1<span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><strong>Ciklus amíg</strong> i <= N és nem L<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2">L := T(A[i]) <span class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2">L := T(A[i]) <span class="feltetelVizsgalatNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">i := i + 1 <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ha"></strong> L <strong data-i18n="pszeudokodelem.akkor"></strong></p>
@@ -80,13 +80,13 @@
 									</tr>
 									<tr>
 										<td colspan="4" class="ciklusFeltetel">
-											i <= N és nem L<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											i <= N és nem L
 										</td>
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td colspan="3" class="ciklusFeltetel">
-											l := T(A[i])
+											l := T(A[i])<span class="feltetelVizsgalatNyil glyphicon glyphicon-triangle-left utasitas hidden">
 										</td>
 									</tr>
 									<tr>
@@ -104,7 +104,7 @@
 									</tr>
 									<tr>
 										<td colspan="2">
-											E := i - 1<span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											E := i - 1
 										</td>
 										<td colspan="2">
 											-
@@ -116,8 +116,8 @@
 								<p class="line"><span class="cppKeyword">int</span> <span class="cppVariable">kereses</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>, <span class="cppKeyword">int</span> <span class="cppVariable">felt</span>){</p>
 								<p class="line tab1"><span class="cppKeyword">bool</span> <span class="cppVariable">l</span> = <span class="cppKeyword">false</span>; <span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><span class="cppKeyword">while</span>(<span class="cppVariable">i</span> < <span class="cppVariable">N</span> && !<span class="cppVariable">l</span>){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><span class="cppVariable">l</span> = (<span class="cppVariable">A</span>[<span class="cppVariable">i</span>] == <span class="cppVariable">felt</span>);</p>
+								<p class="line tab1"><span class="cppKeyword">while</span>(<span class="cppVariable">i</span> < <span class="cppVariable">N</span> && !<span class="cppVariable">l</span>){</p>
+								<p class="line tab2"><span class="cppVariable">l</span> = (<span class="cppVariable">A</span>[<span class="cppVariable">i</span>] == <span class="cppVariable">felt</span>);<span class="feltetelVizsgalatNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><span class="cppVariable">i</span>++; <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1">}</p>
 								<p class="line tab1"><span class="cppKeyword">if</span>(<span class="cppVariable">l</span>){</p>

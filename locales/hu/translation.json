@@ -74,7 +74,7 @@
 			"nev": "Kiválogatás"
 		},
 		"szetvalogatas": {
-			"leiras": "Két tömbbe válogatja szét egy tömb elemeit, feltételtől függően.",
+			"leiras": "Két tömbbe válogatja szét egy tömb elemeit, adott feltételtől függően.",
 			"nev": "Szétválogatás"
 		},
 		"unio": {

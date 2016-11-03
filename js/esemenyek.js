@@ -2,6 +2,7 @@
 $(function() {
   //Minta bemenetet adok a tömb input mezőjébe
   $("#bemenet").val("4,3,6,8,2,3,9");
+  $("#bemenet2").val("4,3,6,8,2,3,9");
   $("#logKerBemenet").val("1,2,3,4,5,6,7,8,9");
   $("#bemenetSimple").val("12");
   

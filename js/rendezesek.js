@@ -14,10 +14,7 @@ function buborekosRendezes(t){
 			}
 		}
 	}
-	elsoLepesMegjelenitese();
-	barValtoztatasa();
-	szovegValtoztatas();
-	play();
+	megjelenitesInit();
 }
 
 //Minimum kiválasztásos rendezés
