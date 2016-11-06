@@ -44,7 +44,7 @@
 						<div id="leiras">
 							<h2 data-i18n="label.leiras"></h2>
 							<p data-i18n="[html]progtetel.metszet.leiras"></p>
-							<a href="" data-i18n="label.bovebben"></a>,
+							<a href="http://progalap.elte.hu/downloads/seged/eTananyag/lecke20_lap1.html#hiv21" data-i18n="label.bovebben"></a>,
 							<a href="cpp/metszet.cpp" data-i18n="label.cppPelda"></a>
 						</div>
 						<ul class="nav nav-tabs">
@@ -63,8 +63,8 @@
 								<p class="line tab3">j := j + 1;</p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> j <= M</p>
-								<p class="line tab3">DB := DB + 1</p>
-								<p class="line tab3">C[DB] := B[j]</p>
+								<p class="line tab3">DB := DB + 1<span class="metszetBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3">C[DB] := B[j]<span class="metszetBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.elagazasvege"></strong></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
@@ -110,7 +110,7 @@
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td colspan="2">
-											DB := DB + 1 <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											DB := DB + 1 <span class="metszetBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td class="noBottomBorder">
 											-
@@ -119,7 +119,7 @@
 									<tr>
 										<td class="ciklusMagElsoOszlop">&nbsp;</td>
 										<td colspan="2">
-											C[DB] := B[j]
+											C[DB] := B[j]<span class="metszetBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td class="noTopBorder"></td>
 									</tr>
@@ -134,7 +134,7 @@
 								<p class="line tab3"><span class="cppVariable">j</span>++;</p>
 								<p class="line tab2">}</p>
 								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">j</span> < <span class="cppVariable">M</span>){</span>
-								<p class="line tab3"><span class="cppVariable">C</span>[<span class="cppVariable">DB</span>++]; <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3"><span class="cppVariable">C</span>[<span class="cppVariable">DB</span>++]; <span class="metszetBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">}</p>
 								<p class="line tab1">}</p>
 								<p class="line">}</p>

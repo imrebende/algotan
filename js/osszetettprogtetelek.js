@@ -54,15 +54,17 @@ function metszet(a, b){
 	tombKiirasa(c);
 	valtozokKiirasa({nev: "a", ertek: a}, {nev: "b", ertek: b}, "");
 	for(var i = 0; i < a.length; i++){
+		valtozokKiirasa({nev: "a", ertek: a}, {nev: "b", ertek: b}, "ciklusLepes");
+		tombKiirasa(c);
 		var j = 0;
 		while(j < b.length && a[i] !== b[j]){
 			j++;
 		}
 		if(j < b.length){
 			c[db++] = a[i];
+			valtozokKiirasa({nev: "a", ertek: a}, {nev: "b", ertek: b}, "metszetBerakas");
+			tombKiirasa(c);
 		}
-		valtozokKiirasa({nev: "a", ertek: a}, {nev: "b", ertek: b}, "");
-		tombKiirasa(c);
 	}
 	megjelenitesInit();
 }
@@ -72,15 +74,17 @@ function unio(a, b){
 	var c = a.slice();
 	var db = a.length;
 	for(var j = 0; j < b.length; j++){
+		valtozokKiirasa({nev: "a", ertek: a}, {nev: "b", ertek: b}, "ciklusLepes");
+		tombKiirasa(c);
 		var i = 0;
 		while(i < a.length && a[i] !== b[j]){
 			i++;
 		}
 		if(i >= a.length){
 			c[db++] = b[j];
+			valtozokKiirasa({nev: "a", ertek: a}, {nev: "b", ertek: b}, "unioBerakas");
+			tombKiirasa(c);
 		}
-		valtozokKiirasa({nev: "a", ertek: a}, {nev: "b", ertek: b}, "");
-		tombKiirasa(c);
 	}
 	megjelenitesInit();
 }

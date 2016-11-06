@@ -195,6 +195,12 @@ function szovegValtoztatas(){
 	} else if($("#valtozok .active").hasClass("feltetelVizsgalat")){
 		$(".feltetelVizsgalatNyil").removeClass("hidden");
 		magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());
+	} else if($("#valtozok .active").hasClass("unioBerakas")){
+		$(".unioBerakasNyil").removeClass("hidden");
+		//magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());
+	} else if($("#valtozok .active").hasClass("metszetBerakas")){
+		$(".metszetBerakasNyil").removeClass("hidden");
+		//magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());
 	}
 	
 	if($("#tombok .active").hasClass("csereLepes")){
