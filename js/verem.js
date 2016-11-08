@@ -11,7 +11,7 @@ function verembol() {
 
 //Betesz egy elemet a verembe (tetejére)
 function verembe() {
-	if($("#betettErtek") != ""){
+	if($("#betettErtek").val() != ""){
 		$("#vE").prepend("<tr><td>" + $("#betettErtek").val() + "</td></tr>");
 		$("#hiba").text("");
 		$("#betettErtek").val("");
