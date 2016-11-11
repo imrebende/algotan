@@ -5,20 +5,26 @@ function csere(t, a, b){
 
 //Buborékos rendezés
 function buborekosRendezes(t){
+	var joHelyenLevoElemek = [];
 	for(var i = t.length - 1; i > 0; i--) {
 		for(var j = 0; j <= i-1; j++) {
-			tombKiirasa(t, j, j + 1, "ciklusLepes");
+			tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "ciklusLepes");
 			if(t[j] > t[j + 1]) {
 				csere(t, j, j+1);
-				tombKiirasa(t, j, j + 1, "csereLepes");
+				tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "csereLepes");
 			}
 		}
+		joHelyenLevoElemek.push(i);
+		tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "");
 	}
+	joHelyenLevoElemek.push(0);
+	tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "");
 	megjelenitesInit();
 }
 
 //Minimum kiválasztásos rendezés
 function minKivRendezes(t){
+	var joHelyenLevoElemek = [];
 	for(var i = 0; i < t.length; i++){
 		minI = i;
 		for(var j = i + 1; j < t.length; j++){
@@ -26,9 +32,10 @@ function minKivRendezes(t){
 				minI = j;
 			}
 		}
-		tombKiirasa(t, i, minI, "csereLepes");
+		tombKiirasa(t, [i, minI], joHelyenLevoElemek, "csereLepes");
 		csere(t, i, minI);
-		tombKiirasa(t, i, minI, "csereLepes");
+		joHelyenLevoElemek.push(i);
+		tombKiirasa(t, [i, minI], joHelyenLevoElemek, "csereLepes");
 	}
 	elsoLepesMegjelenitese();
 	barValtoztatasa();
