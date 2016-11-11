@@ -13,21 +13,27 @@
 			"progtetelek": "Basic algorithms<span class='caret'></span>",
 			"rendezesek": "Sorts<span class='caret'></span>",
 			"grafalgoritmusok": "Graph algorithms<span class='caret'></span>",
-			"adatszerkezetek": "Data structures<span class='caret'></span>"
+			"adatszerkezetek": "Data structures<span class='caret'></span>",
+			"egyeb": "Other<span class='caret'></span>"
 		},
 		"fooldal": {
 			"kezdooldal": "Homepage",
 			"progtetelek": "Basic algorithms",
 			"rendezesek": "Sorts",
 			"grafalgoritmusok": "Graph algorithms",
-			"adatszerkezetek": "Data structures"
-		}
+			"adatszerkezetek": "Data structures",
+			"egyeb": "Other"
+		},
+		"cppPelda": "C++ example",
+		"dokumentacio": "Documentation"
 	},
 	"pszeudokodelem": {
 		"ha": "If",
 		"amig": "While",
 		"kulonben": "Else",
+		"kulonbenha": "Else if",
 		"ciklus": "For",
+		"ciklusamig": "While",
 		"akkor": "then",
 		"eljaras": "Procedure",
 		"kiiras": "Print",
@@ -98,7 +104,6 @@
 	"adatszerkezet": {
 		"sor": {
 			"nev": "Queue",
-			"leiras": "asd",
 			"muvelet": {
 				"sorbol": "Dequeue",
 				"sorba": "Enqueue",
@@ -109,7 +114,6 @@
 		},
 		"verem": {
 			"nev": "Stack",
-			"leiras": "asd",
 			"muvelet": {
 				"verembol": "Pop",
 				"verembe": "Push",
@@ -117,6 +121,12 @@
 				"telie": "Is full?",
 				"elso": "Front"
 			}
+		}
+	},
+	"egyeb": {
+		"faktorialis": {
+			"leiras": "Calculate the N factorial (N!).",
+			"nev": "Factorial"
 		}
 	}
 }

@@ -109,7 +109,6 @@
 	"adatszerkezet": {
 		"sor": {
 			"nev": "Sor",
-			"leiras": "asd",
 			"muvelet": {
 				"sorbol": "Sorból",
 				"sorba": "Sorba",
@@ -120,7 +119,6 @@
 		},
 		"verem": {
 			"nev": "Verem",
-			"leiras": "asd",
 			"muvelet": {
 				"verembol": "Veremből",
 				"verembe": "Verembe",
