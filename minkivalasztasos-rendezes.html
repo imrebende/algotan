@@ -52,13 +52,13 @@
 						</ul>
 						<div class="tab-content">
 							<div id="pszeudo" class="tab-pane fade in active">
-								<p class="line"><strong>Eljárás</strong> MinKivRendezés(A, N)</p>
-								<p class="line tab1"><strong>Ciklus</strong> i := 1-től N-ig</p>
+								<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> MinKivRendezés(A, N)</p>
+								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := 1-től N-ig</p>
 								<p class="line tab2">minI := i;</p>
-								<p class="line tab2"><strong>Ciklus</strong> j := i+1-től N-ig</p>
-								<p class="line tab3"><strong data-i18n="pszeudokodelem.ha"></strong> A[minI] &gt; A[j] <strong>akkor</strong><span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><strong data-i18n="pszeudokodelem.ciklus"></strong> j := i+1-től N-ig</p>
+								<p class="line tab3"><strong data-i18n="pszeudokodelem.ha"></strong> A[minI] &gt; A[j] <strong data-i18n="pszeudokodelem.akkor"></strong><span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab4">minI := j;
-								<p class="line tab3"><strong>Elágazás vége</strong></p>
+								<p class="line tab3"><strong data-i18n="pszeudokodelem.elagazasvege"></strong></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line tab3">tmp := A[i]<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab3">A[i] := A[minI]<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
