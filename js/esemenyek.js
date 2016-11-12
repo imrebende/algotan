@@ -55,7 +55,7 @@ $(function() {
 	//Nyelvi elemek beállítása
 	language_complete = navigator.language.split("-");
 	language = (language_complete[0]);
-	i18n.init({ lng: "en" }, function() {
+	i18n.init({ lng: "hu" }, function() {
 		$("html").i18n();
 	});
 });

@@ -11,6 +11,10 @@
 		"temavezeto": "Témavezető",
 		"futtatas": "Futtatás",
 		"feltetel": "Feltétel",
+		"hibasbemenet": "Hibás bemenet",
+		"valtozokertekei": "Változók értékei",
+		"tomballasa": "Tömb állása",
+		"változás": "Változás:",
 		"menu": {
 			"kezdooldal": "Kezdőoldal",
 			"progtetelek": "Programozási tételek<span class='caret'></span>",
@@ -34,7 +38,7 @@
 		"ha": "Ha",
 		"amig": "Amíg",
 		"kulonben": "Különben",
-		"kulonbenha": "Különben ha"
+		"kulonbenha": "Különben ha",
 		"ciklus": "Ciklus",
 		"ciklusamig": "Ciklus amíg",
 		"akkor": "akkor",
