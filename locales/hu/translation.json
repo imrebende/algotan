@@ -1,5 +1,7 @@
 ﻿{
 	"label": {
+		"cim": "Algoritmusok lépésenként",
+		"oldalleirasa": "",
 		"pszeudokod": "Pszeudokód",
 		"struktogram": "Struktogram",
 		"cppimplementacio": "C++ implementáció",
