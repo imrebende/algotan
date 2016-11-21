@@ -45,21 +45,26 @@
 							<div id="pszeudo">
 							<h2 data-i18n="label.pszeudokod"></h2>
 							<p class="line">Sor:</p>
-							<p class="line tab1">Meret: <strong>egész</strong></p>
+							<p class="line tab1">Meret, MaxMeret, Index: <strong>egész</strong></p>
 							<p class="line tab1">Elemek: <strong>tömb</strong></p>
 							<br/>
-							<p class="line"><strong>Eljárás</strong> Sorból(x)</p>
-							<p class="line tab1">x := Sor.Elemek(1)</p>
-							<p class="line tab1">Sor.Meret := Verem.Meret - 1</p>
+							<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Sorból(x)</p>
+							<p class="line tab1">x := Sor.Elemek(Sor.Index)</p>
+							<p class="line tab1">Sor.Index := Sor.Index + 1</p>
+							<p class="line tab1">Sor.Meret := Sor.Meret - 1</p>
 							<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
 							<br/>
-							<p class="line"><strong>Eljárás</strong> Elso(x)</p>
-							<p class="line tab1">x := Sor.Elemek(1)</p>
+							<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Elso(x)</p>
+							<p class="line tab1">x := Sor.Elemek(Sor.Index)</p>
 							<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
 							<br/>
-							<p class="line"><strong>Eljárás</strong> Sorba(x)</p>
+							<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Sorba(x)</p>
 							<p class="line tab1">Sor.Meret := Sor.Meret + 1</p>
-							<p class="line tab1">Sor.Elemek(Sor.Meret) := x</p>
+							<p class="line tab1"><strong data-i18n="pszeudokodelem.ha"></strong> Sor.Index + Sor.Meret > Sor.MaxMeret <strong data-i18n="pszeudokodelem.akkor"></strong></p>
+							<p class="line tab2">Sor.Elemek(Sor.Index + Sor.Meret - Sor.MaxMeret) := x</p> 
+							<p class="line tab1"><strong data-i18n="pszeudokodelem.kulonben"></strong></p>
+							<p class="line tab2">Sor.Elemek(Sor.Index + Sor.Meret) := x</p>
+							<p class="line tab1"><strong data-i18n="pszeudokodelem.elagazasvege"></strong></p>
 							<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
 						</div>
 						</div>
