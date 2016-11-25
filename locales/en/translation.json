@@ -1,13 +1,22 @@
 ﻿{
 	"label": {
+		"cim": "Algorithms step-by-step",
+		"oldalleirasa": "",
 		"pszeudokod": "Pseudocode",
 		"struktogram": "Structogram",
 		"cppimplementacio": "C++ implementation",
 		"leiras": "Description",
 		"bovebben": "More information",
-		"feltetel": "Condition",
-		"futtatas": "Run",
 		"projecttitle": "Algorithms step-by-step",
+		"tartalomjegyzek": "Contents",
+		"keszitette": "Made by",
+		"temavezeto": "Tutor",
+		"futtatas": "Run",
+		"feltetel": "Condition",	
+		"hibasbemenet": "Wrong input",
+		"valtozokertekei": "Variables",
+		"tomballasa": "Array status",
+		"valtozas": "Changed:",
 		"menu": {
 			"kezdooldal": "Homepage",
 			"progtetelek": "Basic algorithms<span class='caret'></span>",
@@ -39,7 +48,9 @@
 		"kiiras": "Print",
 		"elagazasvege": "End If",
 		"ciklusvege": "End For",
-		"eljarasvege": "End Procedure"
+		"eljarasvege": "End Procedure",
+		"es": "and",
+		"vagy": "or"
 	},
 	"progtetel": {
 		"osszegzes": {
@@ -75,29 +86,29 @@
 			"nev": "Separate"
 		},
 		"unio": {
-			"leiras": "Két halmaz (tömb) unióját adja meg.",
+			"leiras": "Union of two arrays.",
 			"nev": "Union"
 		},
 		"metszet": {
-			"leiras": "Két halmaz (tömb) metszetét adja meg.",
+			"leiras": "Intersection of two arrays.",
 			"nev": "Intersection"
 		}
 	},
 	"rendezes": {
 		"buborekos": {
-			"leiras": "asd",
+			"leiras": "Bubble sort is a simple sorting algorithm. This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order.",
 			"nev": "Bubble sort"
 		},
 		"minkiv": {
-			"leiras": "asd",
+			"leiras": "Selection sort is a simple sorting algorithm. This sorting algorithm is an in-place comparison-based algorithm in which the list is divided into two parts, the sorted part at the left end and the unsorted part at the right end.",
 			"nev": "Selection sort"
 		},
 		"gyorsrendezes": {
-			"leiras": "asd",
+			"leiras": "Quick sort is a highly efficient sorting algorithm and is based on partitioning of array of data into smaller arrays. A large array is partitioned into two arrays one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.",
 			"nev": "Quick sort"
 		},
 		"osszefesulesesrendezes": {
-			"leiras": "asd",
+			"leiras": "Merge sort is a sorting technique based on divide and conquer technique. With worst-case time complexity being Ο(n log n), it is one of the most respected algorithms.",
 			"nev": "Merge sort"
 		}
 	},
