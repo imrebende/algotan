@@ -139,5 +139,11 @@
 			"leiras": "Kiszámítja az N faktoriálist (N!).",
 			"nev": "Faktoriális"
 		}
+	},
+	"komplex": {
+		"moho": {
+			"leiras": "A mohó algoritmus vagy greedy algoritmus az a problémamegoldó algoritmus, amely helyi optimumok megvalósításával próbálja megtalálni a globális optimumot. Ez például az utazó ügynök problémájaként ismert feladatban azt jelenti, hogy minden állomásról a legközelebbi, addig még nem látogatott városba fog utazni az ügynök.",
+			"nev": "Mohó algoritmus"
+		}
 	}
 }

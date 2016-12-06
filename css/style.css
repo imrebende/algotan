@@ -233,3 +233,12 @@ ol li:before {
 .sorNyil {
 	top: -4px;
 }
+
+/* Összetetebb algoritmusok */
+.sliderCimke {
+	margin-bottom: 5px;
+}
+
+.sliderCimke .btn {
+	padding-right: 2px;
+}
