@@ -1,3 +1,7 @@
+$('.dropdown-menu').click(function(event){
+    event.stopPropagation();
+});
+
 //DOM létrehozása után lefutó függvény
 $(function() {
   //Minta bemenetet adok a tömb input mezőjébe
@@ -13,43 +17,54 @@ $(function() {
   $("#navbar").append('\
 	<ul class="nav navbar-nav">\
 		<li id="kezdooldal"><a href="index.html" data-i18n="label.menu.kezdooldal"></a></li>\
-		<li id="progtetelek" class="dropdown">\
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.progtetelek"><span class="caret"></span></a>\
+			<li id="progtetelek" class="dropdown">\
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Algoritmusok <span class="caret"></span></a>\
+				<ul class="dropdown-menu">\
+					<li class="dropdown-header">Programozási tételek</li>\
+					<li><a href="osszegzes.html" data-i18n="progtetel.osszegzes.nev"></a></li>\
+					<li><a href="megszamolas.html" data-i18n="progtetel.megszamolas.nev"></a></li>\
+					<li><a href="maximumkivalasztas.html" data-i18n="progtetel.maxkiv.nev"></a></li>\
+					<li><a href="kereses.html" data-i18n="progtetel.kereses.nev"></a></li>\
+					<li><a href="logaritmikus-kereses.html" data-i18n="progtetel.logker.nev"></a></li>\
+					<li><a href="masolas.html" data-i18n="progtetel.masolas.nev"></a></li>\
+					<li><a href="kivalogatas.html" data-i18n="progtetel.kivalogatas.nev"></a></li>\
+					<li><a href="szetvalogatas.html" data-i18n="progtetel.szetvalogatas.nev"></a></li>\
+					<li><a href="metszet.html" data-i18n="progtetel.metszet.nev"></a></li>\
+					<li><a href="unio.html" data-i18n="progtetel.unio.nev"></a></li>\
+					<li role="separator" class="divider"></li>\
+					<li class="dropdown-header">Rendezések</li>\
+					<li><a href="buborekos-rendezes.html" data-i18n="rendezes.buborekos.nev"></a></li>\
+					<li><a href="minkivalasztasos-rendezes.html" data-i18n="rendezes.minkiv.nev"></a></li>\
+					<li><a href="gyorsrendezes.html" data-i18n="rendezes.gyorsrendezes.nev"></a></li>\
+					<li><a href="osszefesuleses-rendezes.html" data-i18n="rendezes.osszefesulesesrendezes.nev"></a></li>\
+					<li role="separator" class="divider"></li>\
+					<li class="dropdown-header">Versenyfeladatok</li>\
+					<li><a href="moho.html">Mohó algoritmus</a></li>\
+					<li><a href="dinamikus.html">Dinamikus programozás</a></li>\
+					<li><a href="geometriai.html">Geometriai feladatok</a></li>\
+					<li><a href="rekurziv.html">Rekurzív feladatok</a></li>\
+					<li><a href="backtrack.html">Backtrack algoritmus</a></li>\
+				</ul>\
+			</li>\
+		</li>\
+		<li id="adatszerkezetek" class="dropdown">\
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.adatszerkezetek"></a>\
 			<ul class="dropdown-menu">\
-				<li><a href="osszegzes.html" data-i18n="progtetel.osszegzes.nev"></a></li>\
-				<li><a href="megszamolas.html" data-i18n="progtetel.megszamolas.nev"></a></li>\
-				<li><a href="maximumkivalasztas.html" data-i18n="progtetel.maxkiv.nev"></a></li>\
-				<li><a href="kereses.html" data-i18n="progtetel.kereses.nev"></a></li>\
-				<li><a href="logaritmikus-kereses.html" data-i18n="progtetel.logker.nev"></a></li>\
-				<li><a href="masolas.html" data-i18n="progtetel.masolas.nev"></a></li>\
-				<li><a href="kivalogatas.html" data-i18n="progtetel.kivalogatas.nev"></a></li>\
-				<li><a href="szetvalogatas.html" data-i18n="progtetel.szetvalogatas.nev"></a></li>\
-				<li><a href="metszet.html" data-i18n="progtetel.metszet.nev"></a></li>\
-				<li><a href="unio.html" data-i18n="progtetel.unio.nev"></a></li>\
+				<li><a href="verem.html" data-i18n="adatszerkezet.verem.nev"></a></li>\
+				<li><a href="sor.html" data-i18n="adatszerkezet.sor.nev"></a></li>\
+				<li><a href="lancoltlista.html">Láncolt lista</a></li>\
+				<li><a href="graf.html">Gráf</a></li>\
 			</ul>\
 		</li>\
-	<li id="rendezesek" class="dropdown">\
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.rendezesek"></a>\
-		<ul class="dropdown-menu">\
-			<li><a href="buborekos-rendezes.html" data-i18n="rendezes.buborekos.nev"></a></li>\
-			<li><a href="minkivalasztasos-rendezes.html" data-i18n="rendezes.minkiv.nev"></a></li>\
-			<li><a href="gyorsrendezes.html" data-i18n="rendezes.gyorsrendezes.nev"></a></li>\
-			<li><a href="osszefesuleses-rendezes.html" data-i18n="rendezes.osszefesulesesrendezes.nev"></a></li>\
-		</ul>\
-	</li>\
-	<li id="adatszerkezetek" class="dropdown">\
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.adatszerkezetek"></a>\
-		<ul class="dropdown-menu">\
-			<li><a href="verem.html" data-i18n="adatszerkezet.verem.nev"></a></li>\
-			<li><a href="sor.html" data-i18n="adatszerkezet.sor.nev"></a></li>\
-		</ul>\
-	</li>\
-	<li id="egyeb" class="dropdown">\
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.egyeb"></a>\
-		<ul class="dropdown-menu">\
-			<li><a href="faktorialis.html" data-i18n="egyeb.faktorialis.nev"></a></li>\
-		</ul>\
-	</li>\
+		<li id="egyeb" class="dropdown">\
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.egyeb"></a>\
+			<ul class="dropdown-menu">\
+				<li><a href="faktorialis.html" data-i18n="egyeb.faktorialis.nev"></a></li>\
+			</ul>\
+		</li>\
+		<li id="fordito"">\
+			<a href="#"> Pszeudokód fordító</a>\
+		</li>\
 	</ul>');
 	
 	//Nyelvi elemek beállítása

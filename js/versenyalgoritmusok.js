@@ -1,7 +1,7 @@
 function mohoStart(){
 	fuggvenyElottiInit();
 	var t = [];
-	for(var i = 0; i < 3; i++){
+	for(var i = 0; i < $(".slider").length; i++){
 		var tmp = {};
 		tmp.kezd = $( "#slider-range" + i ).slider( "option", "values" )[0];
 		tmp.veg = $( "#slider-range" + i ).slider( "option", "values" )[1];
@@ -13,9 +13,9 @@ function mohoStart(){
 }
 
 function moho(tomb){
-	console.log(tomb);
+	//console.log(tomb);
 	tomb.sort(function(a, b){return a.veg - b.veg});
-	console.log(tomb);
+	//console.log(tomb);
 	
 	var db = 0;
 	var eredmeny = [];
@@ -28,5 +28,5 @@ function moho(tomb){
 		}
 	}
 	megjelenitesInit();
-	console.log(eredmeny);
+	//console.log(eredmeny);
 }
