@@ -63,7 +63,7 @@ $(function() {
 			</ul>\
 		</li>\
 		<li id="fordito"">\
-			<a href="#"> Pszeudokód fordító</a>\
+			<a href="pszeudo.html"> Pszeudokód fordító</a>\
 		</li>\
 	</ul>');
 	
