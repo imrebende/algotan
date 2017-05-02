@@ -55,16 +55,16 @@
 						<div class="tab-content">
 							<div id="pszeudo" class="tab-pane fade in active">
 								<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Unio(A, N, B, M, C)</p>
-								<p class="line tab1">DB := N<span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1">C := A<span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">DB := M<span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">C := B<span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := 1-től M-ig<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">j := 1</p>
-								<p class="line tab2"><strong data-i18n="pszeudokodelem.amig"></strong> j <= M és A[j] <> B[i]</p>
+								<p class="line tab2"><strong data-i18n="pszeudokodelem.amig"></strong> j <= M és A[i] <> B[j]</p>
 								<p class="line tab3">j := j + 1;</p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> j > M</p>
 								<p class="line tab3">DB := DB + 1<span class="unioBerakas glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab3">C[DB] := B[j]<span class="unioBerakas glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3">C[DB] := A[i]<span class="unioBerakas glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.elagazasvege"></strong></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
@@ -73,12 +73,12 @@
 								<table>
 									<tr>
 										<td colspan="4">
-											DB := N <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span><br/>
+											DB := M <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span><br/>
 										</td>
 									</tr>
 									<tr>
 										<td colspan="4">
-											C := A
+											C := B
 										</td>
 									</tr>
 									<tr>
@@ -92,7 +92,7 @@
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
-										<td colspan="3" class="ciklusFeltetel">j <= M és A[j] <> B[i]</td>
+										<td colspan="3" class="ciklusFeltetel">j <= M és A[i] <> B[j]</td>
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
@@ -119,7 +119,7 @@
 									<tr>
 										<td class="ciklusMagElsoOszlop">&nbsp;</td>
 										<td colspan="2">
-											C[DB] := B[j]<span class="unioBerakas glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											C[DB] := A[i]<span class="unioBerakas glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td class="noTopBorder"></td>
 									</tr>
@@ -127,17 +127,17 @@
 							</div>
 							<div id="implementation" class="tab-pane fade">
 								<p class="line"><span class="cppKeyword">void</span> <span class="cppVariable">unio</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>, <span class="cppKeyword">double</span> <span class="cppVariable">B</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">M</span>, <span class="cppKeyword">double</span> <span class="cppVariable">C</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">DB</span>){</p>
-								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">DB</span> = <span class="cppVariable">N</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><span class="cppVariable">C</span>[<span class="cppVariable">i</span>] = <span class="cppVariable">A</span>[<span class="cppVariable">i</span>];</p>
+								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">DB</span> = <span class="cppVariable">M</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">M</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><span class="cppVariable">C</span>[<span class="cppVariable">i</span>] = <span class="cppVariable">B</span>[<span class="cppVariable">i</span>];</p>
 								<p class="line tab1">}</p>
 								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">M</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><span class="cppKeyword">int</span> <span class="cppVariable">j</span> = <span class="cppNumber">0</span>;</p>
-								<p class="line tab2"><span class="cppKeyword">while</span>(<span class="cppVariable">i</span> < <span class="cppVariable">M</span> && <span class="cppVariable">B</span>[<span class="cppVariable">i</span>] != <span class="cppVariable">A</span>[<span class="cppVariable">j</span>])</p>
+								<p class="line tab2"><span class="cppKeyword">while</span>(<span class="cppVariable">i</span> < <span class="cppVariable">M</span> && <span class="cppVariable">B</span>[<span class="cppVariable">j</span>] != <span class="cppVariable">A</span>[<span class="cppVariable">i</span>])</p>
 								<p class="line tab3"><span class="cppVariable">j</span>++;</p>
 								<p class="line tab2">}</p>
 								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">j</span> >= <span class="cppVariable">M</span>){</span>
-								<p class="line tab3"><span class="cppVariable">C</span>[<span class="cppVariable">DB</span>++]; <span class="unioBerakas glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3"><span class="cppVariable">C</span>[<span class="cppVariable">DB</span>++] = <span class="cppVariable">B</span>[<span class="cppVariable">i</span>]; <span class="unioBerakas glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">}</p>
 								<p class="line tab1">}</p>
 								<p class="line">}</p>
