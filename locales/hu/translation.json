@@ -12,7 +12,7 @@
 		"keszitette": "Készítette",
 		"temavezeto": "Témavezető",
 		"futtatas": "Futtatás",
-		"feltetel": "Feltétel",
+		"feltetel": "Feltétel:",
 		"hibasbemenet": "Hibás bemenet",
 		"valtozokertekei": "Változók értékei",
 		"tomballasa": "Tömb állása",
@@ -55,35 +55,43 @@
 	"progtetel": {
 		"osszegzes": {
 			"leiras": "Az összegzés programozási tétel egymás után összeadogatja egy tömb elemeit.",
-			"nev": "Összegzés"
+			"nev": "Összegzés",
+			"cim": "Pr. tételek: Összegzés"
 		},
 		"megszamolas": {
 			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
-			"nev": "Megszámolás"
+			"nev": "Megszámolás",
+			"cim": "Pr. tételek: Megszámolás"
 		},
 		"kereses": {
 			"leiras": "Megkeresi az első olyan elemét a sorozatnak, melyre igaz a T függvény. T egy tetszőleges tulajdonságfüggvényt jelent.",
-			"nev": "Keresés"
+			"nev": "Keresés",
+			"cim": "Pr. tételek: Keresés"
 		},
 		"logker": {
 			"leiras": "A megszámolás tétel egy tömb elemei között megszámlálja a T tulajdonsággal rendelkezőket. T egy tetszőleges tulajdonságfüggvényt jelent, egy sorozatbeli elemre nézve lehet igaz vagy hamis.",
-			"nev": "Logaritmikus keresés"
+			"nev": "Logaritmikus keresés",
+			"cim": "Pr. tételek: Logaritmikus keresés"
 		},
 		"maxkiv": {
-			"leiras": "Egy sorozatban megadja a legnagyobb elem helyét.<br/>Szükséges feltétel: Értelmezve legyen egy rendezési reláció, illetve legalább egy elem legyen!",
-			"nev": "Maximumkiválasztás"
+			"leiras": "Egy sorozatban megadja a legnagyobb elem helyét / értékét.<br/>Szükséges feltétel: Értelmezve legyen egy rendezési reláció, illetve legalább egy elem legyen!",
+			"nev": "Maximumkiválasztás",
+			"cim": "Pr. tételek: Maximumkiválasztás"
 		},
 		"masolas": {
 			"leiras": "Egy tömb elemeit átmásolja egy másik tömbbe, miközben valamilyen átalakítást végez az egyes elemeken.",
-			"nev": "Másolás"
+			"nev": "Másolás",
+			"cim": "Pr. tételek: Másolás"
 		},
 		"kivalogatas": {
 			"leiras": "A tömb elemit egy másik tömbbe rakja, feltételhez kötve.",
-			"nev": "Kiválogatás"
+			"nev": "Kiválogatás",
+			"cim": "Pr. tételek: Kiválogatás"
 		},
 		"szetvalogatas": {
 			"leiras": "Két tömbbe válogatja szét egy tömb elemeit, adott feltételtől függően.",
-			"nev": "Szétválogatás"
+			"nev": "Szétválogatás",
+			"cim": "Pr. tételek: Szétválogatás"
 		},
 		"unio": {
 			"leiras": "Két halmaz (tömb) unióját adja meg.",
@@ -97,19 +105,23 @@
 	"rendezes": {
 		"buborekos": {
 			"leiras": "A buborékos rendezés egy egyszerű rendezési algoritmus. Nevét onnan kapta, hogy hasonlóan ahhoz, ahogy a pezsgőspohárban szállnak felfelé a buborékok, a rendezés során is minden egyes menetben a fennmaradó elemek közül a legnagyobbat \"áramoltatjuk fel\" a tömbszelet végére, tetejére.",
-			"nev": "Buborékos rendezés"
+			"nev": "Buborékos rendezés",
+			"cim": "Rendezések: Buborékos rendezés"
 		},
 		"minkiv": {
 			"leiras": "A kiválasztásos rendezés egy egyszerű, négyzetes időben futó rendezési algoritmus. Az alapötlet az, hogy kiválasztjuk a rendezendő tömb legkisebb elemét, és kicseréljük a tömb legelső elemével. Ezzel a tömb első eleme megkapta a végső értékét, és a feladat egyszerűsödött a tömb maradékának rendezésére. Az algoritmust addig ismételjük a maradék tömbön, amíg csak egy elem marad. ",
-			"nev": "Minimumkiválasztásos rendezés"
+			"nev": "Minimumkiválasztásos rendezés",
+			"cim": "Rendezések: Minimumkiválasztásos rendezés"
 		},
 		"gyorsrendezes": {
 			"leiras": "A gyorsrendezés oszd meg és uralkodj elven működik: a rendezendő számok listáját két részre bontja, majd ezeket a részeket rekurzívan, gyorsrendezéssel rendezi. A felbontáshoz kiválaszt egy támpontnak nevezett elemet (más néven pivot, főelem vagy vezérelem), és particionálja a listát: a támpontnál kisebb elemeket eléje, a nagyobbakat mögéje mozgatja. Teljes indukcióval könnyen belátható, hogy ez az algoritmus helyesen működik.",
-			"nev": "Gyorsrendezés"
+			"nev": "Gyorsrendezés",
+			"cim": "Rendezések: Gyorsrendezés"
 		},
 		"osszefesulesesrendezes": {
 			"leiras": "Az összefésülő rendezés alapötlete, hogy eleve rendezett elemsorozatok aránylag egyszerűen vonhatók össze rendezett sorozattá. Az algoritmus lényege, hogy az elemeket két csoportba osztjuk, a csoportokat rendezzük (akár összefésülő rendezéssel), majd a kapott részeket összefésüljük. ",
-			"nev": "Összefésüléses rendezés"
+			"nev": "Összefésüléses rendezés",
+			"cim": "Rendezések: Összefésüléses rendezés"
 		}
 	},
 	"adatszerkezet": {

@@ -17,7 +17,7 @@ $(function() {
   $("#navbar").append('\
 	<ul class="nav navbar-nav">\
 		<li id="kezdooldal"><a href="index.html" data-i18n="label.menu.kezdooldal"></a></li>\
-			<li id="progtetelek" class="dropdown">\
+			<li id="algoritmusok" class="dropdown">\
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Algoritmusok <span class="caret"></span></a>\
 				<ul class="dropdown-menu">\
 					<li class="dropdown-header">Programozási tételek</li>\
@@ -39,11 +39,11 @@ $(function() {
 					<li><a href="osszefesuleses-rendezes.html" data-i18n="rendezes.osszefesulesesrendezes.nev"></a></li>\
 					<li role="separator" class="divider"></li>\
 					<li class="dropdown-header">Versenyfeladatok</li>\
-					<li><a href="moho.html">Mohó algoritmus</a></li>\
-					<li><a href="dinamikus.html">Dinamikus programozás</a></li>\
-					<li><a href="geometriai.html">Geometriai feladatok</a></li>\
-					<li><a href="rekurziv.html">Rekurzív feladatok</a></li>\
-					<li><a href="backtrack.html">Backtrack algoritmus</a></li>\
+					<li><a href="moho.html">Mohó algoritmus (TODO)</a></li>\
+					<li><a href="dinamikus.html">Dinamikus programozás (TODO)</a></li>\
+					<li><a href="geometriai.html">Geometriai feladatok (TODO)</a></li>\
+					<li><a href="rekurziv.html">Rekurzív feladatok (TODO)</a></li>\
+					<li><a href="backtrack.html">Backtrack algoritmus (TODO)</a></li>\
 				</ul>\
 			</li>\
 		</li>\
@@ -52,8 +52,8 @@ $(function() {
 			<ul class="dropdown-menu">\
 				<li><a href="verem.html" data-i18n="adatszerkezet.verem.nev"></a></li>\
 				<li><a href="sor.html" data-i18n="adatszerkezet.sor.nev"></a></li>\
-				<li><a href="lancoltlista.html">Láncolt lista</a></li>\
-				<li><a href="graf.html">Gráf</a></li>\
+				<li><a href="lancoltlista.html">Láncolt lista (TODO)</a></li>\
+				<li><a href="graf.html">Gráf (TODO)</a></li>\
 			</ul>\
 		</li>\
 		<li id="egyeb" class="dropdown">\
@@ -107,16 +107,12 @@ function stop(){
 	pause();
 	$(".btn-play").removeClass("disabled");
 	$("#stopGomb").addClass("disabled");
-	$("#valtozok .active").addClass("hidden");
-	$("#valtozok .active").removeClass("active");
-	$("#valtozok div").first().addClass("active");
-	$("#valtozok div").first().removeClass("hidden");
-	$("#tombok .active").addClass("hidden");
-	$("#tombok .active").removeClass("active");
-	$("#tombok div").first().addClass("active");
-	$("#tombok div").first().removeClass("hidden");
+	$("#valtozok .active").addClass("hidden").removeClass("active");
+	$("#valtozok div").first().addClass("active").removeClass("hidden");
+	$("#tombok .active").addClass("hidden").removeClass("active");
+	$("#tombok div").first().addClass("active").removeClass("hidden");
 	barValtoztatasa();
-	szovegValtoztatas()
+	szovegValtoztatas();
 	tombValtoztatas();
 }
 
@@ -288,6 +284,10 @@ function osszefesulesesRendezesStart() {
 	}
 }
 
-function osszegzesSzoveg(){
+function osszegzesSzamok() {
+	$("#bemenet").val("4,3,6,8,2,3,9");
+}
+
+function osszegzesSzoveg() {
 	$("#bemenet").val("a,b,cd,ef");
 }

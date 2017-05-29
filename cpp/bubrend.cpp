@@ -14,15 +14,23 @@ void buborekosRendezes(int n, int t[]){
 	}
 }
 
+void tombKiiras(int n, int t[]){
+    for(int i = 0; i < n; i++){
+        cout << t[i] << " ";
+    }
+    cout << endl;
+}
+
 int main(){
-	
 	int t[] = {5,4,6,3,2,1}, n = 6;
-	
+
+	cout << "Tömb elemei rendezés elött:" << endl;
+	tombKiiras(n, t);
+
 	buborekosRendezes(n, t);
 	
-	for(int i = 0; i < n; i++){
-		cout << t[i] << " ";
-	}
+	cout << "Tömb elemei rendezés után:" << endl;
+    tombKiiras(n, t);
 	
 	return 0;
 }

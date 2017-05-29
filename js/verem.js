@@ -22,8 +22,3 @@ function verembe() {
 function teto() {
 	$("#teto").val($("#vE tr:first-of-type td").text());
 }
-
-//Megnézi, hogy üres-e a verem
-function urese() {
-	//if(){}
-}

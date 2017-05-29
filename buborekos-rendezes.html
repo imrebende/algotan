@@ -9,10 +9,11 @@
 		<meta name="author" content="Bende Imre" />
 		<link rel="icon" href="img/elte.ico" />
 
-		<title data-i18n="rendezes.buborekos.nev"></title>
+		<title data-i18n="rendezes.buborekos.cim"></title>
 
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/av-style.css" rel="stylesheet" />
 
 	</head>
 
@@ -40,7 +41,7 @@
 					<h1 data-i18n="rendezes.buborekos.nev"></h1>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 border-right-blue">
 						<div id="leiras">
 							<h2 data-i18n="label.leiras"></h2>
 							<p data-i18n="[html]rendezes.buborekos.leiras"></p>
@@ -116,7 +117,7 @@
 								<p class="line"><span class="cppKeyword">void</span> <span class="cppVariable">buborekosRendezes</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>){</p>
 								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppVariable">N</span> - <span class="cppNumber">1</span>; <span class="cppVariable">i</span> > <span class="cppNumber">0</span>; <span class="cppVariable">i</span>--){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">j</span> = <span class="cppNumber">0</span>; <span class="cppVariable">j</span> < <span class="cppVariable">i</span>; <span class="cppVariable">j</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab3"><span class="cppKeyword">if</span>(<span class="cppVariable">A</span>[<span class="cppVariable">j</span>] > <span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>]){</span>
+								<p class="line tab3"><span class="cppKeyword">if</span>(<span class="cppVariable">A</span>[<span class="cppVariable">j</span>] > <span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>]){</p>
 								<p class="line tab4"><span class="cppKeyword">int</span> <span class="cppVariable">tmp</span> = <span class="cppVariable">A</span>[<span class="cppVariable">j</span>];<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab4"><span class="cppVariable">A</span>[<span class="cppVariable">j</span>] = <span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>];<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab4"><span class="cppVariable">A</span>[<span class="cppVariable">j</span> + <span class="cppNumber">1</span>] = <span class="cppVariable">tmp</span>;<span class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
@@ -155,7 +156,7 @@
 								</div>
 								
 								<div id="algo-prog" class="progress">
-									<div id="algo-progressbar" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+									<div id="algo-progressbar" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
 										<span class="sr-only"></span>
 									</div>
 								</div>
@@ -174,7 +175,7 @@
 		<footer class="footer">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6" id="dokumentacio"><a href="doc/dokumentacio.docx" data-i18n="label.dokumentacio"></a></div>
+					<div class="col-md-6" id="dokumentacio">Verzió: 1.0 (<a href="doc/dokumentacio.docx" data-i18n="label.dokumentacio"></a>)</div>
 					<div class="col-md-6 text-right" id="szerzo"></div>
 				</div>
 			</div>
@@ -188,7 +189,7 @@
 		<script src="js/esemenyek.js"></script>
 		<script>
 			$(function() {
-				$("#rendezesek").addClass("active");
+				$("#algoritmusok").addClass("active");
 			});
 		</script>
 	</body>

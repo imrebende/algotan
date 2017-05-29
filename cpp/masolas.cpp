@@ -4,21 +4,28 @@ using namespace std;
 
 const int MAXN = 100;
 
-//Beolvasás eljárás
+//BeolvasÃ¡s eljÃ¡rÃ¡s
 void beolvasas(int& n, int t[]){
-	cout << "Adja meg a tömb elemszámát: ";
+	cout << "Adja meg a tÃ¶mb elemszÃ¡mÃ¡t: " << endl;
 	cin >> n;
 	for (int i = 0; i < n; i++){
-		cout << "Adja meg a(z) " << i + 1 << ". elemet!";
+		cout << "Adja meg a(z) " << i + 1 << ". elemet!" << endl;
 		cin >> t[i];
 	}
 }
 
-//Megszámolás programozási tétel
+//MÃ¡solÃ¡s programozÃ¡si tÃ©tel
 void masolas(int n, int a[], int b[]){
 	for(int i = 0; i < n; i++){
 		b[i] = a[i];
 	}
+}
+
+void tombKiiras(int n, int t[]){
+    for(int i = 0; i < n; i++){
+        cout << t[i] << " ";
+    }
+    cout << endl;
 }
 
 int main(){
@@ -26,10 +33,7 @@ int main(){
 	
 	beolvasas(n, a);
 	masolas(n, a, b);
-	
-	for(int i = 0; i < n; i++){
-		cout << b[i] << " ";
-	}
+	tombKiiras(n, b);
 	
 	return 0;
 }

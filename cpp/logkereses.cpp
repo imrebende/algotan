@@ -4,17 +4,17 @@ using namespace std;
 
 const int MAXN = 100;
 
-//Beolvas·s elj·r·s
+//Beolvas√°s elj√°r√°s
 void beolvasas(int& n, int t[]){
-	cout << "Adja meg a tˆmb elemsz·m·t: ";
+	cout << "Adja meg a t√∂mb elemsz√°m√°t: " << endl;
 	cin >> n;
 	for (int i = 0; i < n; i++){
-		cout << "Adja meg a(z) " << i + 1 << ". elemet!";
+		cout << "Adja meg a(z) " << i + 1 << ". elemet!" << endl;
 		cin >> t[i];
 	}
 }
 
-//KeresÈs programoz·si tÈtel
+//Logaritmikus keres√©s programoz√°si t√©tel
 int logKereses(int n, int t[], int felt){
 	int u = 0;
 	int v = n - 1;
@@ -47,7 +47,7 @@ int main(){
   if(logKereses(n, t, felt) > -1){
 	  cout << "A keresett elem: " << logKereses(n, t, felt);
   } else {
-	  cout << "Nincs tal·lat.";
+	  cout << "Nincs tal√°lat.";
   }
 
   return 0;

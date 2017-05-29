@@ -23,15 +23,14 @@ void unio(int a[], int n, int b[], int m, int c[], int& db){
 
 int main(){
 	
-	int a[] = {1,2,3,4,5,6};
-	int b[] = {2,4,6};
-	int c[100], db;
+	int a[] = {1,2,3,4,5,6}, b[] = {2,4,6}, c[100], db;
 	
 	metszet(a, 6, b, 3, c, db);
 	
 	for(int i = 0; i < db; i++){
 		cout << c[i] << " ";
 	}
+	cout << endl;
 	
 	return 0;
 }

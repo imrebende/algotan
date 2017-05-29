@@ -4,9 +4,9 @@ using namespace std;
 
 const int MAXN = 100;
 
-//Beolvas·s elj·r·s
+//Beolvas√°s elj√°r√°s
 void beolvasas(int& n, int t[]){
-	cout << "Adja meg a tˆmb elemsz·m·t: ";
+	cout << "Adja meg a t√∂mb elemsz√°m√°t:" << endl;
 	cin >> n;
 	for (int i = 0; i < n; i++){
 		cout << "Adja meg a(z) " << i + 1 << ". elemet!";
@@ -14,16 +14,14 @@ void beolvasas(int& n, int t[]){
 	}
 }
 
-//Megsz·mol·s programoz·si tÈtel
+//Sz√©tv√°lgat√°s programoz√°si t√©tel
 void szetvalogatas(int n, int& dbb, int& dbc, int a[], int b[], int c[], int felt){
 	dbb = 0; dbc = 0;
 	for(int i = 0; i < n; i++){
 		if(a[i] == felt){
-			b[dbb] = a[i];
-			dbb++;
+			b[dbb++] = a[i];
 		} else {
-			c[dbc] = a[i];
-			dbc++;
+			c[dbc++] = a[i];
 		}
 	}
 }

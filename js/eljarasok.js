@@ -45,10 +45,7 @@ function tombEllenorzes(t){
 		}
 		i++;
 	}
-	if(t[t.length - 1] === ',' || t[0] === ','){
-		return false;
-	}
-	return true;
+	return !(t[t.length - 1] === ',' || t[0] === ',');
 }
 
 function tombObjValues(t){
@@ -140,14 +137,15 @@ function elsoLepesMegjelenitese(){
 }
 
 function barValtoztatasa(){
+	var allas;
 	if($(".valtozo").length !== 0){
-		var allas = ($(".valtozo").index($(".valtozo.active")) + 1) / $(".valtozo").length;
+		allas = ($(".valtozo").index($(".valtozo.active")) + 1) / $(".valtozo").length;
 		$("#algo-progressbar").animate({
 			width: (allas * 100) + "%"
 		}, 0, function() {
 		});	
 	} else if($(".tomb").length !== 0){
-		var allas = ($(".tomb").index($(".tomb.active")) + 1) / $(".tomb").length;
+		allas = ($(".tomb").index($(".tomb.active")) + 1) / $(".tomb").length;
 		$("#algo-progressbar").animate({
 			width: (allas * 100) + "%"
 		}, 0, function() {
@@ -270,7 +268,7 @@ function lejatszas(k) {
 
 function allasValtoztatasFunction(){
 	tombValtoztatas();
-	szovegValtoztatas()
+	szovegValtoztatas();
 	barValtoztatasa();
 }
 

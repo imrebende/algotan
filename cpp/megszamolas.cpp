@@ -4,17 +4,17 @@ using namespace std;
 
 const int MAXN = 100;
 
-//Beolvas�s elj�r�s
+//Beolvasás eljárás
 void beolvasas(int& n, int t[]){
-	cout << "Adja meg a t�mb elemsz�m�t: ";
+	cout << "Adja meg a tömb elemszámát:" << endl;
 	cin >> n;
 	for (int i = 0; i < n; i++){
-		cout << "Adja meg a(z) " << i + 1 << ". elemet!";
+		cout << "Adja meg a(z) " << i + 1 << ". elemet!" << endl;
 		cin >> t[i];
 	}
 }
 
-//Megsz�mol�s programoz�si t�tel
+//Megszámolás programozási tétel
 int megszamolas(int n, int t[], int felt){
 	int db = 0;
 	for(int i = 0; i < n; i++){
@@ -26,12 +26,11 @@ int megszamolas(int n, int t[], int felt){
 }
 
 int main(){
-	int N;
-	int t[MAXN];
+	int n, t[MAXN];
 	
 	beolvasas(n, t);
 	
-	cout << megszamolas(n, t, felt) << endl;
+	cout << megszamolas(n, t, felt) << "db feltételnek megfelelő elem van a tömbben." << endl;
 	
 	return 0;
 }

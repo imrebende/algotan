@@ -4,9 +4,9 @@ using namespace std;
 
 const int MAXN = 100;
 
-//Beolvas·s elj·r·s
+//Beolvas√°s elj√°r√°s
 void beolvasas(int& n, int t[]){
-	cout << "Adja meg a tˆmb elemsz·m·t: ";
+	cout << "Adja meg a t√∂mb elemsz√°m√°t: ";
 	cin >> n;
 	for (int i = 0; i < n; i++){
 		cout << "Adja meg a(z) " << i + 1 << ". elemet!";
@@ -14,7 +14,7 @@ void beolvasas(int& n, int t[]){
 	}
 }
 
-//Maximumkiv·lszt·s programoz·si tÈtel
+//Maximumkiv√°lszt√°s programoz√°si t√©tel
 int maximum(int n, int t[]){
 	int maxHely = 0;
 	for (int i = 1; i < n; i++){
@@ -26,13 +26,12 @@ int maximum(int n, int t[]){
 }
 
 int main(){
-  int t[MAXN];
-  int n;
+  int t[MAXN], n;
 
   beolvasas(n, t);
 
   int maxh = maximum(n, t);
-  cout << "…rtÈk: " << t[maxh] << ", hely: " << m << endl;
+  cout << "Legnagyobb √©rt√©k: " << t[maxh] << ", helye (ha t√∂bb van, akkor az els≈ë): " << maxh << endl;
 
   return 0;
 }

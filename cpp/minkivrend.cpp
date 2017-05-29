@@ -16,15 +16,24 @@ void minimumKivalasztasosRendezes(int n, int t[]){
 	}
 }
 
+void tombKiiras(int n, int t[]){
+    for(int i = 0; i < n; i++){
+        cout << t[i] << " ";
+    }
+    cout << endl;
+}
+
 int main(){
 	
 	int t[] = {5,4,6,3,2,1}, n = 6;
-	
+
+	cout << "Tömb elemei rendezés elött: ";
+    tombKiiras(n, t);
+
 	minimumKivalasztasosRendezes(n, t);
 	
-	for(int i = 0; i < n; i++){
-		cout << t[i] << " ";
-	}
+	cout << "Tömb elemei rendezés után: ";
+    tombKiiras(n, t);
 	
 	return 0;
 }

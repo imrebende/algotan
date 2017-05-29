@@ -1,3 +1,18 @@
+/* Általános CSS */
+
+body {
+	background-color: #F1F1F1;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 26px;
+	margin-top: 10px;
+}
+
 .main {
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -9,7 +24,7 @@ footer.footer {
 	background-color: #222;
 	border-color: #080808;
 	position: fixed;
-	bottom: 0px;
+	bottom: 0;
 	width: 100%;
 	min-height: 50px;
 }
@@ -26,7 +41,7 @@ ol {
 	counter-reset: item;
 }
 
-li { 
+li {
 	display: block;
 }
 
@@ -46,11 +61,31 @@ ol li:before {
 }
 
 #program, .tab-content .tab-pane {
-	padding-top: 20px;
+	padding-top: 10px;
 	padding-left: 10px;
 }
 
+.tab-content {
+	background-color: white;
+	border: 1px solid #ddd;
+	border-top-color: transparent;
+	border-radius: 0 0 4px 4px;
+	padding-bottom: 10px;
+}
+
+.border-right-blue {
+	border-right: 1px solid #ddd;
+}
+
+/* Pszeudokód */
+
+#pszeudo p {
+	font-size: 12px;
+    margin: 0;
+}
+
 /* Stuktogram */
+
 #strukto table {
 	width: 80%;
 }
@@ -66,31 +101,31 @@ ol li:before {
 
 #strukto table tr .atloJobb {
 	background-image: linear-gradient(to bottom right,  transparent calc(50% - 1px), black, transparent calc(50% + 1px));
-	border-left: 0px;
+	border-left: 0;
 	width: 30px;
 }
 
 #strukto table tr .atloBal {
 	background-image: linear-gradient(to bottom left,  transparent calc(50% - 1px), black, transparent calc(50% + 1px));
-	border-right: 0px;
+	border-right: 0;
 	width: 30px;
 }
 
 #strukto table tr .elagazasFeltetel {
-	border-left: 0px;
-	border-right: 0px;
+	border-left: 0;
+	border-right: 0;
 }
 
 #strukto table tr .ciklusFeltetel, #strukto table tr .noBottomBorder {
-	border-bottom: 0px;
+	border-bottom: 0;
 }
 
 #strukto table tr .noTopBorder{
-	border-top: 0px;
+	border-top: 0;
 }
 
 #strukto table tr .ciklusMagElsoOszlop {
-	border-top: 0px;
+	border-top: 0;
 }
 
 #strukto table tr .belsoCiklusMag{
@@ -101,6 +136,11 @@ ol li:before {
 
 #implementation  {
 	color: #FF003A;
+}
+
+#implementation p {
+	font-size: 12px;
+	margin: 0;
 }
 
 #implementation .cppVariable, .cplusplus .cppVariable {
@@ -117,7 +157,7 @@ ol li:before {
 }
 
 .line {
-	margin-bottom: 5px !important;
+	margin-bottom: 5px;
 }
 
 .tab1 {
@@ -143,102 +183,34 @@ ol li:before {
 
 /* Bemenet */
 
+.form-group label {
+    width: 145px;
+    text-align: right;
+}
+
 #bemenet, #bemenet2, .inputMezo, #logKerBemenet, #bemenetSimple {
-	width: 200px;
+	width: 120px;
 	display: inline;
 }
 
 #feltetel {
-	width: 135px;
+	width: 87px;
 	display: inline;
 }
 
-#relaciosJel{
-	margin-left: 5px;
+#relaciosJel {
 	width: 60px;
 	display: inline;
 }
 
-#futtatoGomb {
-	margin-bottom: 3px;
+#algo-progressbar {
+	width: 0;
+}
+
+.btn-play {
+	background-color: white;
 }
 
 #nyilak {
 	text-align: center;
-}
-
-#valtozok {
-	min-height: 60px;
-}
-
-.blueElem , .blueTombElem {
-	color: blue;
-	font-weight: bold;
-}
-
-.greenElem, .greenTombElem{
-	color: green !important;
-	font-weight: bold;
-}
-
-/*#pszeudo {
-	border: 1px solid;
-	padding: 0 20px 20px 20px;
-}*/
-
-.nev {
-	min-width: 55px;
-	display: inline-table;
-	font-weight: bold;
-	text-align: right;
-}
-
-.ertek {
-	display: inline;
-}
-
-#algo-prog {
-	height: 5px !important;
-	margin-top: 15px;
-}
-
-/* Verem tulajdonságok */
-
-#vE {
-	border: 1px solid black;
-	border-top: none;
-	font-size: 16px;
-}
-
-#vE td {
-	padding-right: 5px;
-	padding-left: 5px;
-	text-align: center;
-}
-
-/* Sor tulajdonságok */
-
-#sE {
-	font-size: 16px;
-	display: inline;
-}
-
-#sE td {
-	border: 1px solid black;
-	padding-right: 15px;
-	padding-left: 15px;
-	text-align: center;
-}
-
-.sorNyil {
-	top: -4px;
-}
-
-/* Összetetebb algoritmusok */
-.sliderCimke {
-	margin-bottom: 5px;
-}
-
-.sliderCimke .btn {
-	padding-right: 2px;
 }

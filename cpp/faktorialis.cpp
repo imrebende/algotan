@@ -2,15 +2,15 @@
 
 using namespace std;
 
-//Beolvasás eljárás
+//BeolvasÃ¡s eljÃ¡rÃ¡s
 void beolvasas(int &n){
-	cout << "Adja meg az n-et!";
+	cout << "Adja meg az n-et!" << endl;
 	cin >> n;
 }
 
-//Faktoriális kiszámítása	
+//FaktoriÃ¡lis kiszÃ¡mÃ­tÃ¡sa
 int faktorialis(int n){
-	int db = 1;
+	int fakt = 1;
 	for(int i = 2; i <= n; i++){
 		fakt *= i;
 	}
@@ -19,10 +19,9 @@ int faktorialis(int n){
 
 int main(){
 	int n;
-	
 	beolvasas(n);
 	
-	cout << faktorialis(n) << endl;
+	cout << n << "!: " << faktorialis(n) << endl;
 	
 	return 0;
 }
