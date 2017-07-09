@@ -55,12 +55,12 @@
 						</ul>
 						<div class="tab-content">
 							<div id="pszeudo" class="tab-pane fade in active">
-								<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Kiválogatás(A, B, DB)</p>
+								<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Kiválogatás(A, N, B, DB)</p>
 								<p class="line tab1">DB := 0<span class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := 1-től N-ig<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> T(A[i]) <strong data-i18n="pszeudokodelem.akkor"></strong></p>
+								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> I := 1-től N-ig<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> T(A[I]) <strong data-i18n="pszeudokodelem.akkor"></strong></p>
 								<p class="line tab3">DB := DB + 1<span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab3">B[DB] := A[i]<span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3">B[DB] := A[I]<span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.elagazasvege"></strong></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
@@ -74,14 +74,14 @@
 									</tr>
 									<tr>
 										<td colspan="4" class="ciklusFeltetel">
-											i := 1-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											I := 1-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td class="atloBal"></td>
 										<td class="elagazasFeltetel">
-											T(A[i])
+											T(A[I])
 										</td>
 										<td class="atloJobb"></td>
 									</tr>
@@ -97,7 +97,7 @@
 									<tr>
 										<td class="ciklusMagElsoOszlop">&nbsp;</td>
 										<td colspan="2">
-											B[DB] := A[i]<span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											B[DB] := A[I]<span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td class="noTopBorder">
 										</td>
@@ -105,11 +105,11 @@
 								</table>
 							</div>
 							<div id="implementation" class="tab-pane fade">
-								<p class="line"><span class="cppKeyword">void</span> <span class="cppVariable">kivalogatas</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>, <span class="cppKeyword">double</span> <span class="cppVariable">B</span>[]){</p>
-								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">DB</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span></span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">T</span>(<span class="cppVariable">A</span>[<span class="cppVariable">i</span>])){</span>
-								<p class="line tab3"><span class="cppVariable">B</span>[<span class="cppVariable">DB</span>++] = <span class="cppVariable">A</span>[<span class="cppVariable">i</span>]; <span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line"><span class="cppKeyword">void</span> <span class="cppVariable">kivalogatas</span>(<span class="cppKeyword">double</span> <span class="cppVariable">a</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">n</span>, <span class="cppKeyword">double</span> <span class="cppVariable">b</span>[], <span class="cppKeyword">double</span> <span class="cppVariable">db</span>){</p>
+								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">db</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span></span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">n</span>; <span class="cppVariable">i</span>++){ <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">T</span>(<span class="cppVariable">a</span>[<span class="cppVariable">i</span>])){</span>
+								<p class="line tab3"><span class="cppVariable">b</span>[<span class="cppVariable">db</span>++] = <span class="cppVariable">a</span>[<span class="cppVariable">i</span>]; <span class="elemBerakasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">}</p>
 								<p class="line tab1">}</p>
 								<p class="line">}</p>
@@ -160,13 +160,7 @@
 									</div>
 								</div>
 
-								<p class="h4" data-i18n="label.valtozokertekei"></p>
-								<div id="valtozok"></div>
-								
-								<span><b data-i18n="label.valtozas"></b></span><span id="magyarazat"></span>
-
-								<p class="h4" data-i18n="label.tomballasa"></p>
-								<div id="tombok"></div>
+								<div id="algoritmus-reszletek"></div>
 							</div>
 							<div id="hibasbemenet" class="hidden" data-i18n="label.hibasbemenet"></div>
 						</div>
@@ -176,18 +170,12 @@
 
 		</div>
 		
-		<footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6" id="dokumentacio">Verzió: 1.0 (<a href="doc/dokumentacio.docx" data-i18n="label.dokumentacio"></a>)</div>
-					<div class="col-md-6 text-right" id="szerzo"></div>
-				</div>
-			</div>
-		</footer>
+		<footer class="footer"></footer>
 
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/i18next-1.10.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/handlebars-v4.0.10.js"></script>
 		<script src="js/eljarasok.js"></script>
 		<script src="js/osszetettprogtetelek.js"></script>
 		<script src="js/esemenyek.js"></script>

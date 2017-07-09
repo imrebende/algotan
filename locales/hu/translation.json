@@ -16,7 +16,7 @@
 		"hibasbemenet": "Hibás bemenet",
 		"valtozokertekei": "Változók értékei",
 		"tomballasa": "Tömb állása",
-		"valtozas": "Változás:",
+		"valtozas": "Változás: ",
 		"menu": {
 			"kezdooldal": "Kezdőoldal",
 			"progtetelek": "Programozási tételek<span class='caret'></span>",
@@ -84,12 +84,12 @@
 			"cim": "Pr. tételek: Másolás"
 		},
 		"kivalogatas": {
-			"leiras": "A tömb elemit egy másik tömbbe rakja, feltételhez kötve.",
+			"leiras": "Egy tömb feltételnek megfelelő elemeit egy másik tömbbe rakja.",
 			"nev": "Kiválogatás",
 			"cim": "Pr. tételek: Kiválogatás"
 		},
 		"szetvalogatas": {
-			"leiras": "Két tömbbe válogatja szét egy tömb elemeit, adott feltételtől függően.",
+			"leiras": "Két tömbbe válogatja szét egy tömb elemeit, attól függően, hogy a T feltétel teljesül-e az adott elemre.",
 			"nev": "Szétválogatás",
 			"cim": "Pr. tételek: Szétválogatás"
 		},

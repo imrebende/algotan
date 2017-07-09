@@ -56,9 +56,9 @@
 						<div class="tab-content">
 							<div id="pszeudo" class="tab-pane fade in active">
 								<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Összegzés(A, N, S)</p>
-								<p class="line tab1">S := 0 <span class="elsoOsszegNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := 1-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2">S := S + A[i] <span class="osszegNovelesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><a href="#" class="S-data variable-tooltip" data-toggle="tooltip" data-placement="top" title="">S</a> := 0 <span class="elsoOsszegNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> <a href="#" class="I-data variable-tooltip white-tooltip" data-toggle="tooltip" data-placement="top" title="">I</a> := 1-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><a href="#" class="S-data variable-tooltip white-tooltip" data-toggle="tooltip" data-placement="top" title="">S</a> := <a href="#" class="S-data variable-tooltip white-tooltip" data-toggle="tooltip" data-placement="top" title="">S</a> + A[<a href="#" class="I-data variable-tooltip white-tooltip" data-toggle="tooltip" data-placement="top" title="">I</a>] <span class="osszegNovelesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
 							</div>
@@ -71,24 +71,24 @@
 									</tr>
 									<tr>
 										<td colspan="2" class="ciklusFeltetel">
-											i := 1-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											I := 1-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop">&nbsp;</td>
 										<td>
-											S := S + A[i] <span class="osszegNovelesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											<span data-toggle="tooltip" data-placement="top" title="Tooltip on top">S</span> := S + A[I] <span class="osszegNovelesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 									</tr>
 								</table>
 							</div>
 							<div id="implementation" class="tab-pane fade">
-								<p class="line"><span class="cppKeyword">double</span> <span class="cppVariable">osszegzes</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>){</p>
-								<p class="line tab1"><span class="cppKeyword">double</span> <span class="cppVariable">S</span> = <span class="cppNumber">0</span>; <span class="elsoOsszegNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span class="cppVariable">i</span>++){ <span class=" ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><span class="cppVariable">S</span> += <span class="cppVariable">A</span>[<span class="cppVariable">i</span>]; <span class="osszegNovelesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line"><span class="cppKeyword">double</span> <span class="cppVariable">osszegzes</span>(<span class="cppKeyword">double</span> <span class="cppVariable">a</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">n</span>){</p>
+								<p class="line tab1"><span class="cppKeyword">double</span> <span class="cppVariable">s</span> = <span class="cppNumber">0</span>; <span class="elsoOsszegNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span class="cppVariable">i</span> < <span class="cppVariable">n</span>; <span class="cppVariable">i</span>++){ <span class=" ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><span class="cppVariable">s</span> += <span class="cppVariable">a</span>[<span class="cppVariable">i</span>]; <span class="osszegNovelesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1">}</p>
-								<p class="line tab1"><span class="cppKeyword">return</span> <span class="cppVariable">S</span>;</p>
+								<p class="line tab1"><span class="cppKeyword">return</span> <span class="cppVariable">s</span>;</p>
 								<p class="line">}</p>
 							</div>
 						</div>
@@ -98,7 +98,7 @@
 							<div class="form-group">
 								<label for="bemenet">A (tömb): </label>
 								<input type="text" class="form-control" name="bemenet" id="bemenet" />
-								<button class="btn btn-success" id="futtatoGomb" onclick="osszegStart()" data-i18n="label.futtatas"></button>
+								<button class="btn btn-success" id="futtatoGomb" onclick="progTetelStart('osszegzes')" data-i18n="label.futtatas"></button>
 							</div> 
 
 							<div id="eredmenyek" class="hidden">
@@ -126,13 +126,7 @@
 									</div>
 								</div>
 
-								<p class="h4" data-i18n="label.valtozokertekei"></p>
-								<div id="valtozok"></div>
-
-								<span><b data-i18n="label.valtozas"></b></span><span id="magyarazat"></span>
-								
-								<p class="h4" data-i18n="label.tomballasa"></p>
-								<div id="tombok"></div>
+								<div id="algoritmus-reszletek"></div>
 							</div>
 							<div id="hibasbemenet" class="hidden" data-i18n="label.hibasbemenet"></div>
 						</div>
@@ -142,18 +136,12 @@
 
 		</div>
 		
-		<footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6" id="dokumentacio">Verzió: 1.0 (<a href="doc/dokumentacio.docx" data-i18n="label.dokumentacio"></a>)</div>
-					<div class="col-md-6 text-right" id="szerzo"></div>
-				</div>
-			</div>
-		</footer>
+		<footer class="footer"></footer>
 
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/i18next-1.10.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/handlebars-v4.0.10.js"></script>
 		<script src="js/eljarasok.js"></script>
 		<script src="js/programozasitetelek.js"></script>
 		<script src="js/esemenyek.js"></script>

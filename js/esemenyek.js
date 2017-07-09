@@ -9,70 +9,28 @@ $(function() {
   $("#bemenet2").val("4,3,6,8,2,3,9");
   $("#logKerBemenet").val("1,2,3,4,5,6,7,8,9");
   $("#bemenetSimple").val("12");
-  
-  //Footer beszúrása
-  $("footer.footer .container #szerzo").text("Készítette: Bende Imre ( Témavezető: Dr. Zsakó László )");
-  
-  //Menü beszúrása
-  $("#navbar").append('\
-	<ul class="nav navbar-nav">\
-		<li id="kezdooldal"><a href="index.html" data-i18n="label.menu.kezdooldal"></a></li>\
-			<li id="algoritmusok" class="dropdown">\
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Algoritmusok <span class="caret"></span></a>\
-				<ul class="dropdown-menu">\
-					<li class="dropdown-header">Programozási tételek</li>\
-					<li><a href="osszegzes.html" data-i18n="progtetel.osszegzes.nev"></a></li>\
-					<li><a href="megszamolas.html" data-i18n="progtetel.megszamolas.nev"></a></li>\
-					<li><a href="maximumkivalasztas.html" data-i18n="progtetel.maxkiv.nev"></a></li>\
-					<li><a href="kereses.html" data-i18n="progtetel.kereses.nev"></a></li>\
-					<li><a href="logaritmikus-kereses.html" data-i18n="progtetel.logker.nev"></a></li>\
-					<li><a href="masolas.html" data-i18n="progtetel.masolas.nev"></a></li>\
-					<li><a href="kivalogatas.html" data-i18n="progtetel.kivalogatas.nev"></a></li>\
-					<li><a href="szetvalogatas.html" data-i18n="progtetel.szetvalogatas.nev"></a></li>\
-					<li><a href="metszet.html" data-i18n="progtetel.metszet.nev"></a></li>\
-					<li><a href="unio.html" data-i18n="progtetel.unio.nev"></a></li>\
-					<li role="separator" class="divider"></li>\
-					<li class="dropdown-header">Rendezések</li>\
-					<li><a href="buborekos-rendezes.html" data-i18n="rendezes.buborekos.nev"></a></li>\
-					<li><a href="minkivalasztasos-rendezes.html" data-i18n="rendezes.minkiv.nev"></a></li>\
-					<li><a href="gyorsrendezes.html" data-i18n="rendezes.gyorsrendezes.nev"></a></li>\
-					<li><a href="osszefesuleses-rendezes.html" data-i18n="rendezes.osszefesulesesrendezes.nev"></a></li>\
-					<li role="separator" class="divider"></li>\
-					<li class="dropdown-header">Versenyfeladatok</li>\
-					<li><a href="moho.html">Mohó algoritmus (TODO)</a></li>\
-					<li><a href="dinamikus.html">Dinamikus programozás (TODO)</a></li>\
-					<li><a href="geometriai.html">Geometriai feladatok (TODO)</a></li>\
-					<li><a href="rekurziv.html">Rekurzív feladatok (TODO)</a></li>\
-					<li><a href="backtrack.html">Backtrack algoritmus (TODO)</a></li>\
-				</ul>\
-			</li>\
-		</li>\
-		<li id="adatszerkezetek" class="dropdown">\
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.adatszerkezetek"></a>\
-			<ul class="dropdown-menu">\
-				<li><a href="verem.html" data-i18n="adatszerkezet.verem.nev"></a></li>\
-				<li><a href="sor.html" data-i18n="adatszerkezet.sor.nev"></a></li>\
-				<li><a href="lancoltlista.html">Láncolt lista (TODO)</a></li>\
-				<li><a href="graf.html">Gráf (TODO)</a></li>\
-			</ul>\
-		</li>\
-		<li id="egyeb" class="dropdown">\
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[html]label.menu.egyeb"></a>\
-			<ul class="dropdown-menu">\
-				<li><a href="faktorialis.html" data-i18n="egyeb.faktorialis.nev"></a></li>\
-			</ul>\
-		</li>\
-		<li id="fordito"">\
-			<a href="pszeudo.html"> Pszeudokód fordító</a>\
-		</li>\
-	</ul>');
-	
+
 	//Nyelvi elemek beállítása
 	language_complete = navigator.language.split("-");
 	language = (language_complete[0]);
 	i18n.init({ lng: "hu" }, function() {
 		$("html").i18n();
 	});
+
+	//Tooltipek bekapcsolása
+	$('[data-toggle="tooltip"]').tooltip();
+
+	if($("#algoritmus-reszletek")) {
+		templateBetoltes("algoritmus-reszletek", "#algoritmus-reszletek");
+	}
+
+	if($("footer.footer")) {
+		templateBetoltes("footer", "footer.footer");
+	}
+
+	if($("#navbar")) {
+		templateBetoltes("navbar", "#navbar");
+	}
 });
 
 function elozo(){
@@ -95,8 +53,7 @@ function play(){
 	var k;
 	if($(".valtozo").length !== 0){
 		k = $(".valtozo").length - $(".valtozo").index($(".valtozo.active")) - 1;
-	}
-	else if($(".tomb").length !== 0){
+	} else if($(".tomb").length !== 0){
 		k = $(".tomb").length - $(".tomb").index($(".tomb.active")) - 1;
 	}
 	lejatszas(k);
@@ -131,6 +88,19 @@ function fuggvenyElottiInit(){
 	pause();
 	$("#eredmenyek").addClass("hidden");
 	$("#hibasbemenet").removeClass("hidden");
+}
+
+function progTetelStart(tetel) {
+    fuggvenyElottiInit();
+    var bemenet = $("#bemenet").val();
+    if(tombEllenorzes(bemenet)) {
+        var t = tombAtalakitas(bemenet.replace(" ","").split(","));
+        if(tetel == "osszegzes") {
+            osszegzes(t);
+        }
+        $("#eredmenyek").removeClass("hidden");
+        $("#hibasbemenet").addClass("hidden");
+    }
 }
 
 function osszegStart(){
@@ -181,9 +151,8 @@ function logkerStart(){
 			logKereses(t, $("#feltetel").val());
 			$("#eredmenyek").removeClass("hidden");
 			$("#hibasbemenet").addClass("hidden");
-		}
-		else {
-			
+		} else {
+			//TODO Rendezettség hiba
 		}
 	}
 }
@@ -290,4 +259,18 @@ function osszegzesSzamok() {
 
 function osszegzesSzoveg() {
 	$("#bemenet").val("a,b,cd,ef");
+}
+
+function templateBetoltes(templateUrl, whereTo) {
+	$.when(
+		$.ajax({
+			url:"templates/" + templateUrl + ".hbs"
+		})
+	).done(function(html){
+		var template = Handlebars.compile( new XMLSerializer().serializeToString(html));
+		$(template({})).appendTo(whereTo);
+		i18n.init({ lng: "hu" }, function() {
+			$(whereTo).i18n();
+		});
+	});
 }

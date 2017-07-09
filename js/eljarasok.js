@@ -45,7 +45,7 @@ function tombEllenorzes(t){
 		}
 		i++;
 	}
-	return !(t[t.length - 1] === ',' || t[0] === ',');
+	return !(t[t.length - 1] === ',' || t[0] === ',') && t.length != 0;
 }
 
 function tombObjValues(t){
@@ -95,7 +95,13 @@ function tombValtoztatas(){
 	$("#tombok .elem").removeClass("blueElem").removeClass("greenElem");
 	
 	//i változó színezése kékké
+	//TODO törlés
 	var iValue = $("div.valtozo.active .ertek.i").text();
+	if(iValue > 0) {
+		$("#tombok .elem:nth-of-type(" + iValue + ")").addClass("blueElem");
+	}
+
+	var iValue = $("div.valtozo.active .ertek.I").text();
 	if(iValue > 0) {
 		$("#tombok .elem:nth-of-type(" + iValue + ")").addClass("blueElem");
 	}
@@ -162,7 +168,7 @@ function szovegValtoztatas(){
 	$(".utasitas").addClass("hidden");
 	if($("#valtozok .active").hasClass("ciklusLepes")){
 		$(".ciklusLepesNyil").removeClass("hidden");
-		magyarazatValtoztatas("i", $("#valtozok .active .ertek.i").text());
+		magyarazatValtoztatas("I", $("#valtozok .active .ertek.i").text());
 	} else if($("#valtozok .active").hasClass("maxValtozas")){
 		$(".maxValtozasNyil").removeClass("hidden");
 		magyarazatValtoztatas("MAX", $("#valtozok .active .ertek.MAX").text());
@@ -206,6 +212,10 @@ function szovegValtoztatas(){
 	} else if($("#tombok .active").hasClass("ciklusLepes")){
 		$(".ciklusLepesNyil").removeClass("hidden");
 	}
+
+	//Utasítás sorának meghatározása
+	$(".active-line").removeClass("active-line");
+	$(".utasitas:not(.hidden)").parent().addClass("active-line");
 }
 
 //Változók kiírása a "valtozok" id-vel rendelkező tartományba
@@ -213,9 +223,9 @@ function valtozokKiirasa() {
 	var s = '<div class="valtozo hidden ' + arguments[arguments.length - 1] + '">';
 	for (var i = 0; i < arguments.length - 1; i++) {
 		if($.isArray(arguments[i].ertek)){
-			s += '<div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + " " + arguments[i].class + '">[ ' + arguments[i].ertek + " ]</div><br/>";
+			s += '<div data-variable-name="' + arguments[i].nev + '" data-variable-value="' + arguments[i].ertek + '"><div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + " " + arguments[i].class + '">[ ' + arguments[i].ertek + " ]</div></div>";
 		} else {
-			s += '<div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + " " + arguments[i].class + '">' + arguments[i].ertek + "</div><br/>";
+			s += '<div data-variable-name="' + arguments[i].nev + '" data-variable-value="' + arguments[i].ertek + '"><div class="nev">' + arguments[i].nev + '</div>: <div class="ertek ' + arguments[i].nev + " " + arguments[i].class + '">' + arguments[i].ertek + "</div></div>";
 		}
 	}
 	s += '</div>';
@@ -225,33 +235,33 @@ function valtozokKiirasa() {
 //A változók következő állásának betöltése
 function kovetkezoAllas() {
 	//Következő változó állás betöltése, ha van
-	if($("#valtozok .active").next().length > 0){
-		$("#valtozok .active").next().addClass("active");
-		$("#valtozok .active").first().addClass("hidden").removeClass("active");
-		$("#valtozok .active").removeClass("hidden");
+    var activeValtozok = $("#valtozok .active");
+	if(activeValtozok.next().length > 0){
+        activeValtozok.next().addClass("active").removeClass("hidden");
+        activeValtozok.addClass("hidden").removeClass("active");
 		allasValtoztatasFunction();
 	}
 	//Következő tömb állás betöltése, ha van
-	if($("#tombok .active").next().length > 0){
-		$("#tombok .active").next().addClass("active");
-		$("#tombok .active").first().addClass("hidden").removeClass("active");
-		$("#tombok .active").removeClass("hidden");
+    var activeTombok = $("#tombok .active");
+	if(activeTombok.next().length > 0){
+        activeTombok.next().addClass("active").removeClass("hidden");
+        activeTombok.addClass("hidden").removeClass("active");
 		allasValtoztatasFunction();
 	}
 }
 
 //A változók előző állásának betöltése
 function elozoAllas() {
-	if($("#valtozok .active").prev().length > 0){
-		$("#valtozok .active").prev().addClass("active");
-		$("#valtozok .active").last().addClass("hidden").removeClass("active");
-		$("#valtozok .active").removeClass("hidden");
+    var activeValtozok = $("#valtozok .active");
+	if(activeValtozok.prev().length > 0){
+        activeValtozok.prev().addClass("active").removeClass("hidden");
+        activeValtozok.last().addClass("hidden").removeClass("active");
 		allasValtoztatasFunction();
 	}
-	if($("#tombok .active").prev().length > 0){
-		$("#tombok .active").prev().addClass("active");
-		$("#tombok .active").last().addClass("hidden").removeClass("active");
-		$("#tombok .active").removeClass("hidden");
+    var activeTombok = $("#tombok .active");
+	if(activeTombok.prev().length > 0){
+        activeTombok.prev().addClass("active").removeClass("hidden");
+        activeTombok.last().addClass("hidden").removeClass("active");
 		allasValtoztatasFunction();
 	}
 }
@@ -266,14 +276,22 @@ function lejatszas(k) {
 	timeouts.push(setTimeout(pause, k * 2200 + 1));
 }
 
+function tooltipModositas(){
+	$.each( $(".valtozo.active > div"), function(index, value){
+		$("." + $(value).attr("data-variable-name") + "-data").attr("data-original-title", $(value).attr("data-variable-value"));
+	});
+}
+
 function allasValtoztatasFunction(){
 	tombValtoztatas();
 	szovegValtoztatas();
 	barValtoztatasa();
+	tooltipModositas();
 }
 
 function megjelenitesInit(){
 	elsoLepesMegjelenitese();
+	tooltipModositas();
 	barValtoztatasa();
 	szovegValtoztatas();
 	play();

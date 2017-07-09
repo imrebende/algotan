@@ -1,22 +1,22 @@
-//Összegzés tétel
+//Ã–sszegzÃ©s tÃ©tel
 function osszegzes(t){
 	tombKiirasa(t);
 	var s;
 	if(t[0] >= 0 && t[0] <= 9){
 		s = 0;
-	} else{
+	} else {
 		s = "";
 	}
 	valtozokKiirasa({nev: "S", ertek: s}, "elsoOsszeg");
 	for (i = 0; i < t.length; i++) {
-		valtozokKiirasa({nev: "S", ertek: s}, {nev: "i", ertek: i + 1}, "ciklusLepes");
+		valtozokKiirasa({nev: "S", ertek: s}, {nev: "I", ertek: i + 1}, "ciklusLepes");
 		s += t[i];
-		valtozokKiirasa({nev: "S", ertek: s}, {nev: "i", ertek: i + 1}, "osszegNoveles");
+		valtozokKiirasa({nev: "S", ertek: s}, {nev: "I", ertek: i + 1}, "osszegNoveles");
 	}
 	megjelenitesInit();
 }
 
-//Megszámolás tétel
+//MegszÃ¡molÃ¡s tÃ©tel
 function megszamolas(t, relaciosJel, felt){
 	tombKiirasa(t);	
 	var d = 0;
@@ -31,7 +31,7 @@ function megszamolas(t, relaciosJel, felt){
 	megjelenitesInit();
 }
 
-//Keresés tétel
+//KeresÃ©s tÃ©tel
 function kereses(t, relaciosJel, felt) {
 	tombKiirasa(t);	
 	var l = false;
@@ -51,7 +51,7 @@ function kereses(t, relaciosJel, felt) {
 	megjelenitesInit();
 }
 
-//Logaritmikus keresés
+//Logaritmikus keresÃ©s
 function logKereses(t, searchElement) {
 	var u = 0;
     var v = t.length - 1;
@@ -85,7 +85,7 @@ function logKereses(t, searchElement) {
 	megjelenitesInit();
 }
 
-//Maximum-kiválasztás tétel
+//Maximum-kivÃ¡lasztÃ¡s tÃ©tel
 function maximumKivalasztas(t) {
 	tombKiirasa(t);
 	var maxh = 0;

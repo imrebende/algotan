@@ -41,7 +41,7 @@
 					<h1 data-i18n="progtetel.logker.nev"></h1>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 border-right-blue">
 						<div id="leiras">
 							<h2 data-i18n="label.leiras"></h2>
 							<p data-i18n="[html]progtetel.logker.leiras"></p>
@@ -55,17 +55,17 @@
 							<div id="pszeudo" class="tab-pane fade in active">
 								<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> LogKereses(A, N, E, L)</p>
 								<p class="line tab1">L := hamis<span id="elsoDbNyil" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1">i := 1<span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1">u := 1<span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1">v := n<span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusamig"></strong> u <= v és nem L<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2">i := (u + v) / 2<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> A[i] = T <strong data-i18n="pszeudokodelem.akkor"></strong><span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">I := 1<span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">U := 1<span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1">V := N<span class="elsoLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusamig"></strong> U <= V és nem L<span id="ciklusLepes" class="glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2">I := (U + V) / 2<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> A[I] = T <strong data-i18n="pszeudokodelem.akkor"></strong><span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab3">L := igaz <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><strong data-i18n="pszeudokodelem.kulonbenha"></strong> A[i] < T <strong data-i18n="pszeudokodelem.akkor"></strong><span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab3">u := i + 1 <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><strong data-i18n="pszeudokodelem.kulonbenha"></strong> A[I] < T <strong data-i18n="pszeudokodelem.akkor"></strong><span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3">U := I + 1 <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.kulonben"></strong><span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab3">v := i - 1 <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab3">V := I - 1 <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.elagazasvege"></strong></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
@@ -79,37 +79,37 @@
 									</tr>
 									<tr>
 										<td colspan="4">
-											i := 1
+											I := 1
 										</td>
 									</tr>
 									<tr>
 										<td colspan="4">
-											u := 1
+											U := 1
 										</td>
 									</tr>
 									<tr>
 										<td colspan="4">
-											v := n
+											V := N
 										</td>
 									</tr>
 									<tr>
 										<td colspan="4" class="ciklusFeltetel">
-											u <= v és nem L<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											U <= V és nem L<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td colspan="3">
-											i := (u + v) / 2
+											I := (U + V) / 2
 										</td>
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td class="ciklusFeltetel">
-											HA A[i] = T
+											HA A[I] = T
 										</td>
 										<td class="ciklusFeltetel">
-											KÜLÖNBEN HA A[i] < T
+											KÜLÖNBEN HA A[I] < T
 										</td>
 										<td class="ciklusFeltetel">
 											KÜLÖNBEN
@@ -121,23 +121,23 @@
 											L := igaz
 										</td>
 										<td>
-											u := i + 1
+											U := I + 1
 										</td>
 										<td>
-											v := i - 1
+											V := I - 1
 										</td>
 									</tr>
 								</table>
 							</div>
 							<div id="implementation" class="tab-pane fade">
-								<p class="line"><span class="cppKeyword">int</span> <span class="cppVariable">logker</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>, <span class="cppKeyword">double</span> <span class="cppVariable">felt</span>) {</p>
+								<p class="line"><span class="cppKeyword">int</span> <span class="cppVariable">logker</span>(<span class="cppKeyword">double</span> <span class="cppVariable">a</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">n</span>, <span class="cppKeyword">double</span> <span class="cppVariable">felt</span>) {</p>
 								<p class="line tab1"><span class="cppKeyword">bool</span> <span class="cppVariable">l</span> = <span class="cppKeyword">false</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">u</span> = <span class="cppNumber">0</span>, <span class="cppVariable">v</span> = <span class="cppVariable">N</span> - <span class="cppNumber">1</span>, <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><span class="cppKeyword">int</span> <span class="cppVariable">u</span> = <span class="cppNumber">0</span>, <span class="cppVariable">v</span> = <span class="cppVariable">n</span> - <span class="cppNumber">1</span>, <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span class="elsoDbNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab1"><span class="cppKeyword">while</span>(<span class="cppVariable">u</span> <= <span class="cppVariable">v</span> && !<span class="cppVariable">l</span>) { <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><span class="cppVariable">i</span> = (<span class="cppVariable">u</span> + <span class="cppVariable">v</span>) / <span class="cppNumber">2</span>;</p>
-								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">A</span>[<span class="cppVariable">i</span>] == <span class="cppVariable">felt</span>) {</p>
+								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">a</span>[<span class="cppVariable">i</span>] == <span class="cppVariable">felt</span>) {</p>
 								<p class="line tab3"><span class="cppVariable">l</span> = <span class="cppKeyword">true</span>; <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2">} <span class="cppKeyword">else if</span>(<span class="cppVariable">A</span>[<span class="cppVariable">i</span>] < <span class="cppVariable">felt</span>) {</p>
+								<p class="line tab2">} <span class="cppKeyword">else if</span>(<span class="cppVariable">a</span>[<span class="cppVariable">i</span>] < <span class="cppVariable">felt</span>) {</p>
 								<p class="line tab3"><span class="cppVariable">u</span> = <span class="cppVariable">i</span> + <span class="cppNumber">1</span>; <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">} <span class="cppKeyword">else</span> {</p>
 								<p class="line tab3"><span class="cppVariable">v</span> = <span class="cppVariable">i</span> - <span class="cppNumber">1</span>; <span class="dbValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
@@ -205,18 +205,12 @@
 
 		</div>
 		
-		<footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6" id="dokumentacio">Verzió: 1.0 (<a href="doc/dokumentacio.docx" data-i18n="label.dokumentacio"></a>)</div>
-					<div class="col-md-6 text-right" id="szerzo"></div>
-				</div>
-			</div>
-		</footer>
+		<footer class="footer"></footer>
 
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/i18next-1.10.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/handlebars-v4.0.10.js"></script>
 		<script src="js/eljarasok.js"></script>
 		<script src="js/programozasitetelek.js"></script>
 		<script src="js/esemenyek.js"></script>

@@ -40,7 +40,7 @@
 					<h1 data-i18n="progtetel.maxkiv.nev"></h1>
 				</div>
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 border-right-blue">
 						<div id="leiras">
 							<h2 data-i18n="label.leiras"></h2>
 							<p data-i18n="[html]progtetel.maxkiv.leiras"></p>
@@ -56,9 +56,9 @@
 							<div id="pszeudo" class="tab-pane fade in active">
 								<p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Maximumkiválasztás(A, N, MAX)</p>
 								<p class="line tab1">MAX := 1<span class="elsoMaxNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := 2-től N-ig<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> A[i] > A[MAX] <strong data-i18n="pszeudokodelem.akkor"></strong></p>
-								<p class="line tab3">MAX := i <span class="maxValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> I := 2-től N-ig<span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><strong data-i18n="pszeudokodelem.ha"></strong> A[I] > A[MAX] <strong data-i18n="pszeudokodelem.akkor"></strong></p>
+								<p class="line tab3">MAX := I <span class="maxValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2"><strong data-i18n="pszeudokodelem.elagazasvege"></strong></p>
 								<p class="line tab1"><strong data-i18n="pszeudokodelem.ciklusvege"></strong></p>
 								<p class="line"><strong data-i18n="pszeudokodelem.eljarasvege"></strong></p>
@@ -72,21 +72,21 @@
 									</tr>
 									<tr>
 										<td colspan="4" class="ciklusFeltetel">
-											i := 2-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											I := 2-től N-ig <span class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
 										<td class="atloBal"></td>
 										<td class="elagazasFeltetel">
-											A[i] > A[MAX]
+											A[I] > A[MAX]
 										</td>
 										<td class="atloJobb"></td>
 									</tr>
 									<tr>
 										<td class="ciklusMagElsoOszlop">&nbsp;</td>
 										<td colspan="2">
-											MAX = i <span class="maxValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+											MAX = I <span class="maxValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
 										</td>
 										<td>
 											-
@@ -95,11 +95,11 @@
 								</table>
 							</div>
 							<div id="implementation" class="tab-pane fade">
-								<p class="line"><span class="cppKeyword">double</span> <span class="cppVariable">maximum</span>(<span class="cppKeyword">double</span> <span class="cppVariable">A</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">N</span>){</p>
-								<p class="line tab1"><span class="cppKeyword">double</span> <span class="cppVariable">MAX</span> = <span class="cppNumber">0</span>; <span class="elsoMaxNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span></span> = <span class="cppNumber">1</span>; <span class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span class="cppVariable">i</span>++){ <span class=" ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">A</span>[<span class="cppVariable">i</span>] > <span class="cppVariable">A</span>[<span class="cppVariable">MAX</span>]){</p>
-								<p class="line tab3"><span class="cppVariable">MAX</span> = <span class="cppVariable">i</span>; <span class="maxValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line"><span class="cppKeyword">double</span> <span class="cppVariable">maximum</span>(<span class="cppKeyword">double</span> <span class="cppVariable">a</span>[], <span class="cppKeyword">int</span> <span class="cppVariable">n</span>){</p>
+								<p class="line tab1"><span class="cppKeyword">double</span> <span class="cppVariable">max</span> = <span class="cppNumber">0</span>; <span class="elsoMaxNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab1"><span class="cppKeyword">for</span>(<span class="cppKeyword">int</span> <span class="cppVariable">i</span></span> = <span class="cppNumber">1</span>; <span class="cppVariable">i</span> < <span class="cppVariable">n</span>; <span class="cppVariable">i</span>++){ <span class=" ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+								<p class="line tab2"><span class="cppKeyword">if</span>(<span class="cppVariable">a</span>[<span class="cppVariable">i</span>] > <span class="cppVariable">a</span>[<span class="cppVariable">max</span>]){</p>
+								<p class="line tab3"><span class="cppVariable">max</span> = <span class="cppVariable">i</span>; <span class="maxValtozasNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
 								<p class="line tab2">}</p>
 								<p class="line tab1">}</p>
 								<p class="line">}</p>
@@ -155,18 +155,12 @@
 
 		</div>
 
-		<footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6" id="dokumentacio">Verzió: 1.0 (<a href="doc/dokumentacio.docx" data-i18n="label.dokumentacio"></a>)</div>
-					<div class="col-md-6 text-right" id="szerzo"></div>
-				</div>
-			</div>
-		</footer>
+		<footer class="footer"></footer>
 		
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/i18next-1.10.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/handlebars-v4.0.10.js"></script>
 		<script src="js/eljarasok.js"></script>
 		<script src="js/programozasitetelek.js"></script>
 		<script src="js/esemenyek.js"></script>
