@@ -96,7 +96,7 @@ function tombValtoztatas(){
 	
 	//i változó színezése kékké
 	//TODO törlés
-	var iValue = $("div.valtozo.active .ertek.i").text();
+	var iValue = $("div.valtozo.active .ertek.I").text();
 	if(iValue > 0) {
 		$("#tombok .elem:nth-of-type(" + iValue + ")").addClass("blueElem");
 	}
@@ -113,7 +113,7 @@ function tombValtoztatas(){
 	}
 	
 	//Megszámolásnál jelöljük a jó elemeket
-	var i = $("div.valtozo .ertek.i").first().text();
+	var i = $("div.valtozo .ertek.I").first().text();
 	var j = 0;
 	while (i < iValue){
 		if( $("div.valtozo:nth-of-type(" + j + ")").hasClass("dbValtozas") || $("div.valtozo:nth-of-type(" + j + ")").hasClass("elemBerakas")){
@@ -121,7 +121,7 @@ function tombValtoztatas(){
 		}
 		j++;
 		if(j > $("div.valtozo").length){ break; }
-		i = $("div.valtozo:nth-of-type(" + j + ") .ertek.i").text();
+		i = $("div.valtozo:nth-of-type(" + j + ") .ertek.I").text();
 	}
 	if( $("div.valtozo.active").hasClass("dbValtozas") ){
 		$("#tombok .elem:nth-of-type(" + iValue + ")").addClass("greenElem")
@@ -168,7 +168,7 @@ function szovegValtoztatas(){
 	$(".utasitas").addClass("hidden");
 	if($("#valtozok .active").hasClass("ciklusLepes")){
 		$(".ciklusLepesNyil").removeClass("hidden");
-		magyarazatValtoztatas("I", $("#valtozok .active .ertek.i").text());
+		magyarazatValtoztatas("I", $("#valtozok .active .ertek.I").text());
 	} else if($("#valtozok .active").hasClass("maxValtozas")){
 		$(".maxValtozasNyil").removeClass("hidden");
 		magyarazatValtoztatas("MAX", $("#valtozok .active .ertek.MAX").text());
