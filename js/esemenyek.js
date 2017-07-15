@@ -267,7 +267,8 @@ function templateBetoltes(templateUrl, whereTo) {
 			url:"templates/" + templateUrl + ".hbs"
 		})
 	).done(function(html){
-		var template = Handlebars.compile( new XMLSerializer().serializeToString(html));
+		var parsedHtml = $.parseXML(html);
+		var template = Handlebars.compile( new XMLSerializer().serializeToString(parsedHtml));
 		$(template({})).appendTo(whereTo);
 		i18n.init({ lng: "hu" }, function() {
 			$(whereTo).i18n();
