@@ -144,7 +144,7 @@
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/i18next-1.10.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/handlebars-v4.0.10.js"></script>
+		<script src="js/handlebars.js"></script>
 		<script src="js/eljarasok.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/esemenyek.js"></script>
@@ -153,36 +153,6 @@
 			$(function() {
 				$("#algoritmusok").addClass("active");
 			});
-			
-			$( function() {
-				for(var i = 0; i < 3; i++){	
-					sliderGenerator($(".slider").length);
-				}
-			} );
-			
-			function ujSlider(){
-				sliderGenerator($(".slider").length);
-			}
-			
-			function sliderGenerator(num){
-				$("#sliders").append( "<div class='slider-container' id='slider-" + num + "'><div class='sliderCimke'>" + (num + 1) + ". ( <span id='amount" + num + "'></span> ) <button class='btn btn-xs btn-danger' id='sliderTorles" + num + "' onclick='sliderTorles(" + num + ")'><span class='glyphicon glyphicon-remove'></span>&nbsp;</button></div> <div id='slider-range" + num + "' class='slider'></div></div>" );
-				
-				$( "#slider-range" + num ).slider({
-				  range: true,
-				  min: 0,
-				  max: 500,
-				  values: [ 75, 300 ],
-				  slide: function( event, ui ) {
-					$( "#amount" + num ).html( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-				  }
-				});
-				$( "#amount" + num).html( $( "#slider-range" + num ).slider( "values", 0 ) +
-				  " - " + $( "#slider-range" + num ).slider( "values", 1 ) );
-			}
-			
-			function sliderTorles(num){
-				$( "#slider-" + num ).remove();
-			}
 		</script>
 	</body>
 </html>
