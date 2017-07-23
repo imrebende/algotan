@@ -1,184 +1,184 @@
 /* Általános CSS */
 
 body {
-	background-color: #F1F1F1;
+    background-color: #F1F1F1;
 }
 
 h1 {
-	font-size: 30px;
+    font-size: 30px;
 }
 
 h2 {
-	font-size: 26px;
-	margin-top: 10px;
+    font-size: 26px;
+    margin-top: 10px;
 }
 
 .main {
-	padding-top: 50px;
-	padding-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /* Footer beállításai */
 
 footer.footer {
-	background-color: #222;
-	border-color: #080808;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	min-height: 50px;
+    background-color: #222;
+    border-color: #080808;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 50px;
 }
 
 footer.footer .container {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	color: #9D9D9D;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #9D9D9D;
 }
 
 /* Felsorolás a főoldalon */
 
 ol {
-	counter-reset: item;
+    counter-reset: item;
 }
 
 li {
-	display: block;
+    display: block;
 }
 
 ol li:before {
-	content: counters(item, ".") ". ";
-	counter-increment: item;
+    content: counters(item, ".") ". ";
+    counter-increment: item;
 }
 
-.mintaBemenetClass{
-	cursor: pointer;
+.mintaBemenetClass {
+    cursor: pointer;
 }
 
 /* Algorimusok leírásai */
 
 .utasitas {
-	color: black;
+    color: black;
 }
 
 #program, .tab-content .tab-pane {
-	padding-top: 10px;
-	padding-left: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .tab-content {
-	background-color: white;
-	border: 1px solid #ddd;
-	border-top-color: transparent;
-	border-radius: 0 0 4px 4px;
-	padding-bottom: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top-color: transparent;
+    border-radius: 0 0 4px 4px;
+    padding-bottom: 10px;
 }
 
 .border-right-blue {
-	border-right: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 /* Pszeudokód */
 
 #pszeudo p {
-	font-size: 12px;
+    font-size: 12px;
     margin: 0;
 }
 
 /* Stuktogram */
 
 #strukto table {
-	width: 80%;
+    width: 80%;
 }
 
 #strukto table tr td {
-	border: 1px solid black;
-	padding-left: 10px;
+    border: 1px solid black;
+    padding-left: 10px;
 }
 
 .elagazasFeltetel, .ciklusFeltetel {
-	text-align: center;
+    text-align: center;
 }
 
 #strukto table tr .atloJobb {
-	background-image: linear-gradient(to bottom right,  transparent calc(50% - 1px), black, transparent calc(50% + 1px));
-	border-left: 0;
-	width: 30px;
+    background-image: linear-gradient(to bottom right, transparent calc(50% - 1px), black, transparent calc(50% + 1px));
+    border-left: 0;
+    width: 30px;
 }
 
 #strukto table tr .atloBal {
-	background-image: linear-gradient(to bottom left,  transparent calc(50% - 1px), black, transparent calc(50% + 1px));
-	border-right: 0;
-	width: 30px;
+    background-image: linear-gradient(to bottom left, transparent calc(50% - 1px), black, transparent calc(50% + 1px));
+    border-right: 0;
+    width: 30px;
 }
 
 #strukto table tr .elagazasFeltetel {
-	border-left: 0;
-	border-right: 0;
+    border-left: 0;
+    border-right: 0;
 }
 
 #strukto table tr .ciklusFeltetel, #strukto table tr .noBottomBorder {
-	border-bottom: 0;
+    border-bottom: 0;
 }
 
-#strukto table tr .noTopBorder{
-	border-top: 0;
+#strukto table tr .noTopBorder {
+    border-top: 0;
 }
 
 #strukto table tr .ciklusMagElsoOszlop {
-	border-top: 0;
+    border-top: 0;
 }
 
-#strukto table tr .belsoCiklusMag{
-	width: 20px;
+#strukto table tr .belsoCiklusMag {
+    width: 20px;
 }
 
 /* C++ implementáció */
 
-#implementation  {
-	color: #FF003A;
+#implementation {
+    color: #FF003A;
 }
 
 #implementation p {
-	font-size: 12px;
-	margin: 0;
+    font-size: 12px;
+    margin: 0;
 }
 
 #implementation .cppVariable, .cplusplus .cppVariable {
-	color: black;
+    color: black;
 }
 
 #implementation .cppNumber, .cplusplus .cppNumber {
-	color: #F000F0;
+    color: #F000F0;
 }
 
 #implementation .cppKeyword, .cplusplus .cppKeyword {
-	font-weight: bold;
-	color: #0066E1;
+    font-weight: bold;
+    color: #0066E1;
 }
 
 .line {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .tab1 {
-	padding-left: 20px;
+    padding-left: 20px;
 }
 
 .tab2 {
-	padding-left: 40px;
+    padding-left: 40px;
 }
 
 .tab3 {
-	padding-left: 60px;
+    padding-left: 60px;
 }
 
 .tab4 {
-	padding-left: 80px;
+    padding-left: 80px;
 }
 
 #leiras {
-	text-align: justify;
-	padding-bottom: 20px;
+    text-align: justify;
+    padding-bottom: 20px;
 }
 
 /* Bemenet */
@@ -189,62 +189,62 @@ ol li:before {
 }
 
 #bemenet, #bemenet2, .inputMezo, #logKerBemenet, #bemenetSimple {
-	width: 120px;
-	display: inline;
+    width: 120px;
+    display: inline;
 }
 
 #feltetel {
-	width: 87px;
-	display: inline;
+    width: 87px;
+    display: inline;
 }
 
 #relaciosJel {
-	width: 60px;
-	display: inline;
+    width: 60px;
+    display: inline;
 }
 
 #algo-progressbar {
-	width: 0;
+    width: 0;
 }
 
 .btn-play {
-	background-color: white;
+    background-color: white;
 }
 
 #nyilak {
-	text-align: center;
+    text-align: center;
 }
 
 #algoritmus-reszletek {
-	background-color: white;
-	padding: 2px 12px 10px;
-	border-radius: 5px;
-	border: 1px solid #ddd;
+    background-color: white;
+    padding: 2px 12px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 #hibasbemenet {
-	background-color: white;
-	padding: 10px 10px;
-	border-radius: 5px;
-	border: 1px solid red;
-	text-align: center;
-	margin-top: 30px;
-	text-transform: uppercase;
-	color: red;
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid red;
+    text-align: center;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: red;
 }
 
 /* Tooltip */
 a.variable-tooltip {
-	color: black;
-	text-decoration: none;
-	cursor: auto;
+    color: black;
+    text-decoration: none;
+    cursor: auto;
 }
 
 .active-line a.variable-tooltip {
-	color: #337ab7;
-	cursor: pointer;
+    color: #337ab7;
+    cursor: pointer;
 }
 
 .active-line a.variable-tooltip:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }

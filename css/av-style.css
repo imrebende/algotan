@@ -1,88 +1,88 @@
 /* Tömbök */
 
-.blueElem , .blueTombElem {
-	color: blue;
-	font-weight: bold;
+.blueElem, .blueTombElem {
+    color: blue;
+    font-weight: bold;
 }
 
 .greenElem, .greenTombElem {
-	color: green !important;
-	font-weight: bold;
+    color: green !important;
+    font-weight: bold;
 }
 
 #valtozok, #tombok {
-	min-height: 60px;
+    min-height: 60px;
 }
 
 .nev {
-	min-width: 55px;
-	display: inline-table;
-	font-weight: bold;
-	text-align: right;
+    min-width: 55px;
+    display: inline-table;
+    font-weight: bold;
+    text-align: right;
 }
 
 .ertek {
-	display: inline;
+    display: inline;
 }
 
 #algo-prog {
-	height: 5px !important;
-	margin-top: 15px;
+    height: 5px !important;
+    margin-top: 15px;
 }
 
 /* Verem */
 
 #vE {
-	border: 1px solid black;
-	border-top: none;
-	font-size: 16px;
+    border: 1px solid black;
+    border-top: none;
+    font-size: 16px;
 }
 
 #vE td {
-	padding-right: 5px;
-	padding-left: 5px;
-	text-align: center;
-	background-color: white;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-align: center;
+    background-color: white;
 }
 
 #veremElemei {
-	margin-left: 45%;
+    margin-left: 45%;
 }
 
 /* Sor */
 
 #sE {
-	font-size: 16px;
-	display: inline;
+    font-size: 16px;
+    display: inline;
 }
 
 #sE td {
-	border: 1px solid black;
-	padding-right: 15px;
-	padding-left: 15px;
-	text-align: center;
-	background-color: white;
+    border: 1px solid black;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    background-color: white;
 }
 
 .sorNyil {
-	top: -4px;
+    top: -4px;
 }
 
 #sorElemei, #veremElemei {
-	margin-top: 80px;
-	text-align:center;
+    margin-top: 80px;
+    text-align: center;
 }
 
 /* Összetetebb algoritmusok */
 
 .slider-container {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .sliderCimke {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .sliderCimke .btn {
-	padding-right: 2px;
+    padding-right: 2px;
 }

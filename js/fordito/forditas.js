@@ -1,6 +1,6 @@
-var kifejezesek = ["ciklus", "ha", "amíg", "elágazás", "vége", "eljárás"];
+var kifejezesek = ["ciklus", "ha", "amÃ­g", "elÃ¡gazÃ¡s", "vÃ©ge", "eljÃ¡rÃ¡s"];
 
-function forditas(){
-	console.log("forditas");
-	$("#elemek").html($("#pszeudokodInput").val());
+function forditas() {
+    console.log("forditas");
+    $("#elemek").html($("#pszeudokodInput").val());
 }

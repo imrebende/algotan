@@ -118,30 +118,7 @@
                     <canvas id="myCanvas" width="300" height="300" style="border: none;"></canvas>
 
                     <div id="eredmenyek" class="hidden">
-                        <div id="nyilak">
-                            <button class="btn btn-play" id="elozoGomb" onclick="elozo()">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </button>
-                            <button class="btn btn-play" id="stopGomb" onclick="stop()">
-                                <span class="glyphicon glyphicon-stop"></span>
-                            </button>
-                            <button class="btn btn-play" id="pauseGomb" onclick="pause()">
-                                <span class="glyphicon glyphicon-pause"></span>
-                            </button>
-                            <button class="btn btn-play" id="playGomb" onclick="play()">
-                                <span class="glyphicon glyphicon-play"></span>
-                            </button>
-                            <button class="btn btn-play" id="kovetkezoGomb" onclick="kovetkezo()">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </button>
-                        </div>
-
-                        <div id="algo-prog" class="progress">
-                            <div id="algo-progressbar" class="progress-bar progress-bar-striped" role="progressbar"
-                                 aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                <span class="sr-only"></span>
-                            </div>
-                        </div>
+                        <div id="algoritmus-header"></div>
 
                         <div id="algoritmus-reszletek"></div>
 
@@ -181,7 +158,7 @@
         ctx.moveTo(center.x + from.x * szorzo + 1, center.y - from.y * szorzo);
         ctx.lineTo(center.x + to.x * szorzo + 1, center.y - to.y * szorzo);
     }
-    
+
     var center = {x: 150, y: 150};
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
@@ -199,10 +176,10 @@
             {x: 0, y: -1},
             {x: 2, y: 2},
             {x: 2, y: -2, color: "piros"});
-    
+
 
     for (var i = 0; i < 5; i++) {
-        if(t[i].color == "piros"){
+        if (t[i].color == "piros") {
             ctx.fillStyle = "red";
         } else {
             ctx.fillStyle = "black";

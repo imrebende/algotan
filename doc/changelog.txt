@@ -1,2 +1,3 @@
-jquery ui include
-mohó algoritmus
+jquery ui, handlebars include
+mohÃ³ algoritmus
+geometriai algoritmus
