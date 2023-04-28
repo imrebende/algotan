@@ -198,6 +198,9 @@ function szovegValtoztatas() {
     } else if ($("#valtozok .active").hasClass("elemBerakas")) {
         $(".elemBerakasNyil").removeClass("hidden");
         //magyarazatValtoztatas("fakt", $("#valtozok .active .ertek.fakt").text());
+    } else if ($("#valtozok .active").hasClass("elemBerakas2")) {
+        $(".elemBerakas2Nyil").removeClass("hidden");
+        //magyarazatValtoztatas("fakt", $("#valtozok .active .ertek.fakt").text());
     } else if ($("#valtozok .active").hasClass("feltetelVizsgalat")) {
         $(".feltetelVizsgalatNyil").removeClass("hidden");
         magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());

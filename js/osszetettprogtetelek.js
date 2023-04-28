@@ -34,8 +34,9 @@ function szetvalogatas(t, relJel, felt) {
     if (parseFloat(felt)) {
         felt = parseFloat(felt);
     }
-    valtozokKiirasa({nev: "B", ertek: a}, {nev: "C", ertek: b}, "");
+    valtozokKiirasa({nev: "B", ertek: a}, {nev: "C", ertek: b}, "elsoOsszeg");
     for (var i = 0; i < t.length; i++) {
+        valtozokKiirasa({nev: "B", ertek: a}, {nev: "C", ertek: b}, {nev: "I", ertek: i + 1}, "ciklusLepes");
         if (feltetel(t[i], relJel, felt)) {
             a.push(t[i]);
             valtozokKiirasa({nev: "B", ertek: a}, {nev: "C", ertek: b}, {nev: "I", ertek: i + 1}, "elemBerakas");
