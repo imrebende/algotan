@@ -23,7 +23,8 @@
       "rendezesek": "Rendezések<span class='caret'></span>",
       "grafalgoritmusok": "Gráfalgoritmusok<span class='caret'></span>",
       "adatszerkezetek": "Adatszerkezetek<span class='caret'></span>",
-      "egyeb": "Egyéb<span class='caret'></span>"
+      "egyeb": "Egyéb<span class='caret'></span>",
+      "mestersegesintelligencia": "Mesterséges intelligencia<span class='caret'></span>"
     },
     "fooldal": {
       "kezdooldal": "Kezdőoldal",
@@ -31,7 +32,8 @@
       "rendezesek": "Rendezések",
       "grafalgoritmusok": "Gráfalgoritmusok",
       "adatszerkezetek": "Adatszerkezetek",
-      "egyeb": "Egyéb"
+      "egyeb": "Egyéb",
+      "mestersegesintelligencia": "Mesterséges intelligencia"
     },
     "cppPelda": "C++ példa",
     "dokumentacio": "Dokumentáció"

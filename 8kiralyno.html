@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="A honlap programozási tételeket, egyszerűbb algoritmusokat mutat be vizuális megjelenítéssel."/>
+    <meta name="author" content="Bende Imre"/>
+    <link rel="icon" href="img/elte.ico"/>
+
+    <title data-i18n="egyeb.faktorialis.nev"></title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/av-style.css" rel="stylesheet"/>
+
+    <style>
+        table {
+            border: 5px solid white;
+            margin: 30px auto 30px auto;
+        }
+        table tr td {
+            width: 22px;
+            height: 22px;
+            border: 1px solid black;
+            vertical-align: middle;
+            text-align: center;
+        }
+        table tr:first-child td, table tr:last-child td,
+        table tr td:first-child, table tr td:last-child {
+            border: none;
+        }
+        .kijelolt, .kiralyno {
+            font-weight: 600;
+        }
+        .kiralyno::after {
+            content: "♛";
+        }
+        .aktualis {
+            opacity: 0.5;
+            font-weight:600;
+        }
+        .rossz {
+            border: 5px solid red;
+        }
+        .jo {
+            border: 5px solid green;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" data-i18n="label.projecttitle"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse"></div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="main">
+        <div class="row">
+            <h1>8 királynő problémája</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6 border-right-blue">
+                <div id="leiras">
+                    <h2 data-i18n="label.leiras"></h2>
+                    <p>Az algoritmus célja, hogy a sakktáblára elhelyezzünk 8 királynőt úgy, hogy egyik sem üti a másikat.</p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="text-center">
+                    <button class="btn btn-success" id="futtatoGomb" onclick="NyolcKiralynoStart()"
+                            data-i18n="label.futtatas"></button>
+                </div>
+                <div id="program">
+
+                    <table id="sakktabla">
+                        <tr>
+                            <td></td>
+                            <td class="o-1">A</td>
+                            <td class="o-2">B</td>
+                            <td class="o-3">C</td>
+                            <td class="o-4">D</td>
+                            <td class="o-5">E</td>
+                            <td class="o-6">F</td>
+                            <td class="o-7">G</td>
+                            <td class="o-8">H</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="s-1">1</td>
+                            <td class="00"></td>
+                            <td class="01"></td>
+                            <td class="02"></td>
+                            <td class="03"></td>
+                            <td class="04"></td>
+                            <td class="05"></td>
+                            <td class="06"></td>
+                            <td class="07"></td>
+                            <td class="s-1">1</td>
+                        </tr>
+                        <tr>
+                            <td class="s-2">2</td>
+                            <td class="10"></td>
+                            <td class="11"></td>
+                            <td class="12"></td>
+                            <td class="13"></td>
+                            <td class="14"></td>
+                            <td class="15"></td>
+                            <td class="16"></td>
+                            <td class="17"></td>
+                            <td class="s-2">2</td>
+                        </tr>
+                        <tr>
+                            <td class="s-3">3</td>
+                            <td class="20"></td>
+                            <td class="21"></td>
+                            <td class="22"></td>
+                            <td class="23"></td>
+                            <td class="24"></td>
+                            <td class="25"></td>
+                            <td class="26"></td>
+                            <td class="27"></td>
+                            <td class="s-3">3</td>
+                        </tr>
+                        <tr>
+                            <td class="s-4">4</td>
+                            <td class="30"></td>
+                            <td class="31"></td>
+                            <td class="32"></td>
+                            <td class="33"></td>
+                            <td class="34"></td>
+                            <td class="35"></td>
+                            <td class="36"></td>
+                            <td class="37"></td>
+                            <td class="s-4">4</td>
+                        </tr>
+                        <tr>
+                            <td class="s-5">5</td>
+                            <td class="40"></td>
+                            <td class="41"></td>
+                            <td class="42"></td>
+                            <td class="43"></td>
+                            <td class="44"></td>
+                            <td class="45"></td>
+                            <td class="46"></td>
+                            <td class="47"></td>
+                            <td class="s-5">5</td>
+                        </tr>
+                        <tr>
+                            <td class="s-6">6</td>
+                            <td class="50"></td>
+                            <td class="51"></td>
+                            <td class="52"></td>
+                            <td class="53"></td>
+                            <td class="54"></td>
+                            <td class="55"></td>
+                            <td class="56"></td>
+                            <td class="57"></td>
+                            <td class="s-6">6</td>
+                        </tr>
+                        <tr>
+                            <td class="s-7">7</td>
+                            <td class="60"></td>
+                            <td class="61"></td>
+                            <td class="62"></td>
+                            <td class="63"></td>
+                            <td class="64"></td>
+                            <td class="65"></td>
+                            <td class="66"></td>
+                            <td class="67"></td>
+                            <td class="s-7">7</td>
+                        </tr>
+                        <tr>
+                            <td class="s-8">8</td>
+                            <td class="70"></td>
+                            <td class="71"></td>
+                            <td class="72"></td>
+                            <td class="73"></td>
+                            <td class="74"></td>
+                            <td class="75"></td>
+                            <td class="76"></td>
+                            <td class="77"></td>
+                            <td class="s-8">8</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="o-1">A</td>
+                            <td class="o-2">B</td>
+                            <td class="o-3">C</td>
+                            <td class="o-4">D</td>
+                            <td class="o-5">E</td>
+                            <td class="o-6">F</td>
+                            <td class="o-7">G</td>
+                            <td class="o-8">H</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer"></footer>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/i18next-1.10.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/handlebars.js"></script>
+<script src="js/eljarasok.js"></script>
+<script src="js/mi/kiralyno.js"></script>
+<script src="js/esemenyek.js"></script>
+<script>
+    $(function () {
+        $("#egyeb").addClass("active");
+    });
+</script>
+</body>
+</html>
