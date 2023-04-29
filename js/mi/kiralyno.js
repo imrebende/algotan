@@ -39,6 +39,8 @@ function solveNQueens(board, col){
 let boards = [];
 let count = 0;
 function NyolcKiralynoStart() {
+    $('#sakktabla').removeClass('rossz');
+    $('#sakktabla').removeClass('jo');
     let board = [];
     for (let i = 0; i < 8; i++){
         let row = [];
@@ -157,39 +159,6 @@ function isGood(board) {
             }
         }
     }
-    return true;
-
-
-    for (let i = 0; i < 8; i++){
-        let s = 0, o = 0;
-        for (let j = 0; j < 8; j++){
-            s += board[i][j];
-            o += board[j][i];
-        }
-        if (s > 1 || o > 1) {
-            return false;
-        }
-    }
-
-    for (let i = 7; i >= 0; i--){
-        let atlo = 0;
-        for (j = 0; j <= 7 - i; j++) {
-            atlo = board[i][j];
-        }
-        if (atlo > 1) {
-            return false;
-        }
-    }
-    for (let i = 0; i < 8; i++){
-        let atlo = 0;
-        for (j = i; j >= 0; j--) {
-            atlo = board[i][j];
-        }
-        if (atlo > 1) {
-            return false;
-        }
-    }
-
     return true;
 }
 
