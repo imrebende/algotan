@@ -1,5 +1,5 @@
-var HUMAN = -1;
-var COMP = +1;
+let HUMAN = -1;
+let COMP = +1;
 
 let board = [
 	[0, 0, 0],
@@ -8,7 +8,7 @@ let board = [
 ];
 
 function evalute(state) {
-	var score = 0;
+	let score = 0;
 
 	if (gameOver(state, COMP)) {
 		score = +1;
@@ -23,7 +23,7 @@ function evalute(state) {
 }
 
 function gameOver(state, player) {
-	var win_state = [
+	let win_state = [
 		[state[0][0], state[0][1], state[0][2]],
 		[state[1][0], state[1][1], state[1][2]],
 		[state[2][0], state[2][1], state[2][2]],
@@ -34,10 +34,10 @@ function gameOver(state, player) {
 		[state[2][0], state[1][1], state[0][2]],
 	];
 
-	for (var i = 0; i < 8; i++) {
-		var line = win_state[i];
-		var filled = 0;
-		for (var j = 0; j < 3; j++) {
+	for (let i = 0; i < 8; i++) {
+		let line = win_state[i];
+		let filled = 0;
+		for (let j = 0; j < 3; j++) {
 			if (line[j] == player)
 				filled++;
 		}
@@ -52,9 +52,9 @@ function gameOverAll(state) {
 }
 
 function emptyCells(state) {
-	var cells = [];
-	for (var x = 0; x < 3; x++) {
-		for (var y = 0; y < 3; y++) {
+	let cells = [];
+	for (let x = 0; x < 3; x++) {
+		for (let y = 0; y < 3; y++) {
 			if (state[x][y] == 0)
 				cells.push([x, y]);
 		}
@@ -64,7 +64,7 @@ function emptyCells(state) {
 }
 
 function minimax(state, depth, player) {
-	var best;
+	let best;
 
 	if (player == COMP) {
 		best = [-1, -1, -1000];
@@ -74,15 +74,15 @@ function minimax(state, depth, player) {
 	}
 
 	if (depth == 0 || gameOverAll(state)) {
-		var score = evalute(state);
+		let score = evalute(state);
 		return [-1, -1, score];
 	}
 
 	emptyCells(state).forEach(function (cell) {
-		var x = cell[0];
-		var y = cell[1];
+		let x = cell[0];
+		let y = cell[1];
 		state[x][y] = player;
-		var score = minimax(state, depth - 1, -player);
+		let score = minimax(state, depth - 1, -player);
 		state[x][y] = 0;
 		score[0] = x;
 		score[1] = y;
@@ -101,7 +101,6 @@ function minimax(state, depth, player) {
 }
 
 function validMove(x, y) {
-	//var empties = emptyCells(board);
 	try {
 		if (board[x][y] == 0) {
 			return true;
@@ -114,7 +113,6 @@ function validMove(x, y) {
 	}
 }
 function validMoveWithPara(board, x, y) {
-	//var empties = emptyCells(board);
 	try {
 		if (board[x][y] == 0) {
 			return true;
@@ -151,14 +149,12 @@ $(".game td").on('click', clickedCell);
 
 function clickedCell() {
     let cell = this;
-	/*var button = document.getElementById("bnt-restart");
-	button.disabled = true;*/
-	var conditionToContinue = gameOverAll(board) == false && emptyCells(board).length > 0;
+	let conditionToContinue = gameOverAll(board) == false && emptyCells(board).length > 0;
 
 	if (conditionToContinue == true) {
-		var x = cell.id.split("")[0];
-		var y = cell.id.split("")[1];
-		var move = setMove(x, y, HUMAN);
+		let x = cell.id.split("")[0];
+		let y = cell.id.split("")[1];
+		let move = setMove(x, y, HUMAN);
 		if (move == true) {
 			cell.innerHTML = "X";
 			if (conditionToContinue)
@@ -166,8 +162,8 @@ function clickedCell() {
 		}
 	}
 	if (gameOver(board, COMP)) {
-		var lines;
-		var msg;
+		let lines;
+		let msg;
 
 		if (board[0][0] == 1 && board[0][1] == 1 && board[0][2] == 1)
 			lines = [[0, 0], [0, 1], [0, 2]];
@@ -186,7 +182,7 @@ function clickedCell() {
 		else if (board[2][0] == 1 && board[1][1] == 1 && board[0][2] == 1)
 			lines = [[2, 0], [1, 1], [0, 2]];
 
-		for (var i = 0; i < lines.length; i++) {
+		for (let i = 0; i < lines.length; i++) {
 			cell = document.getElementById(String(lines[i][0]) + String(lines[i][1]));
 			cell.style.color = "red";
 		}
@@ -195,15 +191,15 @@ function clickedCell() {
 		msg.innerHTML = "Vesztettél!";
 	}
 	if (emptyCells(board).length == 0 && !gameOverAll(board)) {
-		var msg = document.getElementById("message");
+		let msg = document.getElementById("message");
 		msg.innerHTML = "Döntetlen!";
 	}
 }
 
 function aiTurn() {
-	var x, y;
-	var move;
-	var cell;
+	let x, y;
+	let move;
+	let cell;
 
 	if (emptyCells(board).length == 10) {
 		x = parseInt(Math.random() * 3);
@@ -221,11 +217,9 @@ function aiTurn() {
 	}
 }
 
-//let steps;
 function generateSteps(actBoard, nextPlayer) {
     $(".round .game").html("");
     let board = JSON.parse(JSON.stringify(actBoard));
-    //steps = [];
     if (!board) {
         board = [
             [0, 0, 0],
@@ -239,12 +233,10 @@ function generateSteps(actBoard, nextPlayer) {
         let move = minimax(board, emptyCells(board).length, nextPlayer);
         setMoveWithPara(board, move[0], move[1], nextPlayer);
         displayStep(board, move[0], move[1], nextPlayer, roundNumber);
-        //steps.push(JSON.parse(JSON.stringify(board)));
         nextPlayer *= -1;
         stepNumber++;
         if (stepNumber % 2 == 1) roundNumber++;
     }
-    //console.log(steps);
 }
 
 function displayStep(board, x, y, nextPlayer, stepNumber) {
