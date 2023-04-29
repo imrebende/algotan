@@ -269,3 +269,13 @@ function newGame() {
     $(".gametable .game td").html("");
     $(".gametable .game td").css("color", "black");
 }
+
+$("#ttt-code").val("moveForCode(0,0)\nconsole.log(board);");
+function moveForCode(x, y) {
+	$("#" + String(x) + String(y)).click();
+}
+
+function genCode() {
+	let code = $("#ttt-code").val();
+	eval(code);
+}
