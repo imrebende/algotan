@@ -1,9 +1,7 @@
-var felfedezettLabirintus = [];
-
-var n, m;
-
-var lepesek = [];
-var lepesekSzama;
+let felfedezettLabirintus = [];
+let n = 10, m = 10;
+let lepesek = [];
+let lepesekSzama;
 
 function kezdes(a, b, poz) {
 	n = a;
@@ -13,9 +11,9 @@ function kezdes(a, b, poz) {
 	lepesek[0] = jatekos;
 	lepesekSzama = 1;
 	
-	for (var i = 0; i < n; i++) {
-		var t = [];
-		for (var j = 0; j < n; j++) {
+	for (let i = 0; i < n; i++) {
+		let t = [];
+		for (let j = 0; j < n; j++) {
 			t.push([]);
 		}
 		felfedezettLabirintus.push(t);
@@ -30,11 +28,6 @@ function lepes(jatekos, lehetsegesIranyok) {
 	if (felfedezettLabirintus[jatekos.x][jatekos.y].length == lehetsegesIranyok.length) {
 		return lepesek[--lepesekSzama];
 	}
-	
-	/*var i = 0;
-	while(felfedezettLabirintus[jatekos.x][jatekos.y].includes(lehetsegesIranyok[i])) {
-		i++;
-	}*/
 	
     let options = [];
 	if (lehetsegesIranyok.includes("NY") && !felfedezettLabirintus[jatekos.x][jatekos.y].includes("NY")) {
@@ -98,20 +91,16 @@ function lepes(jatekos, lehetsegesIranyok) {
 	return {...bestOption, lepesek: lepesek.length};
 }
 
-var jatekos = {
+let jatekos = {
 	x: -1, 
 	y: -1
 };
-
-var cel = {
+let cel = {
 	x: 9, 
 	y: 5
 };
-
-var n = 10, m = 10;
-var voltEMar = [];
-
-var labirintus = [
+let voltEMar = [];
+let labirintus = [
 	[["K"], ["NY", "D"], ["K", "D"], ["K", "NY"], ["K", "NY"], ["NY", "D"], ["D", "K"], ["NY"], ["D", "K"], ["NY", "D"]],
 	[["K", "D"], ["É", "NY", "D"], ["É", "K"], ["NY", "D"], ["D", "K"], ["É", "NY", "D"], ["É", "K", "D"], ["NY", "D"], ["É", "D"], ["É", "D"]],
 	[["É", "D"], ["É"], ["K", "D"], ["É", "NY"], ["É", "D"], ["É", "D"], ["É", "D"], ["É", "K"], ["É", "NY"], ["É", "D"]],
@@ -125,11 +114,11 @@ var labirintus = [
 ];
 
 function palyaLetrehozasa() {
-	var tabla = "<table>";
-	for(var i = 0; i < n; i++) {
+	let tabla = "<table>";
+	for(let i = 0; i < n; i++) {
 		tabla += "<tr>";
-		for(var j = 0; j < m; j++) {
-			var style = 'style="'; 
+		for(let j = 0; j < m; j++) {
+			let style = 'style="'; 
 			
 			style += "border-top: ";
 			if (labirintus[i][j].includes("É")) {
@@ -209,13 +198,13 @@ function lepesVizsgalat(poz) {
 	return false;
 }
 
-var interval;
+let interval;
 function jatekInditasa() {
 	palyaLetrehozasa();
 	
-	for (var i = 0; i < n; i++) {
-		var t = [];
-		for (var j = 0; j < m; j++) {
+	for (let i = 0; i < n; i++) {
+		let t = [];
+		for (let j = 0; j < m; j++) {
 			t.push(false);
 		}
 		voltEMar.push(t);
@@ -227,7 +216,7 @@ function jatekInditasa() {
 	
 	interval = setInterval(function(){ 
 		if (!jatekVege()) {
-			var ujPozicio = lepes(jatekos, labirintus[jatekos.x][jatekos.y]);
+			let ujPozicio = lepes(jatekos, labirintus[jatekos.x][jatekos.y]);
 			if (lepesVizsgalat(ujPozicio)) {
 				jatekosMozgatasa(ujPozicio);
 			} else {
@@ -248,9 +237,9 @@ function jatekVege() {
 $( document ).ready(function() {
     palyaLetrehozasa();
 	
-	for (var i = 0; i < n; i++) {
-		var t = [];
-		for (var j = 0; j < m; j++) {
+	for (let i = 0; i < n; i++) {
+		let t = [];
+		for (let j = 0; j < m; j++) {
 			t.push(false);
 		}
 		voltEMar.push(t);
