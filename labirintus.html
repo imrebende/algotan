@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="A honlap programozási tételeket, egyszerűbb algoritmusokat mutat be vizuális megjelenítéssel."/>
+    <meta name="author" content="Bende Imre"/>
+    <link rel="icon" href="img/elte.ico"/>
+
+    <title>Labirintus</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/av-style.css" rel="stylesheet"/>
+
+    <style>
+        .container {
+            text-align: center;
+        }
+        table {
+            margin: 30px auto 30px auto;
+        }
+        table tr td {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            vertical-align: middle;
+            text-align: center;
+            background-color: lightgrey;
+        }
+        .megnemvolt {
+            background-color: white;
+        }
+        .tooltip {
+            z-index: 1000;
+            position: fix;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" data-i18n="label.projecttitle"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse"></div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="main">
+        <div class="row">
+            <h1>Labirintus</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div id="program">
+
+                    <div id="jatek-ter"></div>
+                    
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success" id="futtatoGomb" onclick="jatekInditasa()"
+                            data-i18n="label.futtatas"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer"></footer>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/i18next-1.10.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/handlebars.js"></script>
+<script src="js/eljarasok.js"></script>
+<script src="js/mi/labirintus.js"></script>
+<script src="js/esemenyek.js"></script>
+<script>
+    $(function () {
+        $("#egyeb").addClass("active");
+    });
+</script>
+</body>
+</html>
