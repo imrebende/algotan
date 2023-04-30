@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="A honlap programozási tételeket, egyszerűbb algoritmusokat mutat be vizuális megjelenítéssel."/>
+    <meta name="author" content="Bende Imre"/>
+    <link rel="icon" href="img/elte.ico"/>
+
+    <title>Hátizsák probléma</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/av-style.css" rel="stylesheet"/>
+
+    <style>
+        .round-number {
+            vertical-align: top;
+            margin-top: 38px;
+            display: inline-block;
+            width: 50px;
+            text-align: center;
+        }
+        .round .game {
+            display: inline-block;
+			vertical-align: middle;
+        }
+        .game {
+            border-collapse: collapse;
+            margin: 10px;
+        }
+        .game tr td {
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .new {
+            font-weight: bold;
+            color: blue;
+        }
+        .gametable {
+            width: 45%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .decisions {
+            display: inline-block; 
+        }
+        .gametable .main {
+            margin: auto;
+            display: table;
+        }
+        .gametable .game td {
+            min-width: 50px;
+            width: 50px;
+            height: 50px;
+        }
+		.game tr td.act {
+			border: 3px solid blue;
+		}
+        .game tr td.act.solution {
+			border: 3px solid green;
+		}
+        #bemenet-dinamikus {
+            margin-bottom: 10px;
+        }
+        .game tr td:first-child, .game tr:first-child{
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" data-i18n="label.projecttitle"></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse"></div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="main">
+        <div class="row">
+            <h1>Hátizsák probléma</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-5 border-right-blue">
+                <div class="text-center">
+                    <label for="bemenet">Bemenet: </label>
+                    <textarea class="form-control" name="bemenet-dinamikus" id="bemenet-dinamikus"></textarea>
+                    <button class="btn btn-success" id="futtatoGomb" onclick="sort()">Lépések generálása</button>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="gametable">
+                    <div class="main">
+                        <table class="game"></table>
+                        <div class="text-center">
+                            <strong><span id="message"></span></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer"></footer>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/i18next-1.10.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/handlebars.js"></script>
+<script src="js/eljarasok.js"></script>
+<script src="js/dinamikus.js"></script>
+<script src="js/esemenyek.js"></script>
+<script>
+    $(function () {
+        $("#egyeb").addClass("active");
+    });
+</script>
+</body>
+</html>
