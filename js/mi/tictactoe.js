@@ -7,6 +7,12 @@ let board = [
 	[0, 0, 0],
 ];
 
+let scoreBoard = [
+	[0, 0, 0],
+	[0, 0, 0],
+	[0, 0, 0],
+];
+
 function evalute(state) {
 	let score = 0;
 
@@ -63,7 +69,7 @@ function emptyCells(state) {
 	return cells;
 }
 
-function minimax(state, depth, player) {
+function minimax(state, depth, player, scoreBoard) {
 	let best;
 
 	if (player == COMP) {
@@ -82,7 +88,7 @@ function minimax(state, depth, player) {
 		let x = cell[0];
 		let y = cell[1];
 		state[x][y] = player;
-		let score = minimax(state, depth - 1, -player);
+		let score = minimax(state, depth - 1, -player, scoreBoard);
 		state[x][y] = 0;
 		score[0] = x;
 		score[1] = y;
@@ -94,6 +100,13 @@ function minimax(state, depth, player) {
 		else {
 			if (score[2] < best[2])
 				best = score;
+		}
+		if (scoreBoard && mainDepth == depth) {
+			if (scoreBoard[x][y] === '' || 
+				(scoreBoard[x][y] > score[2] && player == COMP) ||
+				(scoreBoard[x][y] < score[2] && player != COMP)) {
+				scoreBoard[x][y] = score[2];
+			}
 		}
 	});
 
@@ -163,7 +176,6 @@ function clickedCell() {
 	}
 	if (gameOver(board, COMP)) {
 		let lines;
-		let msg;
 
 		if (board[0][0] == 1 && board[0][1] == 1 && board[0][2] == 1)
 			lines = [[0, 0], [0, 1], [0, 2]];
@@ -187,12 +199,10 @@ function clickedCell() {
 			cell.style.color = "red";
 		}
 
-		msg = document.getElementById("message");
-		msg.innerHTML = "Vesztettél!";
+		document.getElementById("message").innerHTML = "Vesztettél!";
 	}
 	if (emptyCells(board).length == 0 && !gameOverAll(board)) {
-		let msg = document.getElementById("message");
-		msg.innerHTML = "Döntetlen!";
+		document.getElementById("message").innerHTML = "Döntetlen!";
 	}
 }
 
@@ -230,25 +240,37 @@ function generateSteps(actBoard, nextPlayer) {
     let stepNumber = 1;
     let roundNumber = 1;
     while (emptyCells(board).length > 0 && !gameOverAll(board)) {
-        let move = minimax(board, emptyCells(board).length, nextPlayer);
+		let scoreBoard = [
+			['', '', ''],
+			['', '', ''],
+			['', '', ''],
+		];
+		mainDepth = emptyCells(board).length;
+        let move = minimax(board, emptyCells(board).length, nextPlayer, scoreBoard);
+		
         setMoveWithPara(board, move[0], move[1], nextPlayer);
-        displayStep(board, move[0], move[1], nextPlayer, roundNumber);
+        displayStep(board, move[0], move[1], nextPlayer, roundNumber, scoreBoard);
         nextPlayer *= -1;
         stepNumber++;
         if (stepNumber % 2 == 1) roundNumber++;
     }
 }
+let mainDepth;
 
-function displayStep(board, x, y, nextPlayer, stepNumber) {
+function displayStep(board, x, y, nextPlayer, stepNumber, scoreBoard) {
     let table = "";
     for (let i = 0; i < 3; i++) {
         table += "<tr>";
         for (let j = 0; j < 3; j++) {
             let icon = board[i][j] === -1 ? "X" : board[i][j] === 1 ? "O" : "";
+			let sb = "";
+			if (scoreBoard[i][j] !== '') {
+				sb = scoreBoard[i][j];
+			}
             if (i === x && j === y) {
-                table += `<td class="new">${icon}</td>`;
+                table += `<td class="new"><span class="icon">${icon}</span><span class="sb hidden">${sb}</span></td>`;
             } else {
-                table += `<td>${icon}</td>`;
+                table += `<td><span class="icon">${icon}</span><span class="sb hidden">${sb}</span></td>`;
             }
         }
         table += "</tr>";
@@ -260,14 +282,25 @@ function displayStep(board, x, y, nextPlayer, stepNumber) {
     }
 }
 
+function showValues() {
+	$(".sb").toggleClass("hidden");
+	$(".icon").toggleClass("hidden");
+}
+
 function newGame() {
     board = [
         [0, 0, 0],
         [0, 0, 0],
         [0, 0, 0],
     ];
+	scoreBoard = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+    ];
     $(".gametable .game td").html("");
     $(".gametable .game td").css("color", "black");
+	document.getElementById("message").innerHTML = "";
 }
 
 $("#ttt-code").val("moveForCode(0,0)\nconsole.log(board);");
