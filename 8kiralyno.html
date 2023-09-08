@@ -17,19 +17,19 @@
     <link href="css/av-style.css" rel="stylesheet"/>
 
     <style>
-        table {
+        table#sakktabla {
             border: 5px solid white;
             margin: 30px auto 30px auto;
         }
-        table tr td {
+        table#sakktabla tr td {
             width: 22px;
             height: 22px;
             border: 1px solid black;
             vertical-align: middle;
             text-align: center;
         }
-        table tr:first-child td, table tr:last-child td,
-        table tr td:first-child, table tr td:last-child {
+        table#sakktabla tr:first-child td, table#sakktabla tr:last-child td,
+        table#sakktabla tr td:first-child, table#sakktabla tr td:last-child {
             border: none;
         }
         .kijelolt, .kiralyno {
@@ -79,7 +79,153 @@
             <div class="col-md-6 border-right-blue">
                 <div id="leiras">
                     <h2 data-i18n="label.leiras"></h2>
-                    <p>Az algoritmus célja, hogy a sakktáblára elhelyezzünk 8 királynőt úgy, hogy egyik sem üti a másikat.</p>
+                    <p>Az algoritmus célja, hogy a sakktáblára elhelyezzünk 8 királynőt úgy, hogy egyik sem üti a másikat. (a sakktábla egyes celláira kattintva kézzel is kipróbálható)</p>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+                    <li><a data-toggle="pill" href="#strukto" data-i18n="label.struktogram"></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="pszeudo" class="tab-pane fade in active">
+                        <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Vezérek(N,Van,Y):</p>
+                        <p class="line tab1">i:=1; Y[]:=[0,…,0]</p>
+                        <p class="line tab1"><strong>Ciklus amíg</strong> i&gt;=1 és i&lt;=N<span
+                            class="first glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2">Jóesetkeresés(i,Van,j)<span
+                            class="fourth glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2"><strong>Ha</strong> Van <strong>akkor</strong> Y[i]:=j; i:=i+1<span
+                            class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab3"><strong>különben</strong> Y[i]:=0; i:=i-1</p>
+                        <p class="line tab1"><strong>Ciklus vége</strong></p>
+                        <p class="line tab1">Van:=(i>N)<span
+                            class="second glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line"><strong>Eljárás vége.</strong></p>
+                        <br/>
+                        <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Jóesetkeresés(i,Van,j):</p>
+                        <p class="line tab1">j:=Y[i]+1</p>
+                        <p class="line tab1"><strong>Ciklus amíg</strong> j≤N és rossz(i,j)</p>
+                        <p class="line tab2">j:=j+1</p>
+                        <p class="line tab1"><strong>Ciklus vége</strong></p>
+                        <p class="line tab1">Van:=(j≤N)</p>
+                        <p class="line"><strong>Eljárás vége.</strong></p>
+                        <br/>
+                        <p class="line"><strong>Függvény</strong> rossz(i,j):</p>
+                        <p class="line tab1">k:=1</p>
+                        <p class="line tab1"><strong>Ciklus amíg</strong> k&lt;i és Y[k]≠j és i-k≠abs(j-Y[k])</p>
+                        <p class="line tab2">k:=k+1</p>
+                        <p class="line tab1"><strong>Ciklus vége</strong></p>
+                        <p class="line tab1">rossz:=(k&lt;i)</p>
+                        <p class="line"><strong>Függvény vége.</strong></p>
+                    </div>
+                    <div id="strukto" class="tab-pane fade">
+                        <p>Vezérek(N,Van,Y):</p>
+                        <table>
+                            <tr>
+                                <td colspan="4">
+                                    i:=1; Y[]:=[0,…,0]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="ciklusFeltetel">
+                                    i&gt;=1 és i&lt;=N<span
+                                    class="first glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td colspan="3">
+                                    Jóesetkeresés(i,Van,j)<span
+                                    class="fourth glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td class="atloBal"></td>
+                                <td class="elagazasFeltetel">
+                                    Van 
+                                </td>
+                                <td class="atloJobb"></td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td colspan="2">
+                                    Y[i]:=j;<span
+                                    class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                                </td>
+                                <td>
+                                    Y[i]:=0;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop">&nbsp;</td>
+                                <td colspan="2">
+                                    i:=i+1<span
+                                    class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                                </td>
+                                <td>
+                                    i:=i-1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    Van:=(i>N)<span
+                                    class="second glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <br/>
+                        <p>Jóesetkeresés(i,Van,j):</p>
+                        <table>
+                            <tr>
+                                <td colspan="4">
+                                    j:=Y[i]+1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="ciklusFeltetel">
+                                    j&gt;=N és rossz(i,j)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td colspan="3">
+                                    j:=j+1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    Van:=(j&lt;=N)
+                                </td>
+                            </tr>
+                        </table>
+
+                        <br/>
+                        <p>rossz(i,j):</p>
+                        <table>
+                            <tr>
+                                <td colspan="4">
+                                    k:=1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="ciklusFeltetel">
+                                    k&lt;i és Y[k]≠j és i-k≠abs(j-Y[k])
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td colspan="3">
+                                    k:=k+1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    rossz:=(k&lt;i)
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-md-5">
@@ -88,130 +234,135 @@
                             data-i18n="label.futtatas"></button>
                 </div>
                 <div id="program">
-
-                    <table id="sakktabla">
-                        <tr>
-                            <td></td>
-                            <td class="o-1">A</td>
-                            <td class="o-2">B</td>
-                            <td class="o-3">C</td>
-                            <td class="o-4">D</td>
-                            <td class="o-5">E</td>
-                            <td class="o-6">F</td>
-                            <td class="o-7">G</td>
-                            <td class="o-8">H</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="s-1">1</td>
-                            <td class="00"></td>
-                            <td class="01"></td>
-                            <td class="02"></td>
-                            <td class="03"></td>
-                            <td class="04"></td>
-                            <td class="05"></td>
-                            <td class="06"></td>
-                            <td class="07"></td>
-                            <td class="s-1">1</td>
-                        </tr>
-                        <tr>
-                            <td class="s-2">2</td>
-                            <td class="10"></td>
-                            <td class="11"></td>
-                            <td class="12"></td>
-                            <td class="13"></td>
-                            <td class="14"></td>
-                            <td class="15"></td>
-                            <td class="16"></td>
-                            <td class="17"></td>
-                            <td class="s-2">2</td>
-                        </tr>
-                        <tr>
-                            <td class="s-3">3</td>
-                            <td class="20"></td>
-                            <td class="21"></td>
-                            <td class="22"></td>
-                            <td class="23"></td>
-                            <td class="24"></td>
-                            <td class="25"></td>
-                            <td class="26"></td>
-                            <td class="27"></td>
-                            <td class="s-3">3</td>
-                        </tr>
-                        <tr>
-                            <td class="s-4">4</td>
-                            <td class="30"></td>
-                            <td class="31"></td>
-                            <td class="32"></td>
-                            <td class="33"></td>
-                            <td class="34"></td>
-                            <td class="35"></td>
-                            <td class="36"></td>
-                            <td class="37"></td>
-                            <td class="s-4">4</td>
-                        </tr>
-                        <tr>
-                            <td class="s-5">5</td>
-                            <td class="40"></td>
-                            <td class="41"></td>
-                            <td class="42"></td>
-                            <td class="43"></td>
-                            <td class="44"></td>
-                            <td class="45"></td>
-                            <td class="46"></td>
-                            <td class="47"></td>
-                            <td class="s-5">5</td>
-                        </tr>
-                        <tr>
-                            <td class="s-6">6</td>
-                            <td class="50"></td>
-                            <td class="51"></td>
-                            <td class="52"></td>
-                            <td class="53"></td>
-                            <td class="54"></td>
-                            <td class="55"></td>
-                            <td class="56"></td>
-                            <td class="57"></td>
-                            <td class="s-6">6</td>
-                        </tr>
-                        <tr>
-                            <td class="s-7">7</td>
-                            <td class="60"></td>
-                            <td class="61"></td>
-                            <td class="62"></td>
-                            <td class="63"></td>
-                            <td class="64"></td>
-                            <td class="65"></td>
-                            <td class="66"></td>
-                            <td class="67"></td>
-                            <td class="s-7">7</td>
-                        </tr>
-                        <tr>
-                            <td class="s-8">8</td>
-                            <td class="70"></td>
-                            <td class="71"></td>
-                            <td class="72"></td>
-                            <td class="73"></td>
-                            <td class="74"></td>
-                            <td class="75"></td>
-                            <td class="76"></td>
-                            <td class="77"></td>
-                            <td class="s-8">8</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="o-1">A</td>
-                            <td class="o-2">B</td>
-                            <td class="o-3">C</td>
-                            <td class="o-4">D</td>
-                            <td class="o-5">E</td>
-                            <td class="o-6">F</td>
-                            <td class="o-7">G</td>
-                            <td class="o-8">H</td>
-                            <td></td>
-                        </tr>
-                    </table>
-                    
+                    <div id="eredmenyek" class="hidden">
+                        <div id="algoritmus-header-new"></div>
+                    </div>
+                    <div id="algoritmus-reszletek-new">
+                        <div class="gametable">
+                            <table id="sakktabla">
+                                <tr>
+                                    <td></td>
+                                    <td class="o-1">A</td>
+                                    <td class="o-2">B</td>
+                                    <td class="o-3">C</td>
+                                    <td class="o-4">D</td>
+                                    <td class="o-5">E</td>
+                                    <td class="o-6">F</td>
+                                    <td class="o-7">G</td>
+                                    <td class="o-8">H</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="s-1">1</td>
+                                    <td class="00"></td>
+                                    <td class="01"></td>
+                                    <td class="02"></td>
+                                    <td class="03"></td>
+                                    <td class="04"></td>
+                                    <td class="05"></td>
+                                    <td class="06"></td>
+                                    <td class="07"></td>
+                                    <td class="s-1">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="s-2">2</td>
+                                    <td class="10"></td>
+                                    <td class="11"></td>
+                                    <td class="12"></td>
+                                    <td class="13"></td>
+                                    <td class="14"></td>
+                                    <td class="15"></td>
+                                    <td class="16"></td>
+                                    <td class="17"></td>
+                                    <td class="s-2">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="s-3">3</td>
+                                    <td class="20"></td>
+                                    <td class="21"></td>
+                                    <td class="22"></td>
+                                    <td class="23"></td>
+                                    <td class="24"></td>
+                                    <td class="25"></td>
+                                    <td class="26"></td>
+                                    <td class="27"></td>
+                                    <td class="s-3">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="s-4">4</td>
+                                    <td class="30"></td>
+                                    <td class="31"></td>
+                                    <td class="32"></td>
+                                    <td class="33"></td>
+                                    <td class="34"></td>
+                                    <td class="35"></td>
+                                    <td class="36"></td>
+                                    <td class="37"></td>
+                                    <td class="s-4">4</td>
+                                </tr>
+                                <tr>
+                                    <td class="s-5">5</td>
+                                    <td class="40"></td>
+                                    <td class="41"></td>
+                                    <td class="42"></td>
+                                    <td class="43"></td>
+                                    <td class="44"></td>
+                                    <td class="45"></td>
+                                    <td class="46"></td>
+                                    <td class="47"></td>
+                                    <td class="s-5">5</td>
+                                </tr>
+                                <tr>
+                                    <td class="s-6">6</td>
+                                    <td class="50"></td>
+                                    <td class="51"></td>
+                                    <td class="52"></td>
+                                    <td class="53"></td>
+                                    <td class="54"></td>
+                                    <td class="55"></td>
+                                    <td class="56"></td>
+                                    <td class="57"></td>
+                                    <td class="s-6">6</td>
+                                </tr>
+                                <tr>
+                                    <td class="s-7">7</td>
+                                    <td class="60"></td>
+                                    <td class="61"></td>
+                                    <td class="62"></td>
+                                    <td class="63"></td>
+                                    <td class="64"></td>
+                                    <td class="65"></td>
+                                    <td class="66"></td>
+                                    <td class="67"></td>
+                                    <td class="s-7">7</td>
+                                </tr>
+                                <tr>
+                                    <td class="s-8">8</td>
+                                    <td class="70"></td>
+                                    <td class="71"></td>
+                                    <td class="72"></td>
+                                    <td class="73"></td>
+                                    <td class="74"></td>
+                                    <td class="75"></td>
+                                    <td class="76"></td>
+                                    <td class="77"></td>
+                                    <td class="s-8">8</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="o-1">A</td>
+                                    <td class="o-2">B</td>
+                                    <td class="o-3">C</td>
+                                    <td class="o-4">D</td>
+                                    <td class="o-5">E</td>
+                                    <td class="o-6">F</td>
+                                    <td class="o-7">G</td>
+                                    <td class="o-8">H</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -228,6 +379,7 @@
 <script src="js/eljarasok.js"></script>
 <script src="js/mi/kiralyno.js"></script>
 <script src="js/esemenyek.js"></script>
+<script src="js/esemenyek-new.js"></script>
 <script>
     $(function () {
         $("#egyeb").addClass("active");

@@ -14,31 +14,49 @@ function isSafe(board, row, col){
 }
 
 function solveNQueens(board, col){
-    console.log(boards);
-    boards.push({b: JSON.parse(JSON.stringify(board))});
+    steps.push({
+        b: JSON.parse(JSON.stringify(board)),
+        type: "first",
+        aktSor: 0,
+        aktOszlop: col
+    });
     if (col == n) {
-        boards.push({b: JSON.parse(JSON.stringify(board))});
+        steps.push({
+            b: JSON.parse(JSON.stringify(board)),
+            type: "second"
+        });
         return true;
     }
     for (let i = 0; i < n; i++) {
         if (isSafe(board, i, col)) {
             board[i][col] = 1;
-            boards.push({
+            steps.push({
                 b: JSON.parse(JSON.stringify(board)),
                 aktSor: i,
-                aktOszlop: col
+                aktOszlop: col,
+                type: "third"
             });
             if (solveNQueens(board, col + 1))
                 return true;
+            board[i][col] = 0;
+        } else {
+            board[i][col] = 1;
+            steps.push({
+                b: JSON.parse(JSON.stringify(board)),
+                aktSor: i,
+                aktOszlop: col,
+                type: "fourth"
+            });
             board[i][col] = 0;
         }
     }
     return false;
 }
 
-let boards = [];
-let count = 0;
+//let boards = [];
+//let count = 0;
 function NyolcKiralynoStart() {
+    pause();
     $('#sakktabla').removeClass('rossz');
     $('#sakktabla').removeClass('jo');
     let board = [];
@@ -51,13 +69,14 @@ function NyolcKiralynoStart() {
     }
 
     solveNQueens(board, 0);
-
-    count = 0;
-    sakkTablaMegjelenites(boards[count]);
+    actStep = 0;
+    display(steps[actStep], actStep);
+    barValtoztatasaNew(actStep, steps.length);
+    playNew();
+    $("#eredmenyek").removeClass("hidden");
 }
 
-function sakkTablaMegjelenites(b) {
-
+function display(b) {
     for (let i = 0; i < 8; i++){
         for (let j = 0; j < 8; j++){
             if (b.b[i][j] === 1) {
@@ -70,28 +89,28 @@ function sakkTablaMegjelenites(b) {
 
     $('.aktualis').removeClass('aktualis');
     $('.kijelolt').removeClass('kijelolt');
-    if (b.aktSor && b.aktOszlop) {
+    if (b.aktSor !== undefined && b.aktOszlop !== undefined) {
         $("." + String(b.aktSor) + String(b.aktOszlop)).addClass('aktualis');
         $(".o-" + (b.aktOszlop + 1)).addClass('kijelolt');
         $(".s-" + (b.aktSor + 1)).addClass('kijelolt');
     }
 
-    setTimeout(() => {
+    /*setTimeout(() => {
         count++;
         sakkTablaMegjelenites(boards[count]);
-    }, 500);
+    }, 500);*/
 }
 
 $("#sakktabla").on('click', userInput);
 
 function userInput(e) {
     let td = e.target;
-    let tdClass;
+    //let tdClass;
     if ($(td).hasClass('kiralyno')) {
         $(td).removeClass('kiralyno');
-        tdClass = $(td).attr('class');
+        //tdClass = $(td).attr('class');
     } else {
-        tdClass = $(td).attr('class');
+        //tdClass = $(td).attr('class');
         $(td).addClass('kiralyno');
     }
 

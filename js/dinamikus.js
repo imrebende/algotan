@@ -5,7 +5,7 @@ function dinamikusStart() {
     pause();
     generateStepsForBackpack();
     //console.log(steps);
-    
+    actStep = 0;
     display(steps[actStep], actStep);
     barValtoztatasaNew(actStep, steps.length);
     playNew();
