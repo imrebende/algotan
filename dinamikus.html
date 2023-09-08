@@ -44,7 +44,7 @@
             color: blue;
         }
         .gametable {
-            width: 45%;
+            /*width: 45%;*/
             display: inline-block;
             vertical-align: top;
         }
@@ -56,9 +56,9 @@
             display: table;
         }
         .gametable .game td {
-            min-width: 50px;
-            width: 50px;
-            height: 50px;
+            min-width: 30px;
+            width: 30px;
+            height: 30px;
         }
 		.game tr td.act {
 			border: 3px solid blue;
@@ -100,19 +100,104 @@
             <h1>Hátizsák probléma</h1>
         </div>
         <div class="row">
-            <div class="col-md-5 border-right-blue">
-                <div class="text-center">
-                    <label for="bemenet">Bemenet: </label>
-                    <textarea class="form-control" name="bemenet-dinamikus" id="bemenet-dinamikus"></textarea>
-                    <button class="btn btn-success" id="futtatoGomb" onclick="sort()">Lépések generálása</button>
+            <div class="col-md-6 border-right-blue">
+                <div id="leiras">
+                    <h2 data-i18n="label.leiras"></h2>
+                    <p>
+                        Adott egy K kapacitású hátizsák és N darab tárgy, amelyek tömege w1, w2, ... wN, értéke pedig v1, v2,.. vN. Szeretnénk a legtöbb értéket bepakolni a hátizsákba, anélkül, hogy túllépnénk a hátizsák kapacitását.<br/>
+                        Írjunk programot, ami megadja, hogy legfeljebb mennyi érték fér a hátizsákba! (Az érték a bepakolt tárgyak értékének összege.)
+                    </p>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+                    <li><a data-toggle="pill" href="#strukto" data-i18n="label.struktogram"></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="pszeudo" class="tab-pane fade in active">
+                        <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Hátizsák():</p>
+                        <p class="line tab1">E(0..S(1)-1,1):=0; E(S(1)..H,1):=F(1)<span
+                            class="first glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab1"><strong>Ciklus</strong>  i=2-től N-ig</p>
+                        <p class="line tab2"><strong>Ciklus</strong> X=0-tól H-ig</p>
+                        <p class="line tab3">E(X,i):=E(X,i-1)<span
+                            class="next glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab3"><strong>Ha</strong> Ha S(i)&lt;=X és E(X,i)&lt;E(X-S(i),i-1)+F(i)<span
+                            class="next glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab4"><strong>akkor</strong> E(X,i):=E(X-S(i),i-1)+F(i)<span
+                            class="next glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2"><strong>Ciklus vége</strong></p>
+                        <p class="line tab1"><strong>Ciklus vége</strong></p>
+                        <p class="line"><strong>Eljárás vége.</strong></p>
+                    </div>
+                    <div id="strukto" class="tab-pane fade">
+                        <table>
+                            <tbody><tr>
+                                <td colspan="5">
+                                    E(0..S(1)-1,1):=0; E(S(1)..H,1):=F(1)<span
+                                    class="first glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="ciklusFeltetel">
+                                    Ciklus i=2-től N-ig
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td colspan="4" class="noBottomBorder">
+                                    Ciklus X=0-tól H-ig
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td colspan="3" class="noBottomBorder">
+                                    E(X,i):=E(X,i-1)<span
+                                    class="next glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
+                                <td class="atloBal"></td>
+                                <td class="elagazasFeltetel">
+                                    Ha S(i)&lt;=X és E(X,i)&lt;E(X-S(i),i-1)+F(i)<span
+                                    class="next glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                                <td class="atloJobb"></td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop">&nbsp;</td>
+                                <td class="ciklusMagElsoOszlop belsoCiklusMag">&nbsp;</td>
+                                <td colspan="2">
+                                    E(X,i):=E(X-S(i),i-1)+F(i)<span
+                                    class="next glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                                <td> -<span
+                                    class="next glyphicon glyphicon-triangle-left utasitas hidden"></span></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-7">
-                <div class="gametable">
-                    <div class="main">
-                        <table class="game"></table>
-                        <div class="text-center">
-                            <strong><span id="message"></span></strong>
+            <div class="col-md-5 border-right-blue">
+                <div id="program">
+                    <div class="text-center">
+                        <label for="bemenet-dinamikus">Bemenet: </label>
+                        <textarea class="form-control" name="bemenet-dinamikus" id="bemenet-dinamikus"></textarea>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="kapacitas">Kapacitás: </label>
+                        <input type="text" class="form-control" name="kapacitas" id="kapacitas"/>
+                        <button class="btn btn-success" id="futtatoGomb" onclick="dinamikusStart()">Futtatás</button>
+                    </div>
+                    <div id="eredmenyek" class="hidden">
+                        <div id="algoritmus-header-new"></div>
+                    </div>
+                    <div id="algoritmus-reszletek-new" class="hidden">
+                        <div class="gametable">
+                            <table class="game"></table>
                         </div>
                     </div>
                 </div>
@@ -131,6 +216,7 @@
 <script src="js/eljarasok.js"></script>
 <script src="js/dinamikus.js"></script>
 <script src="js/esemenyek.js"></script>
+<script src="js/esemenyek-new.js"></script>
 <script>
     $(function () {
         $("#egyeb").addClass("active");

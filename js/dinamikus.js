@@ -1,9 +1,22 @@
 $("#bemenet-dinamikus").val('[{"v": 2, "w": 3}, {"v": 2, "w": 1}, {"v": 4, "w": 3}, {"v": 5, "w": 4}, {"v": 3, "w": 2}]');
+$("#kapacitas").val(7);
 
-let steps = [];
-function sort() {
+function dinamikusStart() {
+    pause();
+    generateStepsForBackpack();
+    //console.log(steps);
+    
+    display(steps[actStep], actStep);
+    barValtoztatasaNew(actStep, steps.length);
+    playNew();
+
+    $("#eredmenyek").removeClass("hidden");
+    $("#algoritmus-reszletek-new").removeClass("hidden");
+}
+
+function generateStepsForBackpack() {
     let values = JSON.parse($("#bemenet-dinamikus").val());
-    let maxSuly = 7;
+    let maxSuly = parseInt($("#kapacitas").val());
     let t = [];
     for (let x = 0; x < values.length; x++) {
         let row = [];
@@ -14,6 +27,13 @@ function sort() {
     }
 
     for (let j = 0; j <= maxSuly; j++) t[0][j]=0;
+    steps.push({
+        values: values,
+        maxSuly: maxSuly,
+        t: JSON.parse(JSON.stringify(t)),
+        act: null,
+        type: "first"
+    });
     for (let i = 1; i < values.length; i++) {
         for (let j = 0; j <= maxSuly; j++) {
             if (values[i].w > j) {
@@ -22,7 +42,8 @@ function sort() {
                     values: values,
                     maxSuly: maxSuly,
                     t: JSON.parse(JSON.stringify(t)),
-                    act: [String(i), String(i - 1) + String(j), String(i) + String(j)]
+                    act: [String(i), String(i - 1) + String(j), String(i) + String(j)],
+                    type: "next"
                 });
             } else {
                 t[i][j] = Math.max(t[i - 1][j], t[i - 1][j - values[i].w] + values[i].v);
@@ -30,15 +51,16 @@ function sort() {
                     values: values,
                     maxSuly: maxSuly,
                     t: JSON.parse(JSON.stringify(t)),
-                    act: [String(i), String(i - 1) + String(j), String(i - 1) + String(j - values[i].w), String(i) + String(j)]
+                    act: [String(i), String(i - 1) + String(j), String(i - 1) + String(j - values[i].w), String(i) + String(j)],
+                    type: "next"
                 });
             }
         }
     }
 
-    setTimeout(() => {
+    /*setTimeout(() => {
         display(steps[0], 0);
-    }, 400);
+    }, 400);*/
 }
 
 function display(step, i) {
@@ -59,14 +81,16 @@ function display(step, i) {
     table += "</table>";
     $(".game").html(table);
 
-    step.act.forEach((element, eInd) => {
-        if (eInd === step.act.length - 1 && i === steps.length - 1) $("#" + element).addClass("solution");
-        $("#" + element).addClass("act");
-    });
+    if (step.act) {
+        step.act.forEach((element, eInd) => {
+            if (eInd === step.act.length - 1 && i === steps.length - 1) $("#" + element).addClass("solution");
+            $("#" + element).addClass("act");
+        });
+    }
 
-    setTimeout(() => {
+    /*setTimeout(() => {
         if (i + 1 < steps.length) {
             display(steps[i + 1], i + 1);
         }
-    }, 400);
+    }, 400);*/
 }

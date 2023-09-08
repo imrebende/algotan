@@ -29,6 +29,10 @@ $(function () {
         templateBetoltes("algoritmus-header", "#algoritmus-header");
     }
 
+    if ($("#algoritmus-header-new")) {
+        templateBetoltes("algoritmus-header-new", "#algoritmus-header-new");
+    }
+
     if ($("footer.footer")) {
         templateBetoltes("footer", "footer.footer");
     }

@@ -188,7 +188,7 @@ ol li:before {
     text-align: right;
 }
 
-#bemenet, #bemenet2, .inputMezo, #logKerBemenet, #bemenetSimple {
+#bemenet, #bemenet2, .inputMezo, #logKerBemenet, #bemenetSimple, #kapacitas {
     width: 120px;
     display: inline;
 }
@@ -220,6 +220,14 @@ ol li:before {
     padding: 2px 12px 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+}
+
+#algoritmus-reszletek-new {
+    background-color: white;
+    padding: 2px 12px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
 #hibasbemenet {
