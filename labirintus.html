@@ -17,9 +17,9 @@
     <link href="css/av-style.css" rel="stylesheet"/>
 
     <style>
-        .container {
+        /*.container {
             text-align: center;
-        }
+        }*/
         table {
             margin: 30px auto 30px auto;
         }
@@ -66,16 +66,58 @@
             <h1>Labirintus</h1>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                
-                <div id="program">
-
-                    <div id="jatek-ter"></div>
-                    
+            <div class="col-md-6 border-right-blue">
+                <div id="leiras">
+                    <h2 data-i18n="label.leiras"></h2>
+                    <p>
+                        Az algoritmus célja a labirintusban található kincs megtalálása heurisztikával.
+                    </p>
                 </div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+                    <li><a data-toggle="pill" href="#strukto" data-i18n="label.struktogram"></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="pszeudo" class="tab-pane fade in active">
+                        <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> A* algoritmus():</p>
+                        <p class="line tab1">nyitott lista létrehozása, amely csak a kezdő csúcsot tartalmazza</p>
+                        <p class="line tab1">üres zárt lista létrehozása</p>
+                        <p class="line tab1"><strong>Ciklus amíg</strong> (a cél csúcsba nem értünk)</p>
+                        <p class="line tab2">vedd ki a nyitott listából azt a csúcsot, amelyre f a legkisebb</p>
+                        <p class="line tab2"><strong>Ha</strong> (ez a csúcs a cél):</p>
+                        <p class="line tab3">végeztünk</p>
+                        <p class="line tab2"><strong>Ha</strong> nem <strong>akkor</strong></p>
+                        <p class="line tab3">tedd az aktuális csúcsot a zárt listába és nézd meg a szomszédjait</p>
+                        <p class="line tab3"><strong>Ciklus</strong> (minden szomszédjára az aktuális csúcsnak):</p>
+                        <p class="line tab4"><strong>Ha</strong> (a szomszédnak kisebb a g függvény által adott értéke, mint az aktuálisnak
+                                    és a zárt listában szerepel) <strong>akkor</strong></p>
+                        <p class="line tab5">cseréld a szomszéd g függvény által adott értékét erre a jelenlegi g értékre</p>
+                        <p class="line tab5">az aktuális csúcs most már a szomszéd szülője</p>
+                        <p class="line tab4"><strong>különben ha</strong> (jelenlegi g érték alacsonyabb 
+                                            és ez a szomszéd a nyílt listában szerepel) <strong>akkor</strong></p>
+                        <p class="line tab5">cseréld a szomszéd g függvény által adott értékét erre a jelenlegi g értékre</p>
+                        <p class="line tab5">változtasd meg a szomszéd szülőjét az aktuális csúcsra</p>
+                        <p class="line tab4"><strong>különben ha</strong> ez a szomszéd nincs mindkét listában <strong>akkor</strong></p>
+                        <p class="line tab5">add hozzá a nyílt listához és állítsd be hozzá tartozó g értékét</p>
+
+                    </div>
+                    <div id="strukto" class="tab-pane fade">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 border-right-blue">
                 <div class="text-center">
                     <button class="btn btn-success" id="futtatoGomb" onclick="jatekInditasa()"
                             data-i18n="label.futtatas"></button>
+                </div>
+                <div id="eredmenyek" class="hidden">
+                    <div id="algoritmus-header-new"></div>
+                </div>
+                <div id="program">
+                    <div id="algoritmus-reszletek-new">
+                        <div id="jatek-ter"></div>
+                    </div>
                 </div>
             </div>
         </div>
