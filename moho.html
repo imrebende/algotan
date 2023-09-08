@@ -18,6 +18,12 @@
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/av-style.css" rel="stylesheet"/>
 
+    <style>
+        #algoritmus-reszletek-new {
+            text-align: left !important;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -49,8 +55,63 @@
                 <div id="leiras">
                     <h2 data-i18n="label.leiras"></h2>
                     <p data-i18n="[html]komplex.moho.leiras"></p>
+                    <p>Feladat: Egy rendezvényre N vendég érkezik. Ismerjük mindegyiknek az érkezési és a távozási idejét. A résztvevőket fényképeken szeretnénk megörökíteni. Add meg, hogy minimum hányszor
+                        kell fényképet készíteni!</p>
                 </div>
-                <div id="example" class="hidden cplusplus"></div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+                    <li><a data-toggle="pill" href="#strukto" data-i18n="label.struktogram"></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="pszeudo" class="tab-pane fade in active">
+                        <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Kiválogatás(N,E,T,Db,X):</p>
+                        <p class="line tab1">Rendezés(N,E,T,S)</p>
+                        <p class="line tab1">DB:=1; X(Db):=S(1); j:=1</p>
+                        <p class="line tab1"><strong>Ciklus</strong> i=2-től N-ig<span
+                            class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2"><strong>Ha</strong> E(i)≥T(j) <strong>akkor</strong></p>
+                        <p class="line tab3">Db:=Db+1; X(Db):=S(i); j:=i<span
+                            class="elemBerakas2Nyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab1"><strong>Ciklus vége</strong></p>
+                        <p class="line"><strong>Eljárás vége.</strong></p>
+                    </div>
+                    <div id="strukto" class="tab-pane fade">
+                        <table>
+                            <tbody><tr>
+                                <td colspan="4">
+                                    Rendezés(N,E,T,S)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    DB:=1; X(Db):=S(1); j:=1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="ciklusFeltetel">
+                                    Ciklus i=2-től N-ig<span
+                                    class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td class="atloBal"></td>
+                                <td class="elagazasFeltetel">
+                                    E(i)≥T(j)
+                                </td>
+                                <td class="atloJobb"></td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop">&nbsp;</td>
+                                <td colspan="2">
+                                    Db:=Db+1; X(Db):=S(i); j:=i<span
+                                    class="elemBerakas2Nyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                                <td> -</td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
             </div>
             <div class="col-md-5">
                 <div id="program">
@@ -66,9 +127,10 @@
 
                     <div id="eredmenyek" class="hidden">
                         <div id="algoritmus-header"></div>
-
-                        <div id="algoritmus-reszletek"></div>
-
+                        <div id="algoritmus-reszletek-new">
+                            <p class="h4" data-i18n="label.valtozokertekei"></p>
+                            <div id="valtozok"></div>
+                        </div>
                     </div>
                     <div id="hibasbemenet" class="hidden" data-i18n="label.hibasbemenet"></div>
                 </div>
