@@ -90,48 +90,97 @@
             <h1>Tic-Tac-Toe</h1>
         </div>
         <div class="row">
-            <div class="col-md-6 border-right-blue">
-                <div class="gametable">
-                    <div class="main">
-                        <table class="game">
-                            <tr>
-                                <td id="00"></td>
-                                <td id="01"></td>
-                                <td id="02"></td>
+            <div class="col-md-5 border-right-blue">
+                <div id="leiras">
+                    <h2 data-i18n="label.leiras"></h2>
+                    <p>
+                        A minimax algoritmus a lehető legjobb lépésnek megfelelő operátort adja vissza, vagyis azt a lépést, amelyik a legkedvezőbb eredményhez vezet, feltéve, hogy az ellenfél pont ennek minimalizálására játszik.
+                    </p>
+                    <p>   
+                        Tic-tac-toe: A játékosok felváltva tesznek O és X jeleket a háromszor hármas méretű táblán. Az a játékos nyer, aki elsőként tud vízszintesen, függőlegesen vagy átlóban három azonos jelölést elhelyezni. 
+                    </p>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+                    <li><a data-toggle="pill" href="#strukto" data-i18n="label.struktogram"></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="pszeudo" class="tab-pane fade in active">
+                        <p class="line"><strong>Függvény</strong> MINIMAX-DÖNTÉS (játék):</p>
+                        <p class="line tab1"><strong>Ciklus</strong> minden op-ra az MŰVELETEK[játék]-ban</p>
+                        <p class="line tab2">ÉRTÉK[op] = MINIMAX-ÉRTÉK(ALKALMAZ(op, játék), játék)</p>
+                        <p class="line tab1"><strong>Ciklus vége</strong></p>
+                        <p class="line tab1"><strong>Vissza:</strong>az op a legmagasabb ÉRTÉK[op] </p>
+                        <p class="line"><strong>Függvény vége</strong></p>
+                        <br/>
+                        <p class="line"><strong>Függvény</strong> MINIMAX-ÉRTÉK (állapot, játék):</p>
+                        <p class="line tab1"><strong>Ha</strong> VÉGE-TESZT[játék](állapot) <strong>akkor</strong></p>
+                        <p class="line tab2"><strong>Vissza:</strong> HASZNOSSÁG[játék](állapot)</p>
+                        <p class="line tab1"><strong>különben ha</strong> MAX lépése az állapot-ban <strong>akkor</strong></p>
+                        <p class="line tab2"><strong>Vissza:</strong> a legmagasabb MINIMAX-ÉRTÉK az UTÓDOK(állapot)-ban </p>
+                        <p class="line tab1"><strong>különben</strong></p>
+                        <p class="line tab2"><strong>Vissza:</strong> a legalacsonyabb MINIMAX-ÉRTÉK az UTÓDOK(állapot)-ban </p>
+                        <p class="line"><strong>Függvény vége</strong></p>
+                    </div>
+                    <div id="strukto" class="tab-pane fade">
+                        <p>MINIMAX-DÖNTÉS (játék):</p>
+                        <table>
+                            <tbody><tr>
+                                <td colspan="2" class="ciklusFeltetel">
+                                    minden op-ra az MŰVELETEK[játék]-ban
+                                </td>
                             </tr>
                             <tr>
-                                <td id="10"></td>
-                                <td id="11"></td>
-                                <td id="12"></td>
+                                <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
+                                <td class="noBottomBorder">
+                                    ÉRTÉK[op] = MINIMAX-ÉRTÉK(ALKALMAZ(op, játék), játék)
+                                </td>
                             </tr>
                             <tr>
-                                <td id="20"></td>
-                                <td id="21"></td>
-                                <td id="22"></td>
+                                <td colspan="2">
+                                    Ki:az op a legmagasabb ÉRTÉK[op]
+                                </td>
                             </tr>
-                        </table>
-                        <div class="text-center">
-                            <strong><span id="message"></span></strong>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-success" id="futtatoGomb" onclick="newGame()">Új játék</button>
-                        </div>
-                        <div class="text-center" style="margin-top:10px;">
-                            <textarea id="ttt-code" style="width: 304px;height:100px;"></textarea>
-                            <button class="btn btn-success" id="" onclick="genCode()">Következő lépés</button>
-                        </div>
+                        </tbody></table>
+                        <br/>
+                        <p>MINIMAX-ÉRTÉK (állapot, játék):</p>
+                        <table>
+                            <tbody> <tr>
+                                <td class="atloBal"></td>
+                                <td class="elagazasFeltetel">
+                                    VÉGE-TESZT[játék](állapot)
+                                </td>
+                                <td class="atloBal"></td>
+                                <td class="elagazasFeltetel">
+                                    MAX lépése az állapot-ban 
+                                </td>
+                                <td class="atloJobb"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    Ki: HASZNOSSÁG[játék](állapot)
+                                </td>
+                                <td colspan="2">
+                                    Ki: a legmagasabb MINIMAX-ÉRTÉK az UTÓDOK(állapot)-ban
+                                </td>
+                                <td colspan="2">
+                                    Ki: a legalacsonyabb MINIMAX-ÉRTÉK az UTÓDOK(állapot)-ban
+                                </td>
+                            </tr>
+                        </tbody></table>
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4 border-right-blue">
                 <div class="text-center">
-                    <button class="btn btn-success" id="futtatoGomb" onclick="generateSteps(board, -1)">Lépések generálása</button>
-                    <button class="btn btn-success" id="futtatoGomb" onclick="showValues()">Min/max értékek megjelenítése/eltűntetése</button>
+                    <button class="btn btn-success" id="futtatoGomb" onclick="generateSteps(board, -1)">Futtatás</button>
+                    <button class="btn btn-success" id="ertekGomb" onclick="showValues()">Min/max értékek megjelenítése</button>
                 </div>
                 <div id="program">
-
+                    <div id="eredmenyek" class="hidden">
+                        <div id="algoritmus-header-new"></div>
+                    </div>
                     <div class="decisions">
-
                         <div>
                             <span style="width:50px;display: inline-block;text-align: center;">Kör</span>
                             <span style="width:72px;display: inline-block;text-align: center;margin-left:3px;">Játékos következő lépése</span>
@@ -165,6 +214,40 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="gametable">
+                    <div class="main">
+                        <table class="game">
+                            <tr>
+                                <td id="00"></td>
+                                <td id="01"></td>
+                                <td id="02"></td>
+                            </tr>
+                            <tr>
+                                <td id="10"></td>
+                                <td id="11"></td>
+                                <td id="12"></td>
+                            </tr>
+                            <tr>
+                                <td id="20"></td>
+                                <td id="21"></td>
+                                <td id="22"></td>
+                            </tr>
+                        </table>
+                        <div class="text-center">
+                            <strong><span id="message"></span></strong>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-success" id="futtatoGomb" onclick="newGame()">Új játék</button>
+                        </div>
+                        <div class="text-center" style="margin-top:10px;">
+                            <textarea id="ttt-code" style="width: 304px;height:100px;"></textarea>
+                            <button class="btn btn-success" id="" onclick="genCode()">Következő lépés</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </div>
 
@@ -179,6 +262,7 @@
 <script src="js/eljarasok.js"></script>
 <script src="js/mi/tictactoe.js"></script>
 <script src="js/esemenyek.js"></script>
+<script src="js/esemenyek-new.js"></script>
 <script>
     $(function () {
         $("#egyeb").addClass("active");

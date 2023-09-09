@@ -228,6 +228,7 @@ function aiTurn() {
 }
 
 function generateSteps(actBoard, nextPlayer) {
+	steps = [];
     $(".round .game").html("");
     let board = JSON.parse(JSON.stringify(actBoard));
     if (!board) {
@@ -254,11 +255,32 @@ function generateSteps(actBoard, nextPlayer) {
         stepNumber++;
         if (stepNumber % 2 == 1) roundNumber++;
     }
+
+	pause();
+	actStep = 0;
+    display(steps[actStep], actStep);
+	barValtoztatasaNew(actStep, steps.length);
+    playNew();
+
+	$("#eredmenyek").removeClass("hidden");
+    $("#algoritmus-reszletek-new").removeClass("hidden");
 }
 let mainDepth;
 
+function display(step, index) {
+	$(".round .game").html("");
+	for (let i = 0; i <= index; i++) {
+		if (steps[i].nextPlayer === -1) {
+			$("#" + steps[i].stepNumber + "P").html(steps[i].table);
+		} else {
+			$("#" + steps[i].stepNumber + "C").html(steps[i].table);
+		}
+	}
+}
+
 function displayStep(board, x, y, nextPlayer, stepNumber, scoreBoard) {
-    let table = "";
+    //console.log(board, x, y, nextPlayer, stepNumber, scoreBoard);
+	let table = "";
     for (let i = 0; i < 3; i++) {
         table += "<tr>";
         for (let j = 0; j < 3; j++) {
@@ -276,9 +298,21 @@ function displayStep(board, x, y, nextPlayer, stepNumber, scoreBoard) {
         table += "</tr>";
     }
     if (nextPlayer === -1) {
-        $("#" + stepNumber + "P").html(table);
+        //$("#" + stepNumber + "P").html(table);
+		steps.push({
+			table: table,
+			id: "#" + stepNumber + "P",
+			nextPlayer: nextPlayer,
+			stepNumber: stepNumber
+		});
     } else {
-        $("#" + stepNumber + "C").html(table);
+        //$("#" + stepNumber + "C").html(table);
+		steps.push({
+			table: table,
+			id: "#" + stepNumber + "C",
+			stepNumber: stepNumber,
+			nextPlayer: nextPlayer,
+		});
     }
 }
 
