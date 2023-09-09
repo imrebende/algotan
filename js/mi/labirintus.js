@@ -1,94 +1,7 @@
-let felfedezettLabirintus = [];
 let n = 10, m = 10;
-let lepesek = [];
-let lepesekSzama;
-
-function kezdes(a, b, poz) {
-	n = a;
-	m = b;
-	
-	jatekos = poz;
-	lepesek[0] = jatekos;
-	lepesekSzama = 1;
-	
-	for (let i = 0; i < n; i++) {
-		let t = [];
-		for (let j = 0; j < n; j++) {
-			t.push([]);
-		}
-		felfedezettLabirintus.push(t);
-	}
-}
 
 function h(pos) {
     return Math.abs(pos.x - cel.x) + Math.abs(pos.y - cel.y);
-}
-
-function lepes(jatekos, lehetsegesIranyok) {	
-	if (felfedezettLabirintus[jatekos.x][jatekos.y].length == lehetsegesIranyok.length) {
-		return lepesek[--lepesekSzama];
-	}
-	
-    let options = [];
-	if (lehetsegesIranyok.includes("NY") && !felfedezettLabirintus[jatekos.x][jatekos.y].includes("NY")) {
-        options.push({
-			x: jatekos.x,
-			y: jatekos.y - 1,
-            ellentetIrany: "K",
-            irany: "NY",
-            h: h({
-                x: jatekos.x,
-                y: jatekos.y - 1
-            })
-		});
-	}
-    if (lehetsegesIranyok.includes("É") && !felfedezettLabirintus[jatekos.x][jatekos.y].includes("É")) {
-        options.push({
-			x: jatekos.x - 1,
-			y: jatekos.y,
-            ellentetIrany: "D",
-            irany: "É",
-            h: h({
-                x: jatekos.x - 1,
-                y: jatekos.y
-            })
-		});
-	} 
-    if (lehetsegesIranyok.includes("K") && !felfedezettLabirintus[jatekos.x][jatekos.y].includes("K")) {
-        options.push({
-			x: jatekos.x,
-			y: jatekos.y + 1,
-            ellentetIrany: "NY",
-            irany: "K",
-            h: h({
-                x: jatekos.x,
-                y: jatekos.y + 1
-            })
-		});
-	} 
-    if (lehetsegesIranyok.includes("D") && !felfedezettLabirintus[jatekos.x][jatekos.y].includes("D")) {
-        options.push({
-			x: jatekos.x + 1,
-			y: jatekos.y,
-            ellentetIrany: "É",
-            irany: "D",
-            h: h({
-                x: jatekos.x + 1,
-                y: jatekos.y
-            })
-		});
-	}
-    let bestOption = options[0];
-    for (let i = 1; i < options.length; i++) {
-        if (h(bestOption) > h(options[i])) {
-            bestOption = options[i];
-        }
-    }
-
-    felfedezettLabirintus[jatekos.x][jatekos.y].push(bestOption.irany);
-	lepesek[++lepesekSzama] = bestOption;
-	felfedezettLabirintus[bestOption.x][bestOption.y].push(bestOption.ellentetIrany);
-	return {...bestOption, lepesek: lepesek.length};
 }
 
 let jatekos = {
@@ -99,7 +12,7 @@ let cel = {
 	x: 9, 
 	y: 5
 };
-let voltEMar = [];
+
 let labirintus = [
 	[["K"], ["NY", "D"], ["K", "D"], ["K", "NY"], ["K", "NY"], ["NY", "D"], ["D", "K"], ["NY"], ["D", "K"], ["NY", "D"]],
 	[["K", "D"], ["É", "NY", "D"], ["É", "K"], ["NY", "D"], ["D", "K"], ["É", "NY", "D"], ["É", "K", "D"], ["NY", "D"], ["É", "D"], ["É", "D"]],
@@ -171,7 +84,6 @@ function jatekosMozgatasa(ujPozicio) {
     }
 	$("#" + jatekos.x + "-" + jatekos.y + " span").html("&nbsp;");
 	$("#" + ujPozicio.x + "-" + ujPozicio.y + " span").html('<span class="glyphicon glyphicon-user" aria-hidden="true" style="top: 3.5px;"></span>');
-	voltEMar[ujPozicio.x][ujPozicio.y] = true;
 	
 	$("#" + (ujPozicio.x) + "-" + (ujPozicio.y)).removeClass("megnemvolt");
     $("#" + (ujPozicio.x) + "-" + (ujPozicio.y) + " span").attr('title', `dist: ${ujPozicio.lepesek - 2}, hv: ${ujPozicio.h}`);
@@ -182,68 +94,147 @@ function jatekosMozgatasa(ujPozicio) {
 	jatekos = ujPozicio;
 }
 
-function lepesVizsgalat(poz) {
-	if (poz.x - jatekos.x == 1) {
-		return labirintus[jatekos.x][jatekos.y].includes("D");
-	}
-	if (poz.x - jatekos.x == -1) {
-		return labirintus[jatekos.x][jatekos.y].includes("É");
-	}
-	if (poz.y - jatekos.y == 1) {
-		return labirintus[jatekos.x][jatekos.y].includes("K");
-	}
-	if (poz.y - jatekos.y == -1) {
-		return labirintus[jatekos.x][jatekos.y].includes("NY");
-	}
-	return false;
-}
-
-let interval;
-function jatekInditasa() {
-	palyaLetrehozasa();
-	
-	for (let i = 0; i < n; i++) {
-		let t = [];
-		for (let j = 0; j < m; j++) {
-			t.push(false);
-		}
-		voltEMar.push(t);
-	}
-	
-	jatekosMozgatasa({x: 0, y: 4});
-	
-	kezdes(n, m, jatekos);
-	
-	interval = setInterval(function(){ 
-		if (!jatekVege()) {
-			let ujPozicio = lepes(jatekos, labirintus[jatekos.x][jatekos.y]);
-			if (lepesVizsgalat(ujPozicio)) {
-				jatekosMozgatasa(ujPozicio);
-			} else {
-				//alert("Rossz pozicio!");
-				clearInterval(interval);
-			}
-		} else {
-			//alert("Megtaláltad a kincset!");
-			clearInterval(interval);
-		}
-	}, 500)
-}
-
-function jatekVege() {
-	return cel.x === jatekos.x && cel.y === jatekos.y;
-}
 
 $( document ).ready(function() {
     palyaLetrehozasa();
 	
-	for (let i = 0; i < n; i++) {
-		let t = [];
-		for (let j = 0; j < m; j++) {
-			t.push(false);
-		}
-		voltEMar.push(t);
-	}
-	
 	jatekosMozgatasa({x: 0, y: 4});
 });
+
+function szomszedok(pos) {
+	let arr = [];
+	if (labirintus[pos.x][pos.y].includes("D")) {
+		arr.push({
+			x: pos.x + 1,
+			y: pos.y
+		});
+	}
+	if (labirintus[pos.x][pos.y].includes("É")) {
+		arr.push({
+			x: pos.x - 1,
+			y: pos.y
+		});
+	}
+	if (labirintus[pos.x][pos.y].includes("K")) {
+		arr.push({
+			x: pos.x,
+			y: pos.y + 1
+		});
+	}
+	if (labirintus[pos.x][pos.y].includes("NY")) {
+		arr.push({
+			x: pos.x,
+			y: pos.y - 1
+		});
+	}
+	return arr;
+}
+
+let start = {x: 0, y: 4};
+let goal = {x: 9, y: 5};
+
+function startFc() {
+	pause();
+    aStar();
+
+	actStep = 0;
+    display(steps[actStep], actStep);
+    barValtoztatasaNew(actStep, steps.length);
+    playNew();
+
+	$("#eredmenyek").removeClass("hidden");
+    $("#algoritmus-reszletek-new").removeClass("hidden");
+}
+
+function display(step, stepCount) {
+	palyaLetrehozasa();
+	$("#" + step.pos.x + "-" + step.pos.y + " span").html('<span class="glyphicon glyphicon-user" aria-hidden="true" style="top: 3.5px;"></span>');
+	for (let i = 0; i < 10; i++) {
+		for (let j = 0; j < 10; j++) {
+			if (step.visited[i][j]) {
+				$("#" + (i) + "-" + (j)).removeClass("megnemvolt");
+
+				$("#" + (i) + "-" + (j) + " span").attr('title', `dist: ${step.distances[i][j]}, hv: ${h({x: i, y: j})}`);
+				$("#" + (i) + "-" + (j) + " span").attr('data-toggle', 'tooltip');
+				$("#" + (i) + "-" + (j) + " span").attr('data-placement', 'right');
+				$('[data-toggle="tooltip"]').tooltip();
+			}
+		}
+	}
+}
+
+function aStar() {
+    let distances = [];
+    for (let i = 0; i < 10; i++) {
+		distances[i] = [];
+		for (let j = 0; j < 10; j++) 
+			distances[i][j] = Number.MAX_VALUE;
+	}
+		
+    distances[start.x][start.y] = 0;
+
+    let priorities = [];
+    for (let i = 0; i < 10; i++) {
+		priorities[i] = [];
+		for (let j = 0; j < 10; j++) 
+			priorities[i][j] = Number.MAX_VALUE;
+	}
+    priorities[start.x][start.y] = h(start);
+
+    let visited = [];
+	for (let i = 0; i < 10; i++) 
+		visited[i] = [];
+
+		steps.push({
+			pos: {x: start.x, y: start.y},
+			visited: JSON.parse(JSON.stringify(visited)),
+			distances: JSON.parse(JSON.stringify(distances)),
+			type: "first"
+		});
+
+    while (true) {
+        let lowestPriority = Number.MAX_VALUE;
+        let lowestPriorityIndex = -1;
+		let lowestPriorityIndexJ = -1;
+        for (let i = 0; i < 10; i++) {
+			for (let j = 0; j < 10; j++) {
+				if (priorities[i][j] < lowestPriority && !visited[i][j]) {
+					lowestPriority = priorities[i][j];
+					lowestPriorityIndex = i;
+					lowestPriorityIndexJ = j;
+				}
+			}
+        }
+
+		steps.push({
+			pos: {x: lowestPriorityIndex, y: lowestPriorityIndexJ},
+			visited: JSON.parse(JSON.stringify(visited)),
+			distances: JSON.parse(JSON.stringify(distances)),
+			type: "second"
+		});
+
+        if (lowestPriorityIndex === -1 || lowestPriorityIndexJ === -1) {
+            return -1;
+        } else if (lowestPriorityIndex === goal.x && lowestPriorityIndexJ === goal.y) {
+			steps.push({
+				pos: {x: lowestPriorityIndex, y: lowestPriorityIndexJ},
+				visited: JSON.parse(JSON.stringify(visited)),
+				distances: JSON.parse(JSON.stringify(distances)),
+				type: "third"
+			});
+            return distances[lowestPriorityIndex][lowestPriorityIndexJ];
+        }
+
+		let szomArray = szomszedok({x: lowestPriorityIndex, y: lowestPriorityIndexJ});
+        for (let i = 0; i < szomArray.length; i++) {
+            if (!visited[szomArray[i].x][szomArray[i].y]) {
+                if (distances[lowestPriorityIndex][lowestPriorityIndexJ] + 1 < distances[szomArray[i].x][szomArray[i].y]) {
+                    distances[szomArray[i].x][szomArray[i].y] = distances[lowestPriorityIndex][lowestPriorityIndexJ] + 1;
+                    priorities[szomArray[i].x][szomArray[i].y] = distances[szomArray[i].x][szomArray[i].y] + h(szomArray[i]);
+                }
+            }
+        }
+
+        visited[lowestPriorityIndex][lowestPriorityIndexJ] = true;
+    }
+}
