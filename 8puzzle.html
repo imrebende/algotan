@@ -17,12 +17,18 @@
     <link href="css/av-style.css" rel="stylesheet"/>
 
     <style>
+        #algoritmus-reszletek-new {
+            text-align: left;
+        }
+        #program.program-decision {
+            padding-left: 2px;
+        }
         .round-number {
             vertical-align: top;
-            margin-top: 38px;
-            display: inline-block;
+            /*margin-top: 38px;*/
+            /*display: inline-block;
             width: 50px;
-            text-align: center;
+            text-align: center;*/
         }
         .round .game {
             display: inline-block;
@@ -45,7 +51,7 @@
             color: blue;
         }
         .gametable {
-            width: 45%;
+            /*width: 45%;*/
             display: inline-block;
             vertical-align: top;
         }
@@ -55,11 +61,12 @@
         .gametable .main {
             margin: auto;
             display: table;
+            padding: 0;
         }
         .gametable .game td {
-            min-width: 100px;
-            width: 100px;
-            height: 100px;
+            min-width: 30px;
+            width: 30px;
+            height: 30px;
         }
 		.best {
 			border: 4px solid red;
@@ -95,45 +102,91 @@
             <h1>8-puzzle</h1>
         </div>
         <div class="row">
-            <div class="col-md-5 border-right-blue">
+            <div class="col-md-6 border-right-blue">
                 <div id="leiras">
-                    <h2></h2>
-                    <p></p>
+                    <h2 data-i18n="label.leiras"></h2>
+                    <p>
+                        Az algoritmus célja a számok sorbarendezése a számok üres helyre való tologatásával. (a játékter szám ikonjaira kattintva a lépések kipróbálhatók)
+                    </p>
                 </div>
-                <div class="gametable">
-                    <div class="main">
-                        <table class="game">
-                            <tr>
-                                <td id="00"></td>
-                                <td id="01"></td>
-                                <td id="02"></td>
-                            </tr>
-                            <tr>
-                                <td id="10"></td>
-                                <td id="11"></td>
-                                <td id="12"></td>
-                            </tr>
-                            <tr>
-                                <td id="20"></td>
-                                <td id="21"></td>
-                                <td id="22"></td>
-                            </tr>
-                        </table>
-                        <div class="text-center">
-                            <strong><span id="message"></span></strong>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="pill" href="#pszeudo" data-i18n="label.pszeudokod"></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="pszeudo" class="tab-pane fade in active">
+                        <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> A* algoritmus():</p>
+                        <p class="line tab1">nyitott lista létrehozása, amely csak a kezdő csúcsot tartalmazza</p>
+                        <p class="line tab1">üres zárt lista létrehozása <span
+                            class="first glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab1"><strong>Ciklus amíg</strong> (a cél csúcsba nem értünk)</p>
+                        <p class="line tab2">vedd ki a nyitott listából azt a csúcsot, amelyre f a legkisebb<span
+                            class="act glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2">tedd az aktuális csúcsot a zárt listába</p>
+                        <p class="line tab2"><strong>Ha</strong> (ez a csúcs a cél) <strong>akkor</strong></p>
+                        <p class="line tab3">végeztünk<span
+                            class="last glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2"><strong>különben</strong></p>
+                        <p class="line tab3"><strong>Ciklus</strong> (minden szomszédjára az aktuális csúcsnak):<span
+                            class="actWithChildren glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab4"><strong>Ha</strong> a szomszéd nincs a zárt listában <strong>akkor</strong></p>
+                        <p class="line tab5">g(gyerek) = g(aktuális) + távolság szomszéd és aktuális csúcs között</p>
+                        <p class="line tab5">h(gyerek) = távolság gyerek és cél között</p>
+                        <p class="line tab5">f(gyerek) = g(gyerek) + h(gyerek)</p>
+                        <p class="line tab5"><strong>Ha</strong> a szomszéd nincs nincs a nyitott listában és g(gyerek) <= g(aktuális) <strong>akkor</strong></p>
+                        <p class="line tab6">a gyereket add hozzá a nyitott listához</p>
+                        <p class="line tab5"><strong>Elágazás vége.</strong></p>
+                        <p class="line tab4"><strong>Elágazás vége.</strong></p>
+                        <p class="line tab3"><strong>Ciklus vége.</strong></p>
+                        <p class="line tab2"><strong>Elágazás vége.</strong></p>
+                        <p class="line tab1"><strong>Ciklus vége.</strong></p>
+                        <p class="line"><strong>Eljárás vége.</strong></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-6 border-right-blue">
+                <div class="text-center">
+                    <label for="bemenet">Játéktér: </label>
+                </div>
+                <div id="algoritmus-reszletek-new2">
+                    <div class="gametable">    
+                        <div class="main">
+                            <table class="game">
+                                <tr>
+                                    <td id="00"></td>
+                                    <td id="01"></td>
+                                    <td id="02"></td>
+                                </tr>
+                                <tr>
+                                    <td id="10"></td>
+                                    <td id="11"></td>
+                                    <td id="12"></td>
+                                </tr>
+                                <tr>
+                                    <td id="20"></td>
+                                    <td id="21"></td>
+                                    <td id="22"></td>
+                                </tr>
+                            </table>
+                            <div class="text-center">
+                                <strong><span id="message"></span></strong>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-7">
                 <div class="text-center">
                     <label for="bemenet">Bemenet: </label>
                     <input type="text" class="form-control" name="bemenet-puzzle" id="bemenet-puzzle"/>
                     <button class="btn btn-success" id="futtatoGomb" onclick="initFunc()">Bemenet töltése</button>
-                    <button class="btn btn-success" id="futtatoGomb" onclick="sort()">Lépések generálása</button>
+                    <button class="btn btn-success" id="futtatoGomb" onclick="startFc()">Lépések generálása</button>
+                </div><br/>
+                <div id="eredmenyek" class="hidden">
+                    <div id="algoritmus-header-new"></div>
                 </div>
-                <div id="program">
-                    <div class="decisions"></div>
+                <div id="program" class="program-decision">
+                    <div id="algoritmus-reszletek-new" class="hidden">
+                        <div class="decisions"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,6 +203,7 @@
 <script src="js/eljarasok.js"></script>
 <script src="js/mi/puzzle.js"></script>
 <script src="js/esemenyek.js"></script>
+<script src="js/esemenyek-new.js"></script>
 <script>
     $(function () {
         $("#egyeb").addClass("active");
