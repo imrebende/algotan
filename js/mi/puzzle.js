@@ -228,7 +228,9 @@ function function4Moves(lowestPriorityIndex, state, actualRound) {
 
 function display(step, actStep) {
     let round = "";
-    round += `<div class="round"><div class="round-number">Aktuális helyzet</div>`;
+    let itext = "Aktuális helyzet";
+    if (step.type === "last" || step.type === "first") itext = "Kezdő állapot";
+    round += `<div class="round"><div class="round-number">${itext}</div>`;
     round += "<table class='game best'>";
     for (let i = 0; i < 3; i++) {
         round += "<tr>";
