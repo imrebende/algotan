@@ -230,6 +230,13 @@ ol li:before {
     border: 1px solid #ddd;
 }
 
+#algoritmus-reszletek-base {
+    background-color: white;
+    padding: 2px 12px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
 #algoritmus-reszletek-new, #algoritmus-reszletek-new2 {
     background-color: white;
     padding: 2px 12px 10px;
