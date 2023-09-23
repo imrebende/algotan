@@ -13,12 +13,15 @@ function isSafe(board, row, col){
     return true;
 }
 
+
+
 function solveNQueens(board, col){
     steps.push({
         b: JSON.parse(JSON.stringify(board)),
         type: "first",
         aktSor: 0,
-        aktOszlop: col
+        aktOszlop: col,
+        desc: `<i>${String.fromCharCode('A'.charCodeAt(0) + col)}</i> oszlop vizsgálata`
     });
     if (col == n) {
         steps.push({
@@ -34,10 +37,12 @@ function solveNQueens(board, col){
                 b: JSON.parse(JSON.stringify(board)),
                 aktSor: i,
                 aktOszlop: col,
-                type: "third"
+                type: "third",
+                desc: `Királynő elhelyezése a(z) <i>${String.fromCharCode('A'.charCodeAt(0) + col)}${i + 1}</i> mezőn`
             });
-            if (solveNQueens(board, col + 1))
+            if (solveNQueens(board, col + 1)) {
                 return true;
+            }
             board[i][col] = 0;
         } else {
             board[i][col] = 1;
@@ -45,11 +50,19 @@ function solveNQueens(board, col){
                 b: JSON.parse(JSON.stringify(board)),
                 aktSor: i,
                 aktOszlop: col,
-                type: "fourth"
+                type: "fourth",
+                desc: `Királynő ellenőrzése a(z) <i>${String.fromCharCode('A'.charCodeAt(0) + col)}${i + 1}</i> mezőn`
             });
             board[i][col] = 0;
         }
     }
+    steps.push({
+        b: JSON.parse(JSON.stringify(board)),
+        aktSor: 0,
+        aktOszlop: col,
+        type: "back",
+        desc: `Visszalépés a(z) <i>${String.fromCharCode('A'.charCodeAt(0) + col - 1)}</i> oszlopra`
+    });
     return false;
 }
 
@@ -77,6 +90,7 @@ function NyolcKiralynoStart() {
 }
 
 function display(b) {
+    console.log(b);
     for (let i = 0; i < 8; i++){
         for (let j = 0; j < 8; j++){
             if (b.b[i][j] === 1) {
@@ -93,6 +107,12 @@ function display(b) {
         $("." + String(b.aktSor) + String(b.aktOszlop)).addClass('aktualis');
         $(".o-" + (b.aktOszlop + 1)).addClass('kijelolt');
         $(".s-" + (b.aktSor + 1)).addClass('kijelolt');
+    }
+
+    if (b.desc) {
+        $('#megjegyzes').html(b.desc);
+    } else {
+        $('#megjegyzes').html('');
     }
 
     /*setTimeout(() => {

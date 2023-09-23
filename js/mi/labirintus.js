@@ -147,6 +147,7 @@ function startFc() {
 }
 
 function display(step, stepCount) {
+	console.log(step);
 	palyaLetrehozasa();
 	$("#" + step.pos.x + "-" + step.pos.y + " span").html('<span class="glyphicon glyphicon-user" aria-hidden="true" style="top: 3.5px;"></span>');
 	for (let i = 0; i < 10; i++) {
@@ -189,6 +190,7 @@ function aStar() {
 			pos: {x: start.x, y: start.y},
 			visited: JSON.parse(JSON.stringify(visited)),
 			distances: JSON.parse(JSON.stringify(distances)),
+			priorities: JSON.parse(JSON.stringify(priorities)),
 			type: "first"
 		});
 
@@ -210,6 +212,7 @@ function aStar() {
 			pos: {x: lowestPriorityIndex, y: lowestPriorityIndexJ},
 			visited: JSON.parse(JSON.stringify(visited)),
 			distances: JSON.parse(JSON.stringify(distances)),
+			priorities: JSON.parse(JSON.stringify(priorities)),
 			type: "second"
 		});
 
@@ -220,6 +223,7 @@ function aStar() {
 				pos: {x: lowestPriorityIndex, y: lowestPriorityIndexJ},
 				visited: JSON.parse(JSON.stringify(visited)),
 				distances: JSON.parse(JSON.stringify(distances)),
+				priorities: JSON.parse(JSON.stringify(priorities)),
 				type: "third"
 			});
             return distances[lowestPriorityIndex][lowestPriorityIndexJ];
