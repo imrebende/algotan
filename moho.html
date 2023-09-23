@@ -66,12 +66,19 @@
                     <div id="pszeudo" class="tab-pane fade in active">
                         <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Kiválogatás(N,E,T,Db,X):</p>
                         <p class="line tab1">Rendezés(N,E,T,S)</p>
-                        <p class="line tab1">DB:=1; X(Db):=S(1); j:=1</p>
-                        <p class="line tab1"><strong>Ciklus</strong> i=2-től N-ig<span
+                        <p class="line tab1">DB := 1</p>
+                        <p class="line tab1">X(Db) := S(1)</p>
+                        <p class="line tab1">j := 1</p>
+                        <p class="line tab1"><strong>Ciklus</strong> i = 2-től N-ig<span
                             class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-                        <p class="line tab2"><strong>Ha</strong> E(i)≥T(j) <strong>akkor</strong></p>
-                        <p class="line tab3">Db:=Db+1; X(Db):=S(i); j:=i<span
+                        <p class="line tab2"><strong>Ha</strong> E(i) ≥ T(j) <strong>akkor</strong></p>
+                        <p class="line tab3">Db := Db+1<span
                             class="elemBerakas2Nyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab3">X(Db) := S(i)<span
+                            class="elemBerakas2Nyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab3">j := i<span
+                            class="elemBerakas2Nyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2"><strong>Elágazás vége</strong></p>
                         <p class="line tab1"><strong>Ciklus vége</strong></p>
                         <p class="line"><strong>Eljárás vége.</strong></p>
                     </div>
@@ -84,12 +91,22 @@
                             </tr>
                             <tr>
                                 <td colspan="4">
-                                    DB:=1; X(Db):=S(1); j:=1
+                                    DB := 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    X(Db) := S(1)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    j := 1
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="4" class="ciklusFeltetel">
-                                    Ciklus i=2-től N-ig<span
+                                    Ciklus i = 2-től N-ig<span
                                     class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                             </tr>
@@ -97,17 +114,33 @@
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
                                 <td class="atloBal"></td>
                                 <td class="elagazasFeltetel">
-                                    E(i)≥T(j)
+                                    E(i) ≥ T(j)
                                 </td>
                                 <td class="atloJobb"></td>
                             </tr>
                             <tr>
-                                <td class="ciklusMagElsoOszlop">&nbsp;</td>
+                                <td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
                                 <td colspan="2">
-                                    Db:=Db+1; X(Db):=S(i); j:=i<span
+                                    Db := Db+1<span
                                     class="elemBerakas2Nyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
-                                <td> -</td>
+                                <td class="noBottomBorder"> -</td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
+                                <td colspan="2">
+                                    X(Db) := S(i)<span
+                                    class="elemBerakas2Nyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                                <td class="noBottomBorder noTopBorder"></td>
+                            </tr>
+                            <tr>
+                                <td class="ciklusMagElsoOszlop">&nbsp;</td>
+                                <td colspan="2">
+                                    j := i<span
+                                    class="elemBerakas2Nyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                                <td class="noTopBorder"></td>
                             </tr>
                         </tbody></table>
                     </div>

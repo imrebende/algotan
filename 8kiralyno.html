@@ -88,52 +88,67 @@
                 <div class="tab-content">
                     <div id="pszeudo" class="tab-pane fade in active">
                         <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Vezérek(N,Van,Y):</p>
-                        <p class="line tab1">i:=1; Y[]:=[0,…,0]</p>
-                        <p class="line tab1"><strong>Ciklus amíg</strong> i&gt;=1 és i&lt;=N<span
+                        <p class="line tab1">i := 1</p>
+                        <p class="line tab1">Y[] := [0,…,0]</p>
+                        <p class="line tab1"><strong>Ciklus amíg</strong> i &gt;= 1 és i &lt;= N<span
                             class="first glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
                         <p class="line tab2">Jóesetkeresés(i,Van,j)<span
                             class="fourth glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-                        <p class="line tab2"><strong>Ha</strong> Van <strong>akkor</strong> Y[i]:=j; i:=i+1<span
+                        <p class="line tab2"><strong>Ha</strong> Van <strong>akkor</strong><span
                             class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-                        <p class="line tab3"><strong>különben</strong> Y[i]:=0; i:=i-1</p>
+                        <p class="line tab3">Y[i] := j<span
+                            class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab3">i := i+1<span
+                            class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2"><strong>különben</strong></p>
+                        <p class="line tab3">Y[i] := 0<span
+                            class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab3">i := i-1<span
+                            class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab2"><strong>Elágazás vége</strong></p>
                         <p class="line tab1"><strong>Ciklus vége</strong></p>
-                        <p class="line tab1">Van:=(i>N)<span
+                        <p class="line tab1">Van := (i > N)<span
                             class="second glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
                         <p class="line"><strong>Eljárás vége.</strong></p>
                         <br/>
                         <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Jóesetkeresés(i,Van,j):</p>
-                        <p class="line tab1">j:=Y[i]+1</p>
-                        <p class="line tab1"><strong>Ciklus amíg</strong> j≤N és rossz(i,j)</p>
-                        <p class="line tab2">j:=j+1</p>
+                        <p class="line tab1">j := Y[i]+1</p>
+                        <p class="line tab1"><strong>Ciklus amíg</strong> j ≤ N és rossz(i,j)</p>
+                        <p class="line tab2">j := j+1</p>
                         <p class="line tab1"><strong>Ciklus vége</strong></p>
-                        <p class="line tab1">Van:=(j≤N)</p>
+                        <p class="line tab1">Van := (j ≤ N)</p>
                         <p class="line"><strong>Eljárás vége.</strong></p>
                         <br/>
                         <p class="line"><strong>Függvény</strong> rossz(i,j):</p>
-                        <p class="line tab1">k:=1</p>
-                        <p class="line tab1"><strong>Ciklus amíg</strong> k&lt;i és Y[k]≠j és i-k≠abs(j-Y[k])</p>
-                        <p class="line tab2">k:=k+1</p>
+                        <p class="line tab1">k := 1</p>
+                        <p class="line tab1"><strong>Ciklus amíg</strong> k &lt; i és Y[k] ≠ j és i-k ≠ abs(j-Y[k])</p>
+                        <p class="line tab2">k := k+1</p>
                         <p class="line tab1"><strong>Ciklus vége</strong></p>
-                        <p class="line tab1">rossz:=(k&lt;i)</p>
+                        <p class="line tab1">rossz := (k &lt; i)</p>
                         <p class="line"><strong>Függvény vége.</strong></p>
                     </div>
                     <div id="strukto" class="tab-pane fade">
                         <p>Vezérek(N,Van,Y):</p>
                         <table>
                             <tr>
-                                <td colspan="4">
-                                    i:=1; Y[]:=[0,…,0]
+                                <td colspan="5">
+                                    i := 1
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="4" class="ciklusFeltetel">
-                                    i&gt;=1 és i&lt;=N<span
+                                <td colspan="5">
+                                    Y[] := [0,…,0]
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="ciklusFeltetel">
+                                    i &gt;= 1 és i &lt;= N<span
                                     class="first glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
-                                <td colspan="3">
+                                <td colspan="4">
                                     Jóesetkeresés(i,Van,j)<span
                                     class="fourth glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
@@ -141,7 +156,7 @@
                             <tr>
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
                                 <td class="atloBal"></td>
-                                <td class="elagazasFeltetel">
+                                <td colspan="2" class="elagazasFeltetel">
                                     Van 
                                 </td>
                                 <td class="atloJobb"></td>
@@ -149,26 +164,26 @@
                             <tr>
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
                                 <td colspan="2">
-                                    Y[i]:=j;<span
+                                    Y[i] := j<span
                                     class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
                                 </td>
-                                <td>
-                                    Y[i]:=0;
+                                <td colspan="2">
+                                    Y[i] := 0
                                 </td>
                             </tr>
                             <tr>
                                 <td class="ciklusMagElsoOszlop">&nbsp;</td>
                                 <td colspan="2">
-                                    i:=i+1<span
+                                    i := i+1<span
                                     class="third glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
                                 </td>
-                                <td>
-                                    i:=i-1
+                                <td colspan="2">
+                                    i := i-1
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="4">
-                                    Van:=(i>N)<span
+                                <td colspan="5">
+                                    Van := (i>N)<span
                                     class="second glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                             </tr>
@@ -179,23 +194,23 @@
                         <table>
                             <tr>
                                 <td colspan="4">
-                                    j:=Y[i]+1
+                                    j := Y[i]+1
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="4" class="ciklusFeltetel">
-                                    j&gt;=N és rossz(i,j)
+                                    j &gt;= N és rossz(i,j)
                                 </td>
                             </tr>
                             <tr>
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
                                 <td colspan="3">
-                                    j:=j+1
+                                    j := j+1
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="4">
-                                    Van:=(j&lt;=N)
+                                    Van := (j &lt;= N)
                                 </td>
                             </tr>
                         </table>
@@ -205,23 +220,23 @@
                         <table>
                             <tr>
                                 <td colspan="4">
-                                    k:=1
+                                    k := 1
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="4" class="ciklusFeltetel">
-                                    k&lt;i és Y[k]≠j és i-k≠abs(j-Y[k])
+                                    k &lt; i és Y[k] ≠ j és i-k ≠ abs(j-Y[k])
                                 </td>
                             </tr>
                             <tr>
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
                                 <td colspan="3">
-                                    k:=k+1
+                                    k := k+1
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="4">
-                                    rossz:=(k&lt;i)
+                                    rossz := (k &lt; i)
                                 </td>
                             </tr>
                         </table>

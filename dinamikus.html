@@ -115,16 +115,19 @@
                 <div class="tab-content">
                     <div id="pszeudo" class="tab-pane fade in active">
                         <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> Hátizsák():</p>
-                        <p class="line tab1">E(0..S(1)-1,1):=0; E(S(1)..H,1):=F(1)<span
+                        <p class="line tab1">E(0..S(1)-1,1) := 0<span
                             class="first glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-                        <p class="line tab1"><strong>Ciklus</strong>  i=2-től N-ig</p>
-                        <p class="line tab2"><strong>Ciklus</strong> X=0-tól H-ig</p>
-                        <p class="line tab3">E(X,i):=E(X,i-1)<span
+                        <p class="line tab1">E(S(1)..H,1) := F(1)<span
+                            class="first glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab1"><strong>Ciklus</strong> i = 2-től N-ig</p>
+                        <p class="line tab2"><strong>Ciklus</strong> X = 0-tól H-ig</p>
+                        <p class="line tab3">E(X,i) := E(X,i-1)<span
                             class="next glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-                        <p class="line tab3"><strong>Ha</strong> Ha S(i)&lt;=X és E(X,i)&lt;E(X-S(i),i-1)+F(i)<span
+                        <p class="line tab3"><strong>Ha</strong> Ha S(i) &lt;= X és E(X,i) &lt; E(X-S(i),i-1)+F(i) <strong>akkor</strong><span
                             class="next glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
-                        <p class="line tab4"><strong>akkor</strong> E(X,i):=E(X-S(i),i-1)+F(i)<span
+                        <p class="line tab4"> E(X,i) := E(X-S(i),i-1)+F(i)<span
                             class="next glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                        <p class="line tab3"><strong>Elágazás vége</strong></p>
                         <p class="line tab2"><strong>Ciklus vége</strong></p>
                         <p class="line tab1"><strong>Ciklus vége</strong></p>
                         <p class="line"><strong>Eljárás vége.</strong></p>
@@ -133,26 +136,32 @@
                         <table>
                             <tbody><tr>
                                 <td colspan="5">
-                                    E(0..S(1)-1,1):=0; E(S(1)..H,1):=F(1)<span
+                                    E(0..S(1)-1,1) := 0<span
+                                    class="first glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    E(S(1)..H,1) := F(1)<span
                                     class="first glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="ciklusFeltetel">
-                                    Ciklus i=2-től N-ig
+                                    i = 2-től N-ig
                                 </td>
                             </tr>
                             <tr>
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
-                                <td colspan="4" class="noBottomBorder">
-                                    Ciklus X=0-tól H-ig
+                                <td colspan="4" class="noBottomBorder text-center">
+                                    X = 0-tól H-ig
                                 </td>
                             </tr>
                             <tr>
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
                                 <td colspan="3" class="noBottomBorder">
-                                    E(X,i):=E(X,i-1)<span
+                                    E(X,i) := E(X,i-1)<span
                                     class="next glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                             </tr>
@@ -161,7 +170,7 @@
                                 <td class="ciklusMagElsoOszlop belsoCiklusMag noBottomBorder">&nbsp;</td>
                                 <td class="atloBal"></td>
                                 <td class="elagazasFeltetel">
-                                    Ha S(i)&lt;=X és E(X,i)&lt;E(X-S(i),i-1)+F(i)<span
+                                    S(i) &lt;= X és E(X,i) &lt; E(X-S(i),i-1)+F(i)<span
                                     class="next glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                                 <td class="atloJobb"></td>
@@ -170,7 +179,7 @@
                                 <td class="ciklusMagElsoOszlop">&nbsp;</td>
                                 <td class="ciklusMagElsoOszlop belsoCiklusMag">&nbsp;</td>
                                 <td colspan="2">
-                                    E(X,i):=E(X-S(i),i-1)+F(i)<span
+                                    E(X,i) := E(X-S(i),i-1)+F(i)<span
                                     class="next glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                                 <td> -<span
