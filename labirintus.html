@@ -38,6 +38,19 @@
             z-index: 1000;
             position: fix;
         }
+        #close-list, #open-list {
+            margin: 10px auto;
+        }
+        #close-list td, #open-list td {
+            width: 10px;
+            height: 10px;
+        }
+        #close-list td, #open-list td {
+            background-color: white;
+        }
+        #close-list td.in, #open-list td.in {
+            background-color: lightgrey;
+        }
     </style>
 </head>
 
@@ -117,6 +130,11 @@
                 <div id="program">
                     <div id="algoritmus-reszletek-new">
                         <div id="jatek-ter"></div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6"><strong>Zárt lista</strong><table id="close-list"></table></div>
+                            <div class="col-md-6"><strong>Nyitott lista</strong><table id="open-list"></table></div>
+                        </div>
                     </div>
                 </div>
             </div>

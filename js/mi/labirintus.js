@@ -146,8 +146,62 @@ function startFc() {
     $("#algoritmus-reszletek-new").removeClass("hidden");
 }
 
+function displayLists(step) {
+	const open = step.priorities;
+	const close = step.visited;
+	const pos = step.pos;
+	if (step.type === 'second') close[pos.x][pos.y] = true;
+	let closeT = "";
+	let openT = "";
+	for (let i = 0; i < 10; i++) {
+		closeT += "<tr>";
+		openT += "<tr>";
+		for (let j = 0; j < 10; j++) {
+
+			let style = 'style="'; 
+			
+			style += "border-top: ";
+			if (labirintus[i][j].includes("É")) {
+				style += "none;";
+			} else {
+				style += "1px solid black;"
+			}
+			
+			style += "border-right: ";
+			if (labirintus[i][j].includes("K")) {
+				style += "none;";
+			} else {
+				style += "1px solid black;"
+			}
+			
+			style += "border-left: ";
+			if (labirintus[i][j].includes("NY")) {
+				style += "none;";
+			} else {
+				style += "1px solid black;"
+			}
+			
+			style += "border-bottom: ";
+			if (labirintus[i][j].includes("D")) {
+				style += "none;";
+			} else {
+				style += "1px solid black;"
+			}
+
+			style += '"';
+
+			closeT += `<td ${style} class="${close[i][j] ? 'in' : ''}"></td>`;
+			openT += `<td ${style} class="${open[i][j] < Number.MAX_VALUE && !close[i][j] ? 'in' : ''}"></td>`;
+		}
+		closeT += "</tr>";
+		openT += "</tr>";
+	} 
+	$('#close-list').html(closeT);
+	$('#open-list').html(openT);
+}
+
 function display(step, stepCount) {
-	console.log(step);
+	console.log(step)
 	palyaLetrehozasa();
 	$("#" + step.pos.x + "-" + step.pos.y + " span").html('<span class="glyphicon glyphicon-user" aria-hidden="true" style="top: 3.5px;"></span>');
 	for (let i = 0; i < 10; i++) {
@@ -162,6 +216,7 @@ function display(step, stepCount) {
 			}
 		}
 	}
+	displayLists(step);
 }
 
 function aStar() {
@@ -238,6 +293,14 @@ function aStar() {
                 }
             }
         }
+
+		steps.push({
+			pos: {x: lowestPriorityIndex, y: lowestPriorityIndexJ},
+			visited: JSON.parse(JSON.stringify(visited)),
+			distances: JSON.parse(JSON.stringify(distances)),
+			priorities: JSON.parse(JSON.stringify(priorities)),
+			type: "second"
+		});
 
         visited[lowestPriorityIndex][lowestPriorityIndexJ] = true;
     }
