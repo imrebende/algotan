@@ -204,7 +204,10 @@ function szovegValtoztatas() {
         //magyarazatValtoztatas("fakt", $("#valtozok .active .ertek.fakt").text());
     } else if ($("#valtozok .active").hasClass("elemBerakas2")) {
         $(".elemBerakas2Nyil").removeClass("hidden");
-        //magyarazatValtoztatas("fakt", $("#valtozok .active .ertek.fakt").text());
+        //magyarazatValtoztatasSzoveg("Az eredménytöbbe új érték került.");
+    } else if ($("#valtozok .active").hasClass("mohoElemBerakas")) {
+        $(".mohoElemBerakasNyil").removeClass("hidden");
+        magyarazatValtoztatasSzoveg("Az eredménytöbbe új érték került.");
     } else if ($("#valtozok .active").hasClass("feltetelVizsgalat")) {
         $(".feltetelVizsgalatNyil").removeClass("hidden");
         magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());

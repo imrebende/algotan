@@ -50,11 +50,11 @@ function moho(tomb) {
     var eredmeny = [];
     var utolsoVege = 0;
     for (var i = 0; i < tomb.length; i++) {
-        valtozokKiirasa({nev: "eredmeny", ertek: eredmeny}, "ciklusLepes");
+        valtozokKiirasa({nev: "eredmeny", ertek: eredmeny}, {nev: "I", ertek: i + 1}, "ciklusLepes");
         if (utolsoVege < tomb[i].kezd) {
             utolsoVege = tomb[i].veg - 1;
             eredmeny.push(utolsoVege);
-            valtozokKiirasa({nev: "eredmeny", ertek: eredmeny}, "elemBerakas2");
+            valtozokKiirasa({nev: "eredmeny", ertek: eredmeny}, {nev: "I", ertek: i + 1}, "mohoElemBerakas");
         }
     }
     megjelenitesInit();
