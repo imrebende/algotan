@@ -165,6 +165,10 @@ function magyarazatValtoztatas(valtozo, ertek) {
     $("#magyarazat").text("A " + valtozo + " változó értéke " + ertek + " lett.");
 }
 
+function magyarazatValtoztatasSzoveg(szoveg) {
+    $("#magyarazat").text(szoveg);
+}
+
 //Az algoritmusban jelzi, hogy a program éppen hol tart
 function szovegValtoztatas() {
     $(".utasitas").addClass("hidden");
@@ -206,10 +210,10 @@ function szovegValtoztatas() {
         magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());
     } else if ($("#valtozok .active").hasClass("unioBerakas")) {
         $(".unioBerakasNyil").removeClass("hidden");
-        //magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());
+        magyarazatValtoztatasSzoveg("Az eredménytömbbe új érték került.");
     } else if ($("#valtozok .active").hasClass("metszetBerakas")) {
         $(".metszetBerakasNyil").removeClass("hidden");
-        //magyarazatValtoztatas("l", $("#valtozok .active .ertek.l").text());
+        magyarazatValtoztatasSzoveg("Az eredménytömbbe új érték került.");
     }
 
     if ($("#tombok .active").hasClass("csereLepes")) {
