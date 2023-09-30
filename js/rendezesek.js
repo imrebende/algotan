@@ -7,15 +7,16 @@ function csere(t, a, b) {
 function buborekosRendezes(t) {
     var joHelyenLevoElemek = [];
     for (var i = t.length - 1; i > 0; i--) {
+        tombKiirasa(t, [], joHelyenLevoElemek, "ciklusLepes");
         for (var j = 0; j <= i - 1; j++) {
-            tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "ciklusLepes");
+            tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "belsoCiklusLepes");
             if (t[j] > t[j + 1]) {
                 csere(t, j, j + 1);
                 tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "csereLepes");
             }
         }
         joHelyenLevoElemek.push(i);
-        tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "");
+        tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "helyereKerult");
     }
     joHelyenLevoElemek.push(0);
     tombKiirasa(t, [j, j + 1], joHelyenLevoElemek, "");
@@ -26,6 +27,7 @@ function buborekosRendezes(t) {
 function minKivRendezes(t) {
     var joHelyenLevoElemek = [];
     for (var i = 0; i < t.length; i++) {
+        tombKiirasa(t, [i, minI], joHelyenLevoElemek, "ciklusLepesMin");
         var minI = i;
         for (var j = i + 1; j < t.length; j++) {
             if (t[minI] > t[j]) {

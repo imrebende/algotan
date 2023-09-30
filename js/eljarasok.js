@@ -218,8 +218,18 @@ function szovegValtoztatas() {
 
     if ($("#tombok .active").hasClass("csereLepes")) {
         $(".csereLepesNyil").removeClass("hidden");
+        magyarazatValtoztatasSzoveg("Elemek cseréje a tömbben.");
     } else if ($("#tombok .active").hasClass("ciklusLepes")) {
         $(".ciklusLepesNyil").removeClass("hidden");
+        magyarazatValtoztatasSzoveg("");
+    } else if ($("#tombok .active").hasClass("ciklusLepesMin")) {
+        $(".ciklusLepesMinNyil").removeClass("hidden");
+        magyarazatValtoztatasSzoveg("Következő minimum keresése.");
+    } else if ($("#tombok .active").hasClass("belsoCiklusLepes")) {
+        $(".belsoCiklusLepesNyil").removeClass("hidden");
+        magyarazatValtoztatasSzoveg("Elemek összehasonlítása.");
+    } else if ($("#tombok .active").hasClass("helyereKerult")) {
+        magyarazatValtoztatasSzoveg("Az elem a helyére került.");
     }
 
     //Utasítás sorának meghatározása

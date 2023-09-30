@@ -65,7 +65,7 @@
                         <p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := N-től 2-ig <span
                                 class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
                         <p class="line tab2"><strong data-i18n="pszeudokodelem.ciklus"></strong> j := 1-től i-1-ig <span
-                                class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
+                                class="belsoCiklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
                         <p class="line tab3"><strong data-i18n="pszeudokodelem.ha"></strong> A[j] &gt; A[j + 1]</p>
                         <p class="line tab4">tmp := A[j]<span
                                 class="csereLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
@@ -90,7 +90,7 @@
                                 <td class="ciklusMagElsoOszlop noBottomBorder">&nbsp;</td>
                                 <td colspan="4" class="noBottomBorder">
                                     j := 1-től i-1-ig<span
-                                        class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                        class="belsoCiklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -146,7 +146,7 @@
                             <span class="cppVariable">j</span> = <span class="cppNumber">0</span>; <span
                                     class="cppVariable">j</span> < <span class="cppVariable">i</span>; <span
                                     class="cppVariable">j</span>++){ <span
-                                    class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                    class="belsoCiklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
                         </p>
                         <p class="line tab3"><span class="cppKeyword">if</span>(<span class="cppVariable">A</span>[<span
                                 class="cppVariable">j</span>] > <span class="cppVariable">A</span>[<span
@@ -182,6 +182,9 @@
                         <div id="algoritmus-reszletek-base">
                             <p class="h4" data-i18n="label.tomballasa"></p>
                             <div id="tombok"></div>
+
+                            <p class="h4" data-i18n="label.valtozas"></p>
+                            <div id="magyarazat"></div>
                         </div>
                     </div>
                     <div id="hibasbemenet" class="hidden" data-i18n="label.hibasbemenet"></div>

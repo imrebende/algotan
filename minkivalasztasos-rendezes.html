@@ -63,7 +63,8 @@
                 <div class="tab-content">
                     <div id="pszeudo" class="tab-pane fade in active">
                         <p class="line"><strong data-i18n="pszeudokodelem.eljaras"></strong> MinKivRendezés(A, N)</p>
-                        <p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := 1-től N-ig</p>
+                        <p class="line tab1"><strong data-i18n="pszeudokodelem.ciklus"></strong> i := 1-től N-ig<span
+                            class="ciklusLepesMinNyil glyphicon glyphicon-triangle-left utasitas hidden"></span></p>
                         <p class="line tab2">minI := i;</p>
                         <p class="line tab2"><strong data-i18n="pszeudokodelem.ciklus"></strong> j := i+1-től N-ig</p>
                         <p class="line tab3"><strong data-i18n="pszeudokodelem.ha"></strong> A[minI] &gt; A[j] <strong
@@ -87,7 +88,7 @@
                             <tr>
                                 <td colspan="5" class="ciklusFeltetel">
                                     i := 1-től N-ig<span
-                                        class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                        class="ciklusLepesMinNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -150,7 +151,7 @@
                             <span class="cppVariable">i</span> = <span class="cppNumber">0</span>; <span
                                     class="cppVariable">i</span> < <span class="cppVariable">N</span>; <span
                                     class="cppVariable">i</span>++){ <span
-                                    class="ciklusLepesNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
+                                        class="ciklusLepesMinNyil glyphicon glyphicon-triangle-left utasitas hidden"></span>
                         </p>
                         <p class="line tab2"><span class="cppKeyword">int</span> <span class="cppVariable">minI</span> =
                             <span class="cppVariable">i</span>;</p>
@@ -195,6 +196,9 @@
                         <div id="algoritmus-reszletek-base">
                             <p class="h4" data-i18n="label.tomballasa"></p>
                             <div id="tombok"></div>
+
+                            <p class="h4" data-i18n="label.valtozas"></p>
+                            <div id="magyarazat"></div>
                         </div>
                     </div>
                     <div id="hibasbemenet" class="hidden" data-i18n="label.hibasbemenet"></div>
