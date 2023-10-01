@@ -230,6 +230,7 @@ function aiTurn() {
 function generateSteps(actBoard, nextPlayer) {
 	steps = [];
     $(".round .game").html("");
+	$('#algoritmus-reszletek-base').show();
     let board = JSON.parse(JSON.stringify(actBoard));
     if (!board) {
         board = [
@@ -269,7 +270,9 @@ let mainDepth;
 
 function display(step, index) {
 	$(".round .game").html("");
+	$('.round').hide();
 	for (let i = 0; i <= index; i++) {
+		$('#' + steps[i].stepNumber + 'R').show();
 		if (steps[i].nextPlayer === -1) {
 			$("#" + steps[i].stepNumber + "P").html(steps[i].table);
 		} else {
